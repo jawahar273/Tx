@@ -1,0 +1,4 @@
+snips-nlu==0.19.5
+PyYAML==5.1
+pre-commit==1.15.1
+git+https://github.com/jek/blinker.git # for event signal system.

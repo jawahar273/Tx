@@ -1,0 +1,111 @@
+{
+  "entities": {
+    "high": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "lower": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "medium": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "snips/date": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    }
+  },
+  "intents": {
+    "priorityIntent": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "list of "
+            },
+            {
+              "entity": "high",
+              "slot_name": "high",
+              "text": "high  priority task"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "list of "
+            },
+            {
+              "entity": "medium",
+              "slot_name": "medium",
+              "text": "medium priority task"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "list of "
+            },
+            {
+              "entity": "lower",
+              "slot_name": "lower",
+              "text": "lower priority task"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "get all high priority between "
+            },
+            {
+              "entity": "snips/date",
+              "slot_name": "date",
+              "text": "last monday"
+            },
+            {
+              "text": " and "
+            },
+            {
+              "entity": "snips/date",
+              "slot_name": "date",
+              "text": "this week monday"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "get from "
+            },
+            {
+              "entity": "snips/date",
+              "slot_name": "date",
+              "text": "today"
+            },
+            {
+              "text": " to "
+            },
+            {
+              "entity": "snips/date",
+              "slot_name": "date",
+              "text": "last week"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "language": "en"
+}
