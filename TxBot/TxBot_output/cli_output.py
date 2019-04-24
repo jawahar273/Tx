@@ -5,8 +5,6 @@ init()
 
 
 from .abstract_output import TxBaseOutput
-from TxBot_input.cli_input import CLIInput
-from config import SKIP_OUTPUT, FOR_OUTPUT
 
 
 class CLIOutput(TxBaseOutput):
@@ -18,18 +16,4 @@ class CLIOutput(TxBaseOutput):
 
         temp = super(CLIOutput, self).output(txObject)
 
-        print(colored("Tx#> ", "blue"), "\n", colored(temp, "white"))
-        # if for_output['next']:
-        #     self.next(for_output)
-
-    # def next(self, to_input):
-    #     """
-    #     next() function is called as repeating actions.
-    #     input_class.next() and output_class.next()
-    #     are interconneccted as intermediate.
-    #     """
-    #     print("calling next: output")
-
-    #     super(CLIOutput, self).next(to_input)
-
-    #     # self.next_fun.next(to_input)
+        print(colored("Tx#> ", "blue"), colored(temp, "white"))

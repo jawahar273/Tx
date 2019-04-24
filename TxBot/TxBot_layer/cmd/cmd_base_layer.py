@@ -1,5 +1,5 @@
 from TxBot_layer.abstract_layer import TxBaseLayer
-from config import PROCESSED_INPUT, cmd_keywords, STOPLAYER, STOPLAYERNAME
+from config import PROCESSED_INPUT, COMMANDS, STOPLAYER, STOPLAYERNAME
 from utils import parse_cmd
 
 

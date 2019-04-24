@@ -4,6 +4,7 @@ purpose. Handle them with care.
 """
 
 from config import STOPLAYER
+from utils import import_class
 
 
 class TxAbstractEngine:
@@ -27,7 +28,7 @@ class TxBaseEngine(TxAbstractEngine):
         """
         Engine will be intermediate object between the input
         and output object.
-        All the layer must be set input Engine class.
+        All the layer must be set using .. py:method:: TxBaseEngine.add(layers) Engine class.
 
         ..note
         1. get the value from input object using the function
@@ -85,3 +86,15 @@ class TxBaseEngine(TxAbstractEngine):
         # This must be changed in sub class.
 
         return self.output_object.output(self.return_object)
+
+    def next(self):
+        """
+        .. py:method:: TxBasedEngine.next() are recommented to be called after the end
+        of :class:method
+        """
+
+        if self.engine_param['is_next']:
+            self.input_object = import_class(self.engine_param['next_class'])(
+                self.engine_param
+            )
+

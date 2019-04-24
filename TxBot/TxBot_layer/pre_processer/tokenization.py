@@ -1,6 +1,6 @@
 
 from TxBot_layer.pre_processer.pre_processer_base import TxPreProcesserBase
-from config import PROCESSED_INPUT, cmd_keywords, ASSERTTYPE
+from config import PROCESSED_INPUT, COMMANDS, ASSERTTYPE
 
 
 class TxTokenization(TxPreProcesserBase):

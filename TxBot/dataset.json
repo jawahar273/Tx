@@ -1,24 +1,48 @@
 {
   "entities": {
-    "high": {
+    "file_name": {
       "automatically_extensible": true,
       "data": [],
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
-    "lower": {
+    "id": {
       "automatically_extensible": true,
       "data": [],
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
-    "medium": {
+    "pendingTaskEntity": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "move"
+        },
+        {
+          "synonyms": [],
+          "value": "mv"
+        },
+        {
+          "synonyms": [],
+          "value": "remove"
+        },
+        {
+          "synonyms": [],
+          "value": "rm"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "priorityStatusEntity": {
       "automatically_extensible": true,
       "data": [],
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
-    "snips/date": {
+    "snips/datetime": {},
+    "taskID": {
       "automatically_extensible": true,
       "data": [],
       "matching_strictness": 1.0,
@@ -26,15 +50,142 @@
     }
   },
   "intents": {
-    "priorityIntent": {
+    "None": {
       "utterances": [
+        {
+          "data": [
+            {
+              "text": "ntg to show."
+            }
+          ]
+        }
+      ]
+    },
+    "getAllListsTaskIntent": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "list --all "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "date",
+              "text": "today"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "get all the list of the task "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "date",
+              "text": "today"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "get all list of "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "date",
+              "text": "last week"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "get all on this "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "date",
+              "text": "date"
+            }
+          ]
+        }
+      ]
+    },
+    "getListOfTaskIntent": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "list -f -i "
+            },
+            {
+              "entity": "taskID",
+              "slot_name": "id",
+              "text": "id"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "list --find --id "
+            },
+            {
+              "entity": "taskID",
+              "slot_name": "id",
+              "text": "id"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "find the task by "
+            },
+            {
+              "entity": "taskID",
+              "slot_name": "id",
+              "text": "id"
+            }
+          ]
+        }
+      ]
+    },
+    "getPriorityIntent": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "list "
+            },
+            {
+              "entity": "priorityStatusEntity",
+              "slot_name": "high",
+              "text": "-h"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "list "
+            },
+            {
+              "entity": "priorityStatusEntity",
+              "slot_name": "high",
+              "text": "-high"
+            }
+          ]
+        },
         {
           "data": [
             {
               "text": "list of "
             },
             {
-              "entity": "high",
+              "entity": "priorityStatusEntity",
               "slot_name": "high",
               "text": "high  priority task"
             }
@@ -43,12 +194,24 @@
         {
           "data": [
             {
-              "text": "list of "
+              "text": "list "
             },
             {
-              "entity": "medium",
+              "entity": "priorityStatusEntity",
               "slot_name": "medium",
-              "text": "medium priority task"
+              "text": "-m"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "list "
+            },
+            {
+              "entity": "priorityStatusEntity",
+              "slot_name": "medium",
+              "text": "--medium"
             }
           ]
         },
@@ -58,7 +221,43 @@
               "text": "list of "
             },
             {
-              "entity": "lower",
+              "entity": "priorityStatusEntity",
+              "slot_name": "medium",
+              "text": "medium priority task"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "list "
+            },
+            {
+              "entity": "priorityStatusEntity",
+              "slot_name": "lower",
+              "text": "-l"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "list "
+            },
+            {
+              "entity": "priorityStatusEntity",
+              "slot_name": "lower",
+              "text": "--lower"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "list of "
+            },
+            {
+              "entity": "priorityStatusEntity",
               "slot_name": "lower",
               "text": "lower priority task"
             }
@@ -70,7 +269,7 @@
               "text": "get all high priority between "
             },
             {
-              "entity": "snips/date",
+              "entity": "snips/datetime",
               "slot_name": "date",
               "text": "last monday"
             },
@@ -78,7 +277,7 @@
               "text": " and "
             },
             {
-              "entity": "snips/date",
+              "entity": "snips/datetime",
               "slot_name": "date",
               "text": "this week monday"
             }
@@ -90,7 +289,7 @@
               "text": "get from "
             },
             {
-              "entity": "snips/date",
+              "entity": "snips/datetime",
               "slot_name": "date",
               "text": "today"
             },
@@ -98,9 +297,211 @@
               "text": " to "
             },
             {
-              "entity": "snips/date",
+              "entity": "snips/datetime",
               "slot_name": "date",
               "text": "last week"
+            }
+          ]
+        }
+      ]
+    },
+    "greetingsIntent": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Hi"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Hello"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Hola"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What up?"
+            }
+          ]
+        }
+      ]
+    },
+    "movePendingTaskIntent": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "rm -p -d "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "date",
+              "text": "today"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "rm --pending --date "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "date",
+              "text": "today"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "rm -p -f "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "from",
+              "text": "today"
+            },
+            {
+              "text": " -t "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "to",
+              "text": "today"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "rm --pending --from "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "from",
+              "text": "today"
+            },
+            {
+              "text": " --to "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "to",
+              "text": "today"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "find the pending task of "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "date",
+              "text": "today"
+            },
+            {
+              "text": " and "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "move",
+              "text": "move"
+            },
+            {
+              "text": " them."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "rm -p -i "
+            },
+            {
+              "entity": "id",
+              "slot_name": "id",
+              "text": "taskId"
+            }
+          ]
+        }
+      ]
+    },
+    "quitIntent": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": ":q"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "(#q)"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "quit now"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "(#quit)"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "good bye"
+            }
+          ]
+        }
+      ]
+    },
+    "setTaskIntent": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "upload --file "
+            },
+            {
+              "entity": "file_name",
+              "slot_name": "file_name",
+              "text": "task.yml"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "set the task from the file "
+            },
+            {
+              "entity": "file_name",
+              "slot_name": "file_name",
+              "text": "task.yml"
             }
           ]
         }

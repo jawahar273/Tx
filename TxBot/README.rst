@@ -1,0 +1,42 @@
+=====
+TxBot
+=====
+
+TxBot Module provide the nessary class from intergating the chat-bot
+objects. TxBot is like general purpose chat build based with the help
+of `snips-nlu`. Snips-nlp is an Natural Language Understanding engine which
+is a part of Natural Language Process, where NLU help the machine
+to understand the given task at the hand. Such as `What will be the weather in paris at 9pm?` this example can be divided into near human
+understanding with the help of snips-nlp.
+
+
+  .. code:: json
+
+        {
+           ...
+           "slots": [
+              {
+                 "value": "paris",
+                 
+              },
+              {
+                 "value": {
+                    "kind": "Time",
+                    "value": "2018-02-08 20:00:00 +00:00"
+                 },
+                 "entity": "snips/datetime",
+                 ...
+              }
+           ]
+        }
+
+
+TxBot is basicaly divided into 4 parts which is `Input`, `Engine`, `Layers` and `Output`.
+
+    .. code:: js
+
+        Input --> Engine --> Ouput
+                    ^
+                    |
+                    |
+                  Layers

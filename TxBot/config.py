@@ -8,10 +8,13 @@ FOR_OUTPUT = "process_output"
 SKIP_OUTPUT = "SKIP_OUTPUT"
 
 # cmd related config
-cmd_keywords = {"WIKI": {"name": "wiki"}, "EXIT": {"name": "exit"}}
+COMMANDS = {"WIKI": {"name": "wiki"}, "EXIT": {"name": "exit"}}
 CMD_SYMBOLE_START = ":"
 CMD_SYMBOLE_STOP = " "
 
 # To stop run wanted running layer signal will be used.
 STOPLAYERNAME = "STOPLAYER"
 STOPLAYER = signal(STOPLAYERNAME)
+
+# Template File Formate
+TEMPLATE_FORMATE = 'html'

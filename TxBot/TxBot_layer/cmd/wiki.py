@@ -2,7 +2,7 @@ from mediawiki import MediaWiki
 from mediawiki.exceptions import DisambiguationError
 
 from TxBot_layer.cmd.cmd_base_layer import TxCMDBaseLayer
-from config import PROCESSED_INPUT, cmd_keywords, STOPLAYERNAME
+from config import PROCESSED_INPUT, COMMANDS, STOPLAYERNAME
 from utils import parse_cmd, parse_cmd_value
 
 
@@ -21,7 +21,7 @@ class TxWikiLayer(TxCMDBaseLayer):
 
         super(TxWikiLayer, self).response(txObject)
 
-        if self.check_cmd(cmd_keywords["WIKI"]["name"], txObject):
+        if self.check_cmd(COMMANDS["WIKI"]["name"], txObject):
 
             key_value = parse_cmd_value(txObject[PROCESSED_INPUT])
             wikipedia = MediaWiki()

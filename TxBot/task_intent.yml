@@ -1,0 +1,144 @@
+
+# pending task entity
+---
+type: entity
+name: pendingTaskEntity
+values: 
+  - move
+  - mv
+  - remove
+  - rm
+
+# entries of list
+---
+type: entity
+name: taskID
+
+#  task
+---
+type: intent
+name: getListOfTaskIntent
+$class: GetListOfTask
+utterances:
+  - list -f -i [id:taskID](id)
+  - list --find --id [id:taskID](id)
+  - find the task by [id:taskID](id)
+
+
+# Move Pending task
+---
+type: intent
+name: movePendingTaskIntent
+$class: MovePendingTask
+slots:
+  - name: move
+    entity: pendingTaskEntity
+utterances: 
+  - rm -p -d [date:snips/datetime](today)
+  - rm --pending --date [date:snips/datetime](today)
+ 
+  - rm -p -f [from:snips/datetime](today) -t [to:snips/datetime](today) 
+  - rm --pending --from [from:snips/datetime](today) --to [to:snips/datetime](today)
+  - find the pending task of [date:snips/datetime](today) and [move:snips/datetime](move) them.
+
+  - rm -p -i [id](taskId)
+
+
+
+
+# all list
+---
+type: intent
+name: getAllListsTaskIntent
+$class: GetAllListsTask
+utterances:
+ - list --all [date:snips/datetime](today)
+ 
+ - get all the list of the task [date:snips/datetime](today)
+ - get all list of [date:snips/datetime](last week)
+ - get all on this [date:snips/datetime](date)
+
+
+
+
+# entrie for priority
+---
+type: entity
+name: priorityStatusEntity
+
+
+# Priority
+---
+type: intent
+name: getPriorityIntent
+$class: GetPriority
+slots:
+  - name: date
+    entity: snips/datetime
+  - name: high
+    entity: priorityStatusEntity
+  - name: medium
+    entity: priorityStatusEntity
+  - name: lower
+    entity: priorityStatusEntity
+utterances:
+ - list [high](-h)
+ - list [high](-high)
+ - list of [high](high  priority task)
+
+ - list [medium](-m)
+ - list [medium](--medium) 
+ - list of [medium](medium priority task)
+ 
+ - list [lower](-l)
+ - list [lower](--lower)
+ - list of [lower](lower priority task)
+ 
+ - get all high priority between [date:snips/datetime](last monday) and [date:snips/datetime](this week monday)
+ - get from [date:snips/datetime](today) to [date:snips/datetime](last week)
+
+
+# Setting task
+---
+type: intent
+name: setTaskIntent
+$class: SetTask
+utterances:
+  - upload --file [file_name](task.yml)
+  # --fmt [file_formate](yaml)
+  - set the task from the file [file_name](task.yml)
+
+
+# Quit
+---
+type: intent
+name: quitIntent
+$class: Quit
+utterances:
+  - :q
+  - (#q)
+  - quit now
+  - (#quit)
+  - good bye
+
+# Greetings
+---
+type: intent
+name: greetingsIntent
+$class: Greeting  
+utterances:
+  - Hi
+  - Hello
+  - Hola
+  - What up?
+
+
+# Quotes of the day
+---
+type: intent
+name: quotesIntent
+$class: Quotes 
+utterances:
+  - quote of the day.
+  - today's quote.
+  - get a good quote.

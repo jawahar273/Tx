@@ -1,7 +1,7 @@
 from sys import exit
 
 from TxBot_layer.cmd.cmd_base_layer import TxCMDBaseLayer
-from config import PROCESSED_INPUT, cmd_keywords
+from config import PROCESSED_INPUT, COMMANDS
 from utils import parse_cmd
 
 
@@ -13,7 +13,7 @@ class TxExitLayer(TxCMDBaseLayer):
 
     def response(self, txObject):
 
-        if self.check_cmd(cmd_keywords['EXIT']['name'], txObject):
+        if self.check_cmd(COMMANDS['EXIT']['name'], txObject):
 
             exit(0)
 

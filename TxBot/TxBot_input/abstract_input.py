@@ -26,7 +26,7 @@ class TxAbstractInput(ABC):
 class TxBaseInput(TxAbstractInput):
     def __init__(self, txObject):
         """
-        Get the input object as `Dict`
+        Get the input object as .. py:class:: `Dict`
         .. notes::
             txObject.update({'text': 'Value must be upates on each function',})
         """
@@ -52,18 +52,18 @@ class TxBaseInput(TxAbstractInput):
 
         self.return_object.update(txObject)
 
-    """
-    :func: get_access_key which return the current object
-    access keys which will be used internally by input object
-    class.
-    """
 
     def get_access_keys(self):
+        """
+        .. py:method:: `get_access_key` which return the current object
+        access keys which will be used internally by input object
+        class.
+        """
         return ("input_params",)
 
     def processed(self):
         """
-        :func: Processed() must be implemented on each new sub class.
+        .. py:method:: `Processed` must be implemented on each new sub class.
         return must of dict type with `key`: 'PROCESSED_INPUT' from config
         module.
         """

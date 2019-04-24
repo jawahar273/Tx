@@ -2,23 +2,25 @@ import json
 
 from snips_nlu import SnipsNLUEngine
 
-from TxBot_layer.test_layer import TxSampleTestLayer
 from .abstract_engine import TxBaseEngine
 
 from config import PROCESSED_INPUT, FOR_OUTPUT
 
-"""
-Default Engine module will be used for manging the NLU engine.
-"""
 
 
 class TxDefaultEngine(TxBaseEngine):
+    """
+    Default Engine module will be used for manging the NLU engine.
+    """
     def __init__(self, input_object, output_object, engine_param=None):
 
-        super(TxDefaultEngine, self).__init__(input_object, output_object, engine_param)
+        super(TxDefaultEngine, self).__init__(
+            input_object, output_object, engine_param
+        )
         self.engine = SnipsNLUEngine()
         # get the path of the dataset
-        self.train_model(engine_param.get("dataset_path"))
+        dataset_path = engine_param.get("dataset_path")
+        self.train_model(dataset_path)
 
     def train_model(self, path):
 
@@ -34,7 +36,7 @@ class TxDefaultEngine(TxBaseEngine):
 
         super(TxDefaultEngine, self).add(layer)
 
-    def go(self, _next, args):
+    def go(self):
         super(TxDefaultEngine, self).go()
 
         if self.break_layer:
@@ -45,5 +47,10 @@ class TxDefaultEngine(TxBaseEngine):
                 self.return_object[PROCESSED_INPUT]
             )
 
-        super().to_output(self.return_object)
-        self.input_object = _next(args)
+        output_result = super().to_output(
+            self.return_object
+        )
+
+        self.next()
+
+        return output_result
