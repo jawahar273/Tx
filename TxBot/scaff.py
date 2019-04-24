@@ -1,5 +1,5 @@
 import os
-from utils import invert_title
+from utils import invert_title, _title
 
 '''
 Scaff module helpful in increating the prodicitive of
@@ -44,7 +44,8 @@ def gen_response(base_path="TxBot_response"):
         os.makedirs(input_path)
 
     except FileExistsError as e:
-        pass
+        print('Folder already exits')
+        exit_now()
 
     scaff_path = os.path.join(input_path, file_name)
     print('abs folder', scaff_path)
@@ -62,10 +63,11 @@ def gen_response(base_path="TxBot_response"):
         class_template = f'''
 from TxBot_response.abstract_response import TxBaseResponse
 
-class {file_name.title()}(TxBaseResponse):
+
+class {_title(file_name)}(TxBaseResponse):
 
     def __init__(self):
-        super(GetListOfTask, self).__init__(self)
+        super({_title(file_name)}, self).__init__(self)
 
     def get_class_name(self):
         return self.__class__.__name__
@@ -76,6 +78,8 @@ class {file_name.title()}(TxBaseResponse):
         '''
         file.write(class_template)
 
+    print('done..')
+
 
 print_text = '''
 0. Exit
@@ -85,6 +89,7 @@ print_text = '''
 
 print('press 1 for help.')
 from sys import exit
+
 while True:
 
     user_number = int(input('command: '))
