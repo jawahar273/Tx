@@ -18,3 +18,6 @@ STOPLAYER = signal(STOPLAYERNAME)
 
 # Template File Formate
 TEMPLATE_FORMATE = 'html'
+
+# Response Config
+IGNORABLE_THESHOLD_VALUE = 0.58

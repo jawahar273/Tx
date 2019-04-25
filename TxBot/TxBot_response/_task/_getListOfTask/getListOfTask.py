@@ -1,11 +1,11 @@
 import os
 
-from TxBot_response.abstract_response import TxAbstractResponse
+from TxBot_response.abstract_response import TxBaseResponse
 
 from utils import template_name_from_class_name
 
 
-class GetListOfTask(TxAbstractResponse):
+class GetListOfTask(TxBaseResponse):
     '''
     This is a implement from `name` in intent name.
     '''
@@ -13,19 +13,13 @@ class GetListOfTask(TxAbstractResponse):
     def __init__(self):
         super(GetListOfTask, self).__init__(self)
 
+    def get_class_name(self):
+        return self.__class__.__name__
+
     def render(self):
 
-        class_name = self.__class__.__name__  # class name
-        template = None
+        self.class_name = self.get_class_name()  # class name
 
-        template = os.path.join(os.path.dirname(__file__),
-                                template_name_from_class_name(class_name)
-                                )
+        super(GetListOfTask, self).render(class_name=self.class_name, sub_path='_task')
 
-        with open(template) as _template_file:
-
-            template = self.template(
-                _template_file.read()
-            )
-
-        return template.render(return_text=[])
+        return self.render_template.render(return_text=list('abn'))

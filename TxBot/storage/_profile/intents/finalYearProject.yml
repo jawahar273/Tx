@@ -1,0 +1,8 @@
+
+#  finalYearProject desc
+---
+type: intent
+name: finalYearProjectIntent_profile
+$class: FinalYearProject
+utterances:
+    - Tell about your final year project.

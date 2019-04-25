@@ -1,0 +1,9 @@
+
+#  experience desc
+---
+type: intent
+name: experienceIntent_profile
+$class: Experience
+utterances:
+    - Your previous past experience.
+    - Tell about your past experience.

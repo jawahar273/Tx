@@ -17,7 +17,7 @@ name: taskID
 #  task
 ---
 type: intent
-name: getListOfTaskIntent
+name: getListOfTaskIntent_task
 $class: GetListOfTask
 utterances:
   - list -f -i [id:taskID](id)
@@ -28,7 +28,7 @@ utterances:
 # Move Pending task
 ---
 type: intent
-name: movePendingTaskIntent
+name: movePendingTaskIntent_task
 $class: MovePendingTask
 slots:
   - name: move
@@ -49,7 +49,7 @@ utterances:
 # all list
 ---
 type: intent
-name: getAllListsTaskIntent
+name: getAllListsTaskIntent_task
 $class: GetAllListsTask
 utterances:
  - list --all [date:snips/datetime](today)
@@ -70,7 +70,7 @@ name: priorityStatusEntity
 # Priority
 ---
 type: intent
-name: getPriorityIntent
+name: getPriorityIntent_task
 $class: GetPriority
 slots:
   - name: date
@@ -98,21 +98,26 @@ utterances:
  - get from [date:snips/datetime](today) to [date:snips/datetime](last week)
 
 
+
 # Setting task
 ---
 type: intent
-name: setTaskIntent
+name: setTaskIntent_task
 $class: SetTask
 utterances:
   - upload --file [file_name](task.yml)
+  - upload --file [file_name](/medium/userName/task.yml)
+  - upload --file [file_name](c://userName//task.yml)
+  - upload --file [file_name](c:\userName\task.yml)
   # --fmt [file_formate](yaml)
   - set the task from the file [file_name](task.yml)
+  - set the task from the file [file_name](/medium/userName/task.yml)
 
 
 # Quit
 ---
 type: intent
-name: quitIntent
+name: quitIntent_task
 $class: Quit
 utterances:
   - :q
@@ -124,8 +129,8 @@ utterances:
 # Greetings
 ---
 type: intent
-name: greetingsIntent
-$class: Greeting  
+name: greetingsIntent_task
+$class: Greetings  
 utterances:
   - Hi
   - Hello
@@ -136,7 +141,7 @@ utterances:
 # Quotes of the day
 ---
 type: intent
-name: quotesIntent
+name: quotesIntent_task
 $class: Quotes 
 utterances:
   - quote of the day.

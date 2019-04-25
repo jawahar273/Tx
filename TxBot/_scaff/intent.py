@@ -1,6 +1,6 @@
 import os
 
-from utils import invert_title, _title
+from utils import invert_title_case as invert_title, _title_case as _title
 
 
 def gen_intent(base_path='storage'):

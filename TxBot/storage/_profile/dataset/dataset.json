@@ -1,0 +1,89 @@
+{
+  "entities": {},
+  "intents": {
+    "bioIntent_profile": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Tell me about yourself"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what you bio?"
+            }
+          ]
+        }
+      ]
+    },
+    "certificationIntent_profile": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Current certification you have."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What are the certification you have?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Tell about certification you have."
+            }
+          ]
+        }
+      ]
+    },
+    "experienceIntent_profile": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Your previous past experience."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Tell about your past experience."
+            }
+          ]
+        }
+      ]
+    },
+    "finalYearProjectIntent_profile": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Tell about your final year project."
+            }
+          ]
+        }
+      ]
+    },
+    "locationIntent_profile": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Would you like to relocate."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "language": "en"
+}

@@ -1,0 +1,9 @@
+
+#  profileImg desc
+---
+type: intent
+name: bioIntent_profile
+$class: Bio
+utterances:
+    - Tell me about yourself
+    - what you bio? 

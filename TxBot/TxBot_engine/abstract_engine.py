@@ -40,6 +40,7 @@ class TxBaseEngine(TxAbstractEngine):
         self.middleware_classes = []
         self.return_object = None
         self.break_layer = False
+        self.engine_name = 'base_engine'
         STOPLAYER.connect(self.subscribe)
         # return object is alway for accessing
         # processed input inside.
@@ -57,7 +58,6 @@ class TxBaseEngine(TxAbstractEngine):
         Get the event signal and return true(for now).
         """
         self.break_layer = True
-        print(">>>>>>>>>>>", self.break_layer)
 
     def go(self):
         """ Running the go function which will be used

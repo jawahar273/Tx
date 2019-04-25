@@ -1,0 +1,8 @@
+
+#  location desc
+---
+type: intent
+name: locationIntent_profile
+$class: Location
+utterances:
+    - Would you like to relocate.

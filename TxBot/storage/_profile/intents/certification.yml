@@ -1,0 +1,11 @@
+
+#  certification desc
+---
+type: intent
+name: certificationIntent_profile
+$class: Certification
+utterances:
+    - Current certification you have.
+    - What are the certification you have?
+    - Tell about certification you have.
+

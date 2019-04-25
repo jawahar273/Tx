@@ -13,3 +13,5 @@ coverage==4.5.2  # https://github.com/nedbat/coveragepy
 colorama==0.4.1
 profiling==0.1.3
 memory-profiler==0.55.0
+
+click==7.0

@@ -21,7 +21,9 @@ class TxBaseOutput(TxAbstractOutput):
     def output(self, txObject):
         """
         """
-        return txObject[FOR_OUTPUT]
+        from IPython import embed; embed()
+
+        return txObject
 
     # def next(self, to_input):
     #     print('calling abstract output')

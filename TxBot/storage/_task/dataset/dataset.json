@@ -50,17 +50,6 @@
     }
   },
   "intents": {
-    "None": {
-      "utterances": [
-        {
-          "data": [
-            {
-              "text": "ntg to show."
-            }
-          ]
-        }
-      ]
-    },
     "getAllListsTaskIntent": {
       "utterances": [
         {
@@ -479,6 +468,31 @@
         }
       ]
     },
+    "quotesIntent": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "quote of the day."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "today's quote."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "get a good quote."
+            }
+          ]
+        }
+      ]
+    },
     "setTaskIntent": {
       "utterances": [
         {
@@ -496,12 +510,60 @@
         {
           "data": [
             {
+              "text": "upload --file "
+            },
+            {
+              "entity": "file_name",
+              "slot_name": "file_name",
+              "text": "/medium/userName/task.yml"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "upload --file "
+            },
+            {
+              "entity": "file_name",
+              "slot_name": "file_name",
+              "text": "c://userName//task.yml"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "upload --file "
+            },
+            {
+              "entity": "file_name",
+              "slot_name": "file_name",
+              "text": "c:\\userName\\task.yml"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
               "text": "set the task from the file "
             },
             {
               "entity": "file_name",
               "slot_name": "file_name",
               "text": "task.yml"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "set the task from the file "
+            },
+            {
+              "entity": "file_name",
+              "slot_name": "file_name",
+              "text": "/medium/userName/task.yml"
             }
           ]
         }

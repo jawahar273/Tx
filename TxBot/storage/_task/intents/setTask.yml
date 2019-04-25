@@ -1,0 +1,11 @@
+
+#  setTask desc
+---
+type: intent
+name: setTaskIntent
+$class: SetTask
+utterances:
+  - upload --file [file_name](task.yml)
+  # --fmt [file_formate](yaml)
+  - set the task from the file [file_name](task.yml)
+

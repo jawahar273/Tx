@@ -33,7 +33,7 @@ understanding with the help of snips-nlp.
 
 TxBot is basicaly divided into 4 parts which is `Input`, `Engine`, `Layers` and `Output`.
 
-    .. code:: js
+    .. code-block:: js
 
         Input --> Engine --> Ouput
                     ^

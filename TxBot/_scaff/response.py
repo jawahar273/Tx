@@ -1,6 +1,6 @@
 import os
 
-from utils import invert_title, _title
+from utils import invert_title_case as invert_title, _title_case as _title
 
 
 def gen_response(base_path="TxBot_response", _sub_path=None, _file_name=None):
@@ -59,6 +59,7 @@ class {_title(file_name)}(TxBaseResponse):
 
         super({_title(file_name)}, self).render(class_name=self.class_name, sub_path='{sub_path}')
 
+        return self.render_template.render()
 
 '''
         file.write(class_template)
