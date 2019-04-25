@@ -3,8 +3,8 @@ Engine module is used for higher level or specific object
 purpose. Handle them with care.
 """
 
-from config import STOPLAYER
-from utils import import_class
+from TxBot.config import STOPLAYER
+from TxBot.utils import import_class
 
 
 class TxAbstractEngine:

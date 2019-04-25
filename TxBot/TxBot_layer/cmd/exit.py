@@ -1,8 +1,8 @@
 from sys import exit
 
-from TxBot_layer.cmd.cmd_base_layer import TxCMDBaseLayer
-from config import PROCESSED_INPUT, COMMANDS
-from utils import parse_cmd
+from TxBot.TxBot_layer.cmd.cmd_base_layer import TxCMDBaseLayer
+from TxBot.config import PROCESSED_INPUT, COMMANDS
+from TxBot.utils import parse_cmd
 
 
 class TxExitLayer(TxCMDBaseLayer):

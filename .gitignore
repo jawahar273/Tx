@@ -285,3 +285,4 @@ tx/media/
 .env
 .envs/*
 !.envs/.local/
+envs/.local/.password

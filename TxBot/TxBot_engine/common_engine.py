@@ -1,7 +1,7 @@
-from TxBot_layer.test_layer import TxSampleTestLayer
+from TxBot.TxBot_layer.test_layer import TxSampleTestLayer
 
 from .abstract_engine import TxBaseEngine
-from config import FOR_OUTPUT, PROCESSED_INPUT
+from TxBot.config import FOR_OUTPUT, PROCESSED_INPUT
 
 """
 Common engine will only return the layer's result

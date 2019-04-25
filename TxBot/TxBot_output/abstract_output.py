@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
-from utils import import_class
-from config import FOR_OUTPUT
+from TxBot.utils import import_class
+from TxBot.config import FOR_OUTPUT
 
 
 class TxAbstractOutput(ABC):
@@ -19,9 +19,6 @@ class TxBaseOutput(TxAbstractOutput):
         pass
 
     def output(self, txObject):
-        """
-        """
-        from IPython import embed; embed()
 
         return txObject
 

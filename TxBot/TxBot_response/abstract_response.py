@@ -3,8 +3,8 @@ import os
 
 from jinja2 import Template
 
-from config import IGNORABLE_THESHOLD_VALUE
-from utils import template_name_from_class_name, invert_title_case as _title
+from TxBot.config import IGNORABLE_THESHOLD_VALUE
+from TxBot.utils import template_name_from_class_name, invert_title_case as _title
 
 # class TxAbstractResponse(ABC):
 

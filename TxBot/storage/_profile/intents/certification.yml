@@ -1,3 +1,9 @@
+---
+type: entity
+name: certificateEntity
+value:
+  - certification
+  - certificate
 
 #  certification desc
 ---
@@ -5,7 +11,8 @@ type: intent
 name: certificationIntent_profile
 $class: Certification
 utterances:
-    - Current certification you have.
-    - What are the certification you have?
-    - Tell about certification you have.
+    - Current [certificateEntity](certification) you have.
+    - What are the [certificateEntity](certification) you have?
+    - Tell about [certificateEntity](certification) you have.
+    - Describe you current holding [certificateEntity](certification)
 

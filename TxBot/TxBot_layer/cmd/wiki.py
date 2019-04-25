@@ -1,9 +1,9 @@
 from mediawiki import MediaWiki
 from mediawiki.exceptions import DisambiguationError
 
-from TxBot_layer.cmd.cmd_base_layer import TxCMDBaseLayer
-from config import PROCESSED_INPUT, COMMANDS, STOPLAYERNAME
-from utils import parse_cmd, parse_cmd_value
+from TxBot.TxBot_layer.cmd.cmd_base_layer import TxCMDBaseLayer
+from TxBot.config import PROCESSED_INPUT, COMMANDS, STOPLAYERNAME
+from TxBot.utils import parse_cmd, parse_cmd_value
 
 
 """

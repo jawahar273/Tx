@@ -1,5 +1,5 @@
 
-from TxBot_response.abstract_response import TxBaseResponse
+from TxBot.TxBot_response.abstract_response import TxBaseResponse
 
 
 class ProfileImage(TxBaseResponse):

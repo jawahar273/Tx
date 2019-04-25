@@ -1,7 +1,7 @@
 from importlib import import_module
 from re import split, search
 
-from config import CMD_SYMBOLE_STOP, CMD_SYMBOLE_START, TEMPLATE_FORMATE
+from TxBot.config import CMD_SYMBOLE_STOP, CMD_SYMBOLE_START, TEMPLATE_FORMATE
 
 
 
@@ -24,9 +24,13 @@ def invert_title_case(value):
 
 def import_class(path):
 
-    value, class_name = path.rsplit(".", 1)
-    module = import_module(value)
-    return getattr(module, class_name)
+    if isinstance(path, str):
+
+        value, class_name = path.rsplit(".", 1)
+        module = import_module(value)
+        return getattr(module, class_name)
+    else:
+        return path
 
 
 def import_response_intent(intent_name):

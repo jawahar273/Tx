@@ -3,9 +3,9 @@ import os
 
 import click
 
-from _scaff.response import gen_response
-from _scaff.intent import gen_intent
-from _scaff.utils import exit_now
+from TxBot._scaff.response import gen_response
+from TxBot._scaff.intent import gen_intent
+from TxBot._scaff.utils import exit_now
 
 '''
 Scaff module helpful in increating the prodicitive of
@@ -15,9 +15,11 @@ location.
 
 Intent rules.
 
-1. Always declare intent name ends with '-Intent'(like '-ing' to 'following' from 'follow') in yaml file
-before training.
-2. Class in response must of Title case with intent name without the suffiex '-Intent'
+1. Always declare intent name ends with
+ '-Intent'(like '-ing' to 'following' from 'follow') in yaml file
+    before training and with sub folder Example `_profile`.
+2. Class in response must of Title
+    case with intent name without the suffiex '-Intent'
 
 .. code-block:: yaml
     type: intent

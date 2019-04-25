@@ -6,3 +6,5 @@ name: locationIntent_profile
 $class: Location
 utterances:
     - Would you like to relocate.
+    - Are you will to relocate?
+    - Do you like to relocate?

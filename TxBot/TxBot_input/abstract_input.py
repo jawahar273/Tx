@@ -8,7 +8,7 @@ result can be taken to engine.
 
 from abc import ABC, abstractmethod
 
-from config import PROCESSED_INPUT
+from TxBot.config import PROCESSED_INPUT
 
 
 class TxAbstractInput(ABC):

@@ -4,8 +4,8 @@ from snips_nlu import SnipsNLUEngine
 
 from .abstract_engine import TxBaseEngine
 
-from config import PROCESSED_INPUT, FOR_OUTPUT
-from utils import import_response_intent
+from TxBot.config import PROCESSED_INPUT, FOR_OUTPUT
+from TxBot.utils import import_response_intent
 
 
 class TxDefaultEngine(TxBaseEngine):
