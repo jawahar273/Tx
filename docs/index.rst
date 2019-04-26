@@ -11,6 +11,7 @@ Welcome to Tx's documentation!
    contributing
    authors
    history
+   usage/scaff
 
 Indices and tables
 ==================
