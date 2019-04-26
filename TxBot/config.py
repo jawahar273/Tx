@@ -4,6 +4,7 @@ from blinker import signal
 ASSERTTYPE = "ASSERTTYPE"
 PROCESSED_INPUT = "process_input"
 FOR_OUTPUT = "process_output"
+NLUSCOPE = "NLUSCOPE"
 
 SKIP_OUTPUT = "SKIP_OUTPUT"
 

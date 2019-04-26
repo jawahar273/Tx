@@ -1,12 +1,3 @@
-from subprocess import run
-import os
-
-import click
-
-from TxBot._scaff.response import gen_response
-from TxBot._scaff.intent import gen_intent
-from TxBot._scaff.utils import exit_now
-
 '''
 Scaff module helpful in increating the prodicitive of
 generating of intent response files.
@@ -29,6 +20,16 @@ Intent rules.
 
 '''
 
+from subprocess import run
+import os
+
+import click
+
+from TxBot.scaff.response import gen_response
+from TxBot.scaff.intent import gen_intent
+from TxBot.scaff.utils import exit_now
+
+
 @click.group(invoke_without_command=False)
 def main():
     pass
@@ -37,7 +38,7 @@ def main():
 
 @main.command('intent')
 def intent():
-    if click.confirm('Do you like generate Intent both?'):
+    if click.confirm('Do you like generate Intent files both?'):
         gen_intent()
     else:
         click.echo('abort!')
@@ -45,7 +46,7 @@ def intent():
 
 @main.command('response')
 def response():
-    if click.confirm('Do you like generate Response both?'):
+    if click.confirm('Do you like generate Response folders both?'):
         gen_response()
     else:
         click.echo('abort!')

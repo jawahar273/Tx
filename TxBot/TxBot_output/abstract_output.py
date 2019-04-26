@@ -20,10 +20,4 @@ class TxBaseOutput(TxAbstractOutput):
 
     def output(self, txObject):
 
-        return txObject
-
-    # def next(self, to_input):
-    #     print('calling abstract output')
-    #     to_input['is_next'] = True
-
-    #     self.next_fun().next(to_input)
+        return txObject[FOR_OUTPUT]

@@ -33,6 +33,10 @@ def import_class(path):
         return path
 
 
+def get_intent_sub_path(intent_name):
+    return intent_name.split('Intent')
+
+
 def import_response_intent(intent_name):
     '''
     @params intent_name intent name from yaml
@@ -40,9 +44,8 @@ def import_response_intent(intent_name):
      such as `_profile`.
     '''
 
-    temp = intent_name.split('Intent')
-    intent_name = temp[0]
-    sub_path = temp[1]
+    intent_name, sub_path  = get_intent_sub_path(intent_name)
+
     path = f'TxBot_response.{sub_path}._{intent_name}'
     path = f'{path}.{intent_name}.{_title_case(intent_name)}'
     try:

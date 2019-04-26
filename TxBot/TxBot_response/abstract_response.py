@@ -1,10 +1,10 @@
 from abc import ABC, abstractmethod
 import os
 
-from jinja2 import Template
+from config.settings import render_template
 
-from TxBot.config import IGNORABLE_THESHOLD_VALUE
-from TxBot.utils import template_name_from_class_name, invert_title_case as _title
+from TxBot.config import IGNORABLE_THESHOLD_VALUE, TEMPLATE_FORMATE
+from TxBot.utils import template_name_from_class_name, invert_title_case, _title_case
 
 # class TxAbstractResponse(ABC):
 
@@ -42,29 +42,32 @@ class TxAbstractResponse(ABC):
 class TxBaseResponse(TxAbstractResponse):
 
     def __init__(self, *args, **kwargs):
-        self.template = Template
         # to reject if the probility of intent is less than
         # theshold value.
         self.theshold_value = IGNORABLE_THESHOLD_VALUE
-        self.default_response = '''I am unable to understanding what you asked. Could you repeate what you have said. If you are using shorthand use without mistake'''
 
     def render(self, *args, **kwargs):
-        # raise NotImplementedError('Response is not implemented')
+
         self.class_name = kwargs.get('class_name')
 
-        self.render_template = os.path.join(os.path.dirname(__file__),
-                                            kwargs.get('sub_path'),
-                                            f'_{_title(self.class_name)}',
-                                            template_name_from_class_name(
-                                                self.class_name)
-                                            )
+        # render_template_name = os.path.join(os.path.dirname(__file__),
+        #                                     kwargs.get('sub_path'),
+        #                                     f'_{_title(self.class_name)}',
+        #                                     template_name_from_class_name(
+        #                                         self.class_name)
+        #                                     )
+        render_template_name = f'{invert_title_case(self.class_name)}.{TEMPLATE_FORMATE}'
+        render_template_name = f'_{invert_title_case(self.class_name)}/{render_template_name}'
+        render_template_name = f'{kwargs.get("sub_path")}/{render_template_name}'
 
-        with open(self.render_template) as _template_file:
+        self.render_template = render_template.get_template(
+            render_template_name
+        )
+        # with open(self.render_template) as _template_file:
 
-            self.render_template = self.template(
-                _template_file.read()
-            )
-
+        #     self.render_template = self.template(
+        #         _template_file.read()
+        #     )
 
     def get_class_name(self):
         raise NotImplementedError('get_class_name must be implemented')

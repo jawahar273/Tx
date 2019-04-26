@@ -1,6 +1,9 @@
 import os
 
+from jinja2 import Template
+
 from TxBot.utils import invert_title_case as invert_title, _title_case as _title
+from TxBot.scaff.utils import exit_now
 
 
 def gen_response(base_path="TxBot_response", _sub_path=None, _file_name=None):
@@ -19,50 +22,41 @@ def gen_response(base_path="TxBot_response", _sub_path=None, _file_name=None):
 
     try:
 
-        if (os.path.isdir(input_path)):
-            input_path = os.path.split(input_path)[0]
+        # if (os.path.isdir(input_path)):
+        #     input_path = os.path.split(input_path)[0]
+        #     from IPython import embed; embed()
 
-        input_path = os.path.join(os.path.split(os.path.dirname(__file__))[0],
+        input_path = os.path.join(os.path.dirname('TxBot/storage'),
                                   base_path, sub_path, input_path)
         os.makedirs(input_path)
 
     except FileExistsError as e:
         print('Folder already exits')
 
-    scaff_path = os.path.join(input_path, file_name)
-    print('abs folder', scaff_path)
+    py_scaff_path = os.path.join(input_path, file_name)
+    template_scaff_path = os.path.join(input_path, 'templates' ,file_name)
+    print('abs folder', input_path)
     print('If somthing is wrong, press 1  to exit or press any key')
     if input('..') == '1':
         exit_now()
 
-    with open(f'{scaff_path}.html', 'w') as file:
+    with open(f'{template_scaff_path}.html', 'w') as file:
         pass
 
-    with open(f'{scaff_path}.txt', 'w') as file:
+    with open(f'{template_scaff_path}.txt', 'w') as file:
         pass
 
     with open(f'{scaff_path}.py', 'w') as file:
-        class_template = f'''
-from TxBot_response.abstract_response import TxBaseResponse
 
+            class_template = None#Template(intent_file.read())
+            template_py = os.path.join(
+                os.path.dirname(__file__),
+                'template.py.html'
+            )
+            with open(template_py) as template:
+                class_template = Template(template.read())
 
-class {_title(file_name)}(TxBaseResponse):
-
-    def __init__(self):
-        super({_title(file_name)}, self).__init__(self)
-
-    def get_class_name(self):
-        return self.__class__.__name__
-
-    def render(self):
-        self.class_name = self.get_class_name()  # class name
-
-        super({_title(file_name)}, self).render(class_name=self.class_name, sub_path='{sub_path}')
-
-        return self.render_template.render()
-
-'''
-        file.write(class_template)
+            file.write(class_template.render(file_name=file_name, sub_path=sub_path, _title=_title))
 
     return {
         _sub_path: _sub_path,

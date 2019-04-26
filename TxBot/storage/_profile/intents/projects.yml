@@ -1,0 +1,8 @@
+#  projects desc
+---
+type: intent
+name: projectsIntent_profile
+$class: Projects
+utterances:
+    - Have you done any project of all this years?
+    - Did you contribute any open source projects?

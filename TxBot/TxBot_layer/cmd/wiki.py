@@ -2,7 +2,7 @@ from mediawiki import MediaWiki
 from mediawiki.exceptions import DisambiguationError
 
 from TxBot.TxBot_layer.cmd.cmd_base_layer import TxCMDBaseLayer
-from TxBot.config import PROCESSED_INPUT, COMMANDS, STOPLAYERNAME
+from TxBot.config import PROCESSED_INPUT, COMMANDS, STOPLAYER
 from TxBot.utils import parse_cmd, parse_cmd_value
 
 
@@ -24,17 +24,25 @@ class TxWikiLayer(TxCMDBaseLayer):
         if self.check_cmd(COMMANDS["WIKI"]["name"], txObject):
 
             key_value = parse_cmd_value(txObject[PROCESSED_INPUT])
-            wikipedia = MediaWiki()
-            respose_value = None
 
+            respose_value = None
             try:
 
-                respose_value = wikipedia.page(key_value).summary
+                wikipedia = MediaWiki()
 
-            except DisambiguationError as e:
+                try:
 
-                respose_value = str(e)
+                    respose_value = wikipedia.page(key_value).summary
 
-            txObject[PROCESSED_INPUT] = respose_value
-            STOPLAYER.send()
+                except DisambiguationError as e:
+
+                    respose_value = str(e)
+
+                txObject[PROCESSED_INPUT] = respose_value
+                STOPLAYER.send()
+  
+            except ConnectionError as e:
+
+                txObject[PROCESSED_INPUT] = str(e)
+
         return txObject
