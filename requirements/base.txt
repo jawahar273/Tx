@@ -2,7 +2,6 @@ redis>=2.10.6, < 3  # pyup: < 3 # https://github.com/antirez/redis
 
 snips-nlu==0.19.5
 PyYAML==5.1
-pre-commit==1.15.1
 git+https://github.com/jek/blinker.git # for event signal system.
 
 # python-crontab==2.3.6
