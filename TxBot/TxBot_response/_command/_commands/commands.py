@@ -4,7 +4,6 @@ from TxBot.config import FOR_OUTPUT
 
 
 class Commands(TxBaseResponse):
-
     def __init__(self):
 
         super(Commands, self).__init__(self)
@@ -13,15 +12,12 @@ class Commands(TxBaseResponse):
 
         return self.__class__.__name__
 
-    def render(self, txObject):
+    def render(self, txObject, pretty=None):
 
         self.class_name = self.get_class_name()  # class name
 
-        super(Commands, self).render(
-            class_name=self.class_name, sub_path='_command',
-
-        )
+        super(Commands, self).render(class_name=self.class_name, sub_path="_command")
 
         return self.render_template.render(
-            output_values=txObject.get(FOR_OUTPUT)
+            output_values=txObject.get(FOR_OUTPUT), pretty=pretty
         )

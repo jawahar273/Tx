@@ -19,13 +19,22 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-
+{#  
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/normalize.css')}}">
+  <link rel="stylesheet" href="url_for('static',filename=''css/skeleton.css')}}"> 
+  #}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
-
+    
+  <style type="text/css">
+      body {
+        font-size:  1.623em;
+      }
+  </style>
+    {% block card_style %}
+    {% endblock %}
 </head>
 <body>
 
@@ -34,12 +43,12 @@
   <div class="container">
   <!-- columns should be the immediate child of a .row -->
     <div class="row">
-      <div class="eleven columns" style="margin-top: 15%;">
-          <p>
-            
+      <div class="eleven columns" style="margin-top: 2%;">
+          
+            {% block card %}
 This document describes the syntax and semantics of the template engine and will be most useful as reference to those creating Jinja templates. As the template engine is very flexible, the configuration from the application can be slightly different from the code presented here in terms of delimiters and behavior of undefined values.
-
-          </p>
+            {% endblock%}
+          
       </div>
     </div>
 </div>

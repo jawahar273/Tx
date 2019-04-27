@@ -1,4 +1,9 @@
+from os import getenv
+
 from blinker import signal
+
+from utils import import_class, import_module
+
 
 # PROCESSED_INPUT = 'PROCESSED_INPUT'
 ASSERTTYPE = "ASSERTTYPE"
@@ -18,7 +23,17 @@ STOPLAYERNAME = "STOPLAYER"
 STOPLAYER = signal(STOPLAYERNAME)
 
 # Template File Formate
-TEMPLATE_FORMATE = 'html'
+TEMPLATE_FORMATE = "html"
 
 # Response Config
 IGNORABLE_THESHOLD_VALUE = 0.58
+
+# logger Config
+logger = None
+
+try:
+    # for importing sanic logger
+    logger = import_class(getenv("LOGGERCLASS"))
+except AttributeError:
+    # importing standard logger module
+    logger = import_module(getenv("LOGGERCLASS"))

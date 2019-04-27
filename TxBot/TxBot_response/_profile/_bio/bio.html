@@ -1,33 +1,51 @@
+{% extends "response.html" %}
 
-<div>
-  <h1> Short Description </h1>
-  <p>
-      Hello, I am Jawahar. I am full stack developer.
-  </p>
-  <h1> Long Description </h1>
-  <p>
-      Hello, I am Jawahar. I am full stack developer with past
-      6 months expirence in CodeingMart, Bangalore. In CodeingMart
-      the stack I work are Ruby on Rails, Angular 2(4 also) and Typescript.
-      
-      <h3>What your dislike on the Client Location?</h3>
-      For last 3 month I worked in client location
-      which is a very good learning period to make broad comparsion
-      between Flat and Enterprice Cultures.
+{% block card_style %}
+<style type="text/css">
+    .skill-set {
+        display: flex; list-style: none;
+    }
+    .skill-set > li {
+        padding: 0 2px;
+    }
+</style>
+{% endblock %}
 
-      <h3>What your like on the Client Location?</h3>
-      The client location
-      the infrastructure is well established up till the point
-      of my intent's end.
-  </p>
-  <h1> Current Tech </h1>
-  <p>
-    <ol>
-      <li>Python</li>
-      <li>Djagno</li>
-      <li>Boostrap 4</li>
-      <li>ReactJs</li>
-      <li>VueJS</li>
-    </ol>
-  </p>
-</div>
+{% block card %}
+
+    <div>
+      <h1> Short Description </h1>
+      <p>
+          Hello, I am Jawahar. I am full stack developer.
+      </p>
+      <h1> Long Description </h1>
+      <p>
+          Hello, I am Jawahar. I am full stack developer with past
+          6 months expirence in CodeingMart, Bangalore. In CodeingMart
+          the stack I work are Ruby on Rails, Angular 2(4 also) and Typescript.
+
+          <h3> My Current Skill Sets are </h3>
+          <p>
+            <ol class="skill-set">
+              <li>Python,</li>
+              <li>Djagno,</li>
+              <li>Boostrap 4,</li>
+              <li>ReactJs,</li>
+              <li>VueJS</li>
+            </ol>
+          </p>
+
+          <h3> What your like on the Client Location? </h3>
+          The client location
+          the infrastructure is well established up till the point
+          of my intent's end.
+          
+          <h3>What your dislike on the Client Location?</h3>
+          For last 3 month I worked in client location
+          which is a very good learning period to make broad comparsion
+          between Flat and Enterprice Cultures.
+
+      </p>
+
+    </div>
+{% endblock %}

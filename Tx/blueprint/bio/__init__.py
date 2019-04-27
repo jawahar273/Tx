@@ -5,22 +5,26 @@ from sanic_openapi import doc
 from TxBot.TxBot_engine.default_engine import TxDefaultEngine as Engine
 from TxBot.TxBot_input.rest_input import RESTInput
 from TxBot.TxBot_output.rest_output import RESTOutput
-from TxBot.TxBot_layer.cmd.wiki import TxWikiLayer 
+from TxBot.TxBot_layer.cmd.wiki import TxWikiLayer
+
+from config.stage import settings
+from utils import render_template_file as render_template
 
 profile = Blueprint("Profile", url_prefix="/p")
 
-engine_param = {
-    'dataset_path': 'TxBot/storage/_profile/dataset/dataset.json',
-    'next_class': 'TxBot.TxBot_input.rest_input.RESTInput',
-    'input_params': {},
-    # 'output_class': 'TxBot_output.cli_output.CLIOutput',
-    'is_next': False,
-}
 
-__input = RESTInput(engine_param)
+__input = RESTInput(settings.engine_param)
 __output = RESTOutput()
-__engine = Engine(__input, __output,engine_param)
+__engine = Engine(__input, __output, settings.engine_param)
 __engine.add([TxWikiLayer({})])
+
+
+@profile.route("/")
+@doc.summary("Get Profile details")
+@doc.produces({"status": str, "msg": str, "errCode": int, "html": str})
+async def bot_intro(request):
+
+    return html(render_template("profile/intro.html"))
 
 
 @profile.route("/<query>")
@@ -29,6 +33,12 @@ __engine.add([TxWikiLayer({})])
 async def profile_details(request, query):
 
     __input.step(query)
-    
 
-    return html(__engine.go())
+    # render_format = ''
+    if request.args.get("pretty") == "true":
+
+        return json({"status": "ok", "html": __engine.go(pretty="json.html")})
+
+    else:
+
+        return html(__engine.go(pretty="base.html"))

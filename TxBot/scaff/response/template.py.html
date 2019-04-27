@@ -11,7 +11,7 @@ class {{_title(file_name)}}(TxBaseResponse):
 
         return self.__class__.__name__
 
-    def render(self):
+    def render(self, pretty=None):
 
         self.class_name = self.get_class_name()  # class name
 
@@ -19,4 +19,4 @@ class {{_title(file_name)}}(TxBaseResponse):
             class_name=self.class_name, sub_path='{{sub_path}}'
         )
 
-        return self.render_template.render()
+        return self.render_template.render(pretty=pretty)

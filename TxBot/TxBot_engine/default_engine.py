@@ -15,10 +15,8 @@ class TxDefaultEngine(TxBaseEngine):
 
     def __init__(self, input_object, output_object, engine_param=None):
 
-        super(TxDefaultEngine, self).__init__(
-            input_object, output_object, engine_param
-        )
-        self.engine_name = 'default_engine'
+        super(TxDefaultEngine, self).__init__(input_object, output_object, engine_param)
+        self.engine_name = "default_engine"
         self.engine = SnipsNLUEngine()
         # get the path of the dataset
         dataset_path = engine_param.get("dataset_path")
@@ -36,39 +34,34 @@ class TxDefaultEngine(TxBaseEngine):
         return engine
 
     def response(self, scope):
-        '''
+        """
         Get the :class: `Dict` status from NLU or command
         exection success, the one
         response class :module: `TxBot.TxBot_response`
         imported.
-        '''
+        """
 
-        intent_name = scope['intent']['intentName'] or 'defaultIntent_default'
+        intent_name = scope["intent"]["intentName"] or "defaultIntent_default"
         return import_response_intent(intent_name)
 
     def command_success_response(self, txObject):
 
-        txObject.update({ NLUSCOPE: {'intent': 
-                    {
-                        'intentName': 'commandsIntent_command'
-                    },
-                }
-            })
+        txObject.update(
+            {NLUSCOPE: {"intent": {"intentName": "commandsIntent_command"}}}
+        )
 
     def add(self, layer):
 
         super(TxDefaultEngine, self).add(layer)
 
-    def go(self):
+    def go(self, pretty="base.html"):
 
         # super() must be called
         super(TxDefaultEngine, self).go()
-        _render = {}
+
         if self.break_layer:
             # getting the result from the NLP engine.
-            self.return_object[FOR_OUTPUT] = self.return_object[
-                PROCESSED_INPUT
-            ]
+            self.return_object[FOR_OUTPUT] = self.return_object[PROCESSED_INPUT]
             self.command_success_response(self.return_object)
 
         else:
@@ -77,28 +70,25 @@ class TxDefaultEngine(TxBaseEngine):
                 self.return_object[PROCESSED_INPUT]
             )
 
-
-        # del self.return_object[PROCESSED_INPUT]
+        del self.return_object[PROCESSED_INPUT]
 
         # after success of getting return value from the NLU
-        # or command status the return value are pass into 
+        # or command status the return value are pass into
         # response object for template parsing.
 
-        _class = self.response(
-            self.return_object[NLUSCOPE]
-        )()
-
+        _class = self.response(self.return_object[NLUSCOPE])()
 
         if self.break_layer:
-            self.return_object[FOR_OUTPUT] = _class.render(self.return_object)
+
+            self.return_object[FOR_OUTPUT] = _class.render(
+                self.return_object, pretty=pretty
+            )
 
         else:
 
-            self.return_object[FOR_OUTPUT] = _class.render()
+            self.return_object[FOR_OUTPUT] = _class.render(pretty=pretty)
 
-        output_result = super().to_output(
-            self.return_object
-        )
+        output_result = super().to_output(self.return_object)
 
         self.next()
 

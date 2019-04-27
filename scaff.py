@@ -1,4 +1,4 @@
-'''
+"""
 Scaff module helpful in increating the prodicitive of
 generating of intent response files.
 Scaff module is alway in developer mode as this is a fixed
@@ -18,7 +18,7 @@ Intent rules.
     $class: Quit
 
 
-'''
+"""
 
 from subprocess import run
 import os
@@ -35,37 +35,32 @@ def main():
     pass
 
 
-
-@main.command('intent')
+@main.command("intent")
 def intent():
-    if click.confirm('Do you like generate Intent files both?'):
-        gen_intent()
-    else:
-        click.echo('abort!')
+    gen_intent()
 
 
-@main.command('response')
+@main.command("response")
 def response():
-    if click.confirm('Do you like generate Response folders both?'):
-        gen_response()
-    else:
-        click.echo('abort!')
+    gen_response()
 
 
-@main.command('both')
+@main.command("both")
 def both():
-    if click.confirm('Do you like generate Intent and Response both?'):
+    if click.confirm("Do you like generate Intent and Response both?"):
         temp = gen_intent()
         gen_response(**temp)
     else:
-        click.echo('abort!')
+        click.echo("abort!")
 
 
-@main.command('train')
-@click.argument('path', type=click.Path(exists=True),)
-@click.option('--name', '-n', default='dataset.json',help='name for the dataset format')
+@main.command("train")
+@click.argument("path", type=click.Path(exists=True))
+@click.option(
+    "--name", "-n", default="dataset.json", help="name for the dataset format"
+)
 def intent_to_dataset_format(path, name):
-    '''
+    """
     Folder structure for the intent and dataset.
         storage/
             _profile/
@@ -74,9 +69,9 @@ def intent_to_dataset_format(path, name):
 
     @params path location of the intent folder and location of dataset folder
     are take from the single arguments.
-    '''
-    INTENT = 'intents'
-    DATASET = 'dataset'
+    """
+    INTENT = "intents"
+    DATASET = "dataset"
 
     dataset_path = os.path.join(path, DATASET)
     dataset_file_name = os.path.join(dataset_path, name)
@@ -84,21 +79,18 @@ def intent_to_dataset_format(path, name):
     intent_path = os.path.join(path, INTENT)
     intent_path = os.listdir(intent_path)
 
-    command = 'snips-nlu generate-dataset en'.split()
-    command.extend(
-            list(map(lambda x: os.path.join(path, INTENT ,x) , intent_path))
-    )
+    command = "snips-nlu generate-dataset en".split()
+    command.extend(list(map(lambda x: os.path.join(path, INTENT, x), intent_path)))
 
     std_out = run(command, capture_output=True)
 
-    click.echo('dataset has been generated and writeing to file..')
+    click.echo("dataset has been generated and writeing to file..")
 
-    with open(f'{dataset_file_name}', 'w') as dataset_file:
-        dataset_file.write(std_out.stdout.decode('utf-8'))
+    with open(f"{dataset_file_name}", "w") as dataset_file:
+        dataset_file.write(std_out.stdout.decode("utf-8"))
 
-    click.echo('write file successful')
+    click.echo("write file successful")
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -1,1 +1,4 @@
-SANIC_DEBUG=false
+# Global config
+CONFIG=config.local
+
+SANIC_DEBUG=true

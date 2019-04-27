@@ -1,8 +1,8 @@
 # PostgreSQL
 # ------------------------------------------------------------------------------
-SANIC_POSTGRES_HOST=local
-SANIC_POSTGRES_PORT=5432
-SANIC_POSTGRES_DB=TX
+SANIC_DB_HOST=localhost
+SANIC_DB_PORT=5432
+SANIC_DB_NAME=TX
 
 # This can be used for using other than postgresql
 # and comment the line in Tx.utils.setup_database_creation_listener

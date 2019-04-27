@@ -1,6 +1,6 @@
 from sanic import Sanic
-from sanic.response import json
-from sanic_openapi import swagger_blueprint, doc # openapi_blueprint
+from sanic.response import redirect
+from sanic_openapi import swagger_blueprint, doc  # openapi_blueprint
 from Tx.blueprint.health import health
 from Tx.blueprint.bio import profile
 from Tx.model import DATABASE
@@ -25,4 +25,9 @@ setup_database_creation_listener(app, DATABASE)
 
 @app.route("/")
 async def default(request):
-    return json({"message": "hello Sanic!"})
+    return redirect("/p", status=301)
+
+
+@app.route("/<query>")
+async def default(request, query):
+    return redirect(f"/p/{query}", status=301)

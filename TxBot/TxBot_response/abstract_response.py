@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 import os
 
-from config.settings import render_template
+from config.stage import settings
 
 from TxBot.config import IGNORABLE_THESHOLD_VALUE, TEMPLATE_FORMATE
 from TxBot.utils import template_name_from_class_name, invert_title_case, _title_case
@@ -10,7 +10,7 @@ from TxBot.utils import template_name_from_class_name, invert_title_case, _title
 
 
 class TxAbstractResponse(ABC):
-    '''
+    """
     Name of the sub class must be matching to
     the intent with title-case such as.
 
@@ -20,27 +20,26 @@ class TxAbstractResponse(ABC):
         $class: getList
         ...
 
-    '''
+    """
 
     @abstractmethod
     def __init__(self, *args, **kwargs):
-        raise NotImplementedError('__init__ must be implemented')
+        raise NotImplementedError("__init__ must be implemented")
 
     @abstractmethod
     def render(self, *args, **kwargs):
-        raise NotImplementedError('Response is not implemented')
+        raise NotImplementedError("Response is not implemented")
 
     @abstractmethod
     def get_class_name(self):
-        raise NotImplementedError('get_class_name must be implemented')
+        raise NotImplementedError("get_class_name must be implemented")
 
     @abstractmethod
     def check_intent_name(self, *args, **kwargs):
-        raise NotImplementedError('check_intent_name must be implemented')
+        raise NotImplementedError("check_intent_name must be implemented")
 
 
 class TxBaseResponse(TxAbstractResponse):
-
     def __init__(self, *args, **kwargs):
         # to reject if the probility of intent is less than
         # theshold value.
@@ -48,7 +47,7 @@ class TxBaseResponse(TxAbstractResponse):
 
     def render(self, *args, **kwargs):
 
-        self.class_name = kwargs.get('class_name')
+        self.class_name = kwargs.get("class_name")
 
         # render_template_name = os.path.join(os.path.dirname(__file__),
         #                                     kwargs.get('sub_path'),
@@ -56,11 +55,15 @@ class TxBaseResponse(TxAbstractResponse):
         #                                     template_name_from_class_name(
         #                                         self.class_name)
         #                                     )
-        render_template_name = f'{invert_title_case(self.class_name)}.{TEMPLATE_FORMATE}'
-        render_template_name = f'_{invert_title_case(self.class_name)}/{render_template_name}'
+        render_template_name = (
+            f"{invert_title_case(self.class_name)}.{TEMPLATE_FORMATE}"
+        )
+        render_template_name = (
+            f"_{invert_title_case(self.class_name)}/{render_template_name}"
+        )
         render_template_name = f'{kwargs.get("sub_path")}/{render_template_name}'
 
-        self.render_template = render_template.get_template(
+        self.render_template = settings.render_template.get_template(
             render_template_name
         )
         # with open(self.render_template) as _template_file:
@@ -70,7 +73,7 @@ class TxBaseResponse(TxAbstractResponse):
         #     )
 
     def get_class_name(self):
-        raise NotImplementedError('get_class_name must be implemented')
+        raise NotImplementedError("get_class_name must be implemented")
 
     def check_intent_name(self, name):
-        return name.startswith(f'{self.get_class_name()}Intent')
+        return name.startswith(f"{self.get_class_name()}Intent")

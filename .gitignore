@@ -1,4 +1,3 @@
-
 Skeleton*
 client/*
 profile.*
@@ -287,4 +286,4 @@ tx/media/
 .env
 .envs/*
 !.envs/.local/
-envs/.local/.password
+.envs/.local/.password

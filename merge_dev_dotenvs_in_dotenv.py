@@ -8,6 +8,8 @@ PRODUCTION_DOTENVS_DIR_PATH = os.path.join(ROOT_DIR_PATH, ".envs", ".local")
 PRODUCTION_DOTENV_FILE_PATHS = [
     os.path.join(PRODUCTION_DOTENVS_DIR_PATH, ".sanic"),
     os.path.join(PRODUCTION_DOTENVS_DIR_PATH, ".postgres"),
+    os.path.join(PRODUCTION_DOTENVS_DIR_PATH, ".password"),
+    os.path.join(PRODUCTION_DOTENVS_DIR_PATH, ".txbot"),
 ]
 DOTENV_FILE_PATH = os.path.join(ROOT_DIR_PATH, ".env")
 
