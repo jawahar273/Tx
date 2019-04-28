@@ -22,7 +22,7 @@ app.blueprint(profile)
 app.blueprint(user)
 
 # Boostraping Database connection
-setup_database_creation_listener(app, DATABASE)
+# setup_database_creation_listener(app, DATABASE)
 
 
 @app.route("/")
