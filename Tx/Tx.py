@@ -20,7 +20,8 @@ app.blueprint(swagger_blueprint)
 app.blueprint(health)
 app.blueprint(profile)
 app.blueprint(user)
-setup_database_creation_listener(app, DATABASE)
+# closing db connection for demo heroku
+# setup_database_creation_listener(app, DATABASE)
 
 
 @app.route("/")
