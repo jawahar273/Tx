@@ -1,2 +1,1 @@
-web: python run.py
-worker: python -m snips_nlu download en
+web: python -m snips_nlu download en ; python run.py
