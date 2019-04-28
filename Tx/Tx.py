@@ -20,6 +20,8 @@ app.blueprint(swagger_blueprint)
 app.blueprint(health)
 app.blueprint(profile)
 app.blueprint(user)
+
+# Boostraping Database connection
 setup_database_creation_listener(app, DATABASE)
 
 
