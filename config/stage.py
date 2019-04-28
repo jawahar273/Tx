@@ -2,4 +2,6 @@ from os import getenv
 
 from importlib import import_module
 
-settings = import_module(getenv("CONFIG", "config.local"))
+setting = import_module(getenv("CONFIG", "config.local"))
+
+logger = setting.logger
