@@ -1,5 +1,12 @@
 {
-  "entities": {},
+  "entities": {
+    "certificateEntity": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    }
+  },
   "intents": {
     "bioIntent_profile": {
       "utterances": [
@@ -16,6 +23,34 @@
               "text": "what you bio?"
             }
           ]
+        },
+        {
+          "data": [
+            {
+              "text": "How do you describe yourself?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "About yourself"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Describe yourself"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Describe yourself with current skill set"
+            }
+          ]
         }
       ]
     },
@@ -24,21 +59,57 @@
         {
           "data": [
             {
-              "text": "Current certification you have."
+              "text": "Current "
+            },
+            {
+              "entity": "certificateEntity",
+              "slot_name": "certificateEntity",
+              "text": "certification"
+            },
+            {
+              "text": " you have."
             }
           ]
         },
         {
           "data": [
             {
-              "text": "What are the certification you have?"
+              "text": "What are the "
+            },
+            {
+              "entity": "certificateEntity",
+              "slot_name": "certificateEntity",
+              "text": "certification"
+            },
+            {
+              "text": " you have?"
             }
           ]
         },
         {
           "data": [
             {
-              "text": "Tell about certification you have."
+              "text": "Tell about "
+            },
+            {
+              "entity": "certificateEntity",
+              "slot_name": "certificateEntity",
+              "text": "certification"
+            },
+            {
+              "text": " you have."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Describe you current holding "
+            },
+            {
+              "entity": "certificateEntity",
+              "slot_name": "certificateEntity",
+              "text": "certification"
             }
           ]
         }
@@ -70,6 +141,13 @@
               "text": "Tell about your final year project."
             }
           ]
+        },
+        {
+          "data": [
+            {
+              "text": "What you faviour achivement?"
+            }
+          ]
         }
       ]
     },
@@ -79,6 +157,52 @@
           "data": [
             {
               "text": "Would you like to relocate."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Are you will to relocate?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Do you like to relocate?"
+            }
+          ]
+        }
+      ]
+    },
+    "projectsIntent_profile": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Tell about your projects"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What are projects done so far?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Do you have some projects to showcase?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Have you done any projects so far?"
             }
           ]
         }

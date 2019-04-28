@@ -54,7 +54,10 @@ def both():
         click.echo("abort!")
 
 
-@main.command("train")
+@main.command(
+    "train",
+    help="convert list of intent file into train format by giving the folder path `TxBot/storage/_profile`",
+)
 @click.argument("path", type=click.Path(exists=True))
 @click.option(
     "--name", "-n", default="dataset.json", help="name for the dataset format"
@@ -62,6 +65,7 @@ def both():
 def intent_to_dataset_format(path, name):
     """
     Folder structure for the intent and dataset.
+    .. code-block:: bash
         storage/
             _profile/
                 intents

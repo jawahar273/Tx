@@ -2,25 +2,32 @@
 
 {% block card %}
     <div>
-        <h1>Tx Project</h1>
+        <h1> Tx </h1>
         <p>
-            Tx is an umberall package which intern compressed of
-            Tx(based on Sanic web framework) and TxBot(NLU Bot based on Snip-nlu).
+            Tx is an umberall package with compressed of
+            Tx(based on 
+            <a href="https://sanic.readthedocs.io"> Sanic
+            </a>) and TxBot NLU Bot( 
+            <a href="http://snips-nlu.readthedocs.io" >
+            Snip-nlu
+            </a>). This project design in intent for managering
+            daily task with automation and having of conversation in mocking of assistance such
+            <b>JAVIS</b>.
         </p>
         <p>
-            TxBot can be configure for complex task(work in progress) such todolist,
+            TxBot is design and can be configure for complex task(work in progress) such todolist,
             reminder jobs, for file uploading etc. 
         </p>
-        <h3>Demo (Profile details)</h3>
+        <h3><i>Demo</i> (Profile details)</h3>
         <p>
-            Right now TxBot can response to the general question asked in
-            interview section(Profile Details). Some of the basic
+            Right now this is a<b>Demo  v0.1.0pre-Alpha stage</b>, TxBot can response to the general question asked in
+            interview section(General introduction by the canidates). Some of the basic
             question are 
             <a href="/tell" >
                 <i>Tell me about yourself.</i>
             </a>, 
             <a href="/Current certification you have"  >
-                <i>Tell about your final year project.</i>
+                <i>Tell me about your certificate.</i>
             </a>
             (or 
             <a href="/the current certification you have"  >
@@ -30,14 +37,14 @@
                 <i>Tell about your final year project.</i>
             </a> which all gives you same details related
             to my cerfitications
-            ). The question you might ask to TxBot are <b><i>about me, my cerfitications, my final year project,  open source projects, relocation (response limit for now) </i></b>.
+            ). The question you might ask to TxBot are <b><i>about me, my cerfitications, my final year project,  open source projects, relocation (these are some of related request right now TxBot can response) </i></b>.
 
         </p>
-        <h4> How to ask the questions? </h4>
+        <h4> How to ask the questions to the TxBot? </h4>
         <p>
             <br/> Just type the question in the 
-            brower's address bar with forware slash as a prefix 
-            (`/` before the start of the question). For example click about link for better understanding. 
+            brower's address bar with forware slash(`/`) as a prefix 
+            ( or just add the `/` before the start of the question). For example click about link for better understanding. 
         </p>
     </div>
 {% endblock %}

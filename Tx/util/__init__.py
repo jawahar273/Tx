@@ -20,7 +20,10 @@ def setup_database_creation_listener(app: Sanic, database: Gino):
     @app.listener("after_server_start")
     async def setup_database(app: Sanic, loop):
         # uncomment for using diffrent DB
-        # await database.set_bind(env_str('SANIC_DB_URL', ''))
+        if not app.config["DEBUG"]:
+
+            await database.set_bind(env_str("SANIC_DB_URL", ""))
+
         await database.gino.create_all()
 
 

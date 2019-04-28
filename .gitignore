@@ -1,6 +1,7 @@
 Skeleton*
 client/*
 profile.*
+.fuse_hidden*
 
 # local testing files
 compose/*
