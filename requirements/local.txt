@@ -17,7 +17,7 @@ memory-profiler==0.55.0
 click==7.0
 
 
-pytest-sanic-1.0.0 
+pytest-sanic==1.0.0 
 
 sphinx==1.8.4
 pytest-cov==2.6.1
@@ -29,3 +29,6 @@ tox==3.9.0
 twine==1.13.0
 
 pre-commit==1.15.1
+
+alembic==1.0.10
+m2r

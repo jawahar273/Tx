@@ -35,6 +35,12 @@ def main():
     pass
 
 
+@main.command("m2r")
+@click.argument("convert_file")
+def m2r_command(convert_file):
+    run(f"m2r {convert_file}".split())
+
+
 @main.command("intent")
 def intent():
     gen_intent()

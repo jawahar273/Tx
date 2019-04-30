@@ -1,0 +1,30 @@
+
+
+{% extends "response.html" %}
+
+{% block card_style %}
+{% endblock %}
+
+{% block card %}
+    <div>
+        <h1> Final Year Project </h1>
+        <p>
+            <a href="http://ceur-ws.org/Vol-1737/T6-11.pdf" target="_blank">
+            “Detection of paraphrase on Indian Languages(Tamil)”
+            </a> in the International Conference Forum for Information Retrieval and Evaluation held at Indian Statistical Institute(ISI) in Kolkata and published in Central European (CEUR) Journal and secured 2nd place for Tamil highest accuracy.
+        </p>
+        <h3> Short Description </h3>
+        <p>
+            Paraphrases is finding where their two sentence is equal or not based on semantic.
+        </p>
+        <h3> Long Description </h3>
+        <p>
+This  paper  presents  a  report  on  <i>Detecting  Paraphrases  in  Indian Languages  (DPIL)</i>,  in particular the  Tamil  language,  by  the  team <b>NLP@KEC of Kongu Engineering College</b>. Automatic paraphrase detection  is  an  intellectual  task  which  has  immense  applications like  plagiarism  detection,  new  event  detection,  etc.  <i>Paraphrase  is defined as the expression of a given fact in more than one way by means  of  different  phrases</i>.  Paraphrase  identification  is  a  classic natural  language  processing  task  which  is  of  classification  type. Though there are several algorithms for paraphrase identification, reflecting the semantic relations between the constituent parts of a sentence  plays  a  very  important  role.  In  this  paper  we  utilize 
+<b>sixteen  different  features  to  best  represent  the  similarity  between sentences</b>.
+ The   proposed   approach   utilizes   machine   learning algorithms  like  
+ <b>Support  Vector  Machine, Maximum  Entropy and XgBoost( outside the paper with Word2vec)</b> 
+ for classification of given sentence pair. They have been classified into  Paraphrase  and  Not-a-Paraphrase  for  task1  and  Paraphrase, Not-a-Paraphrase  and  Semi-Paraphrase  for  task2.  The  accuracy and  performance  of  these  methods  are  measured  on  the  basis  of evaluation  parameters  like  accuracy,  precision,  recall,  f-measure and  macro  f-measure.  Our  methodology  got <b> 2nd  place  in  DPIL evaluation track</b>. 
+        </p>
+    </div>
+{% endblock %}
+
