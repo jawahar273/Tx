@@ -8,7 +8,7 @@ git+https://github.com/jek/blinker.git # for event signal system.
 
 pymediawiki==0.6.1
 
-Jinja2==2.10
+Jinja2==2.10.1
 
 requests==2.21.0
 
