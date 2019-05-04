@@ -1,0 +1,14 @@
+#  greeting desc
+---
+type: intent
+name: greetingIntent_global
+$class: Greeting
+utterances:
+    - hi
+    - Wake up
+    - Hi, How is it going?
+    - How are you doing?
+    - How do you do?
+    - What's up?
+    - Greetings!
+    - Hello

@@ -25,9 +25,9 @@ import os
 
 import click
 
-from TxBot.scaff.response import gen_response
-from TxBot.scaff.intent import gen_intent
-from TxBot.scaff.utils import exit_now
+from Bot.scaff.response import gen_response
+from Bot.scaff.intent import gen_intent
+from Bot.scaff.utils import exit_now
 
 
 @click.group(invoke_without_command=False)
@@ -62,7 +62,7 @@ def both():
 
 @main.command(
     "train",
-    help="convert list of intent file into train format by giving the folder path `TxBot/storage/_profile`",
+    help="convert list of intent file into train format by giving the folder path `Bot/storage/_profile`",
 )
 @click.argument("path", type=click.Path(exists=True))
 @click.option(
@@ -83,6 +83,7 @@ def intent_to_dataset_format(path, name):
     INTENT = "intents"
     DATASET = "dataset"
 
+    # path = os.path.join(DEFAULT_STARTPOINT, path)
     dataset_path = os.path.join(path, DATASET)
     dataset_file_name = os.path.join(dataset_path, name)
 
@@ -93,8 +94,11 @@ def intent_to_dataset_format(path, name):
     command.extend(list(map(lambda x: os.path.join(path, INTENT, x), intent_path)))
 
     std_out = run(command, capture_output=True)
+    click.echo("dataset has been generated and writting to file..")
 
-    click.echo("dataset has been generated and writeing to file..")
+    if std_out.stdout == b"":
+        click.echo(std_out.stderr.decode("utf-8"))
+        exit_now()
 
     with open(f"{dataset_file_name}", "w") as dataset_file:
         dataset_file.write(std_out.stdout.decode("utf-8"))

@@ -4,15 +4,15 @@ from utils import import_class
 # Template settings
 
 render_template = Environment(
-    loader=FileSystemLoader(["Tx/templates", "TxBot/TxBot_response/templates"]),
+    loader=FileSystemLoader(["templates", "Bot/Bot_response/templates"]),
     autoescape=select_autoescape(["html", "xml"]),
 )
 
 
 # NLU Engine settings
 engine_param = {
-    "dataset_path": "TxBot/storage/_profile/dataset/dataset.json",
-    "next_class": "TxBot.TxBot_input.rest_input.RESTInput",
+    "dataset_path": "Bot/storage/_profile/dataset/dataset.json",
+    "next_class": "Bot.Bot_input.rest_input.RESTInput",
     "input_params": {},
     "is_next": False,
 }
@@ -25,3 +25,6 @@ logger = import_class("sanic.log.logger")
 
 # Standard RFC 5322, url: https://emailregex.com/
 EMAIL_VALID_REGEX = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
+
+# Intent and Dataset storage
+DEFAULT_STARTPOINT = "Bot.storage"

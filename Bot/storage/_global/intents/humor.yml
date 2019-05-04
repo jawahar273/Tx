@@ -1,0 +1,9 @@
+#  humor desc
+---
+type: intent
+name: humorIntent_global
+$class: Humor
+utterances:
+    - Tell me a joke
+    - tell me some jokes
+    - Do know any jokes

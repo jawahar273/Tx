@@ -1,0 +1,23 @@
+
+
+
+{% extends "response.html" %}
+
+{% block card_style %}
+
+{% endblock %}
+
+{% block card %}
+<div>
+    <p>
+        {% for breatch in breatchs%}
+            <ul>
+                <li>
+                    {{breatch}}
+                </li>
+            </ul>
+        {% endfor %}
+    </p>
+</div>
+{% endblock %}
+

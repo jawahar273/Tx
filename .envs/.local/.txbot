@@ -1,2 +1,4 @@
 # TxBot Config
 LOGGERCLASS=sanic.log.logger
+
+TEMPLATE_FORMATE="html"

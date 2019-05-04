@@ -1,0 +1,33 @@
+# entries of list
+---
+type: entity
+name: emailEntity
+
+# data breach
+---
+type: entity
+name: dataBreachEntity
+values:
+  - pwned
+  - data breach
+  - compromised
+  - hacked
+
+
+#  Check if you have an account
+#  that has been compromised in a data breach
+---
+
+type: intent
+name: pwnedIntent_global
+$class: Pwned
+slots:
+  - name: email
+    entity: emailEntity
+  - name: breach
+    entity: dataBreachEntity
+utterances:
+    - have my [email](some@gmap.com) has been [breach](hacked)
+    - Check my [email](some@gmap.com) has been [breach](hacked)
+    - Is my [email](some@gmap.com) has been [breach](hacked)
+    - Can you check my [email](some@gmap.com) has been [breach](hacked)
