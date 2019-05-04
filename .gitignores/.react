@@ -1,6 +1,4 @@
 # react git ignores
-
-
 !frontend/*.md
 
 # Don't check auto-generated stuff into git

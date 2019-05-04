@@ -3,6 +3,7 @@ from sanic import Sanic
 from Tx.util import sanic_config_manager
 from pytest import raises
 
+
 def test_app_config_default_env_prefix(sanic_app: Sanic):
     environ["SANIC_PARAM1"] = "value1"
     environ["SANIC_PARAM2"] = "p2"

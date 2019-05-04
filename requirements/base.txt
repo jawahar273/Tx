@@ -21,3 +21,5 @@ gino==0.8.2
 python-dotenv==0.10.1
 
 sqlalchemy-utils==0.33.11
+
+passlib==1.7.1

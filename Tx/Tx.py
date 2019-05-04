@@ -16,7 +16,7 @@ from Tx.auth import login_user
 # ##Utils
 from Tx.util import setup_database_creation_listener
 from Tx.util import setup_rate_limiter
-
+from utils import env_bool
 
 app = Sanic(__name__)
 
@@ -36,7 +36,7 @@ setup_database_creation_listener(app, DATABASE)
 initialize(app, authenticate=login_user)
 
 # app.blueprint(openapi_blueprint)
-if app.config["DEBUG"]:
+if env_bool("SANIC_DEBUG", True):
 
     from sanic_openapi import swagger_blueprint, doc  # openapi_blueprint
 

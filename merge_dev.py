@@ -24,6 +24,7 @@ def get_env_files():
     PRODUCTION_DIR_PATH = os.path.join(ROOT_DIR_PATH, ".envs", ".local")
 
     PRODUCTION_FILE_PATHS = [
+        os.path.join(PRODUCTION_DIR_PATH, ".general"),
         os.path.join(PRODUCTION_DIR_PATH, ".sanic"),
         os.path.join(PRODUCTION_DIR_PATH, ".postgres"),
         os.path.join(PRODUCTION_DIR_PATH, ".password"),

@@ -3,7 +3,7 @@ from sqlalchemy_utils import EmailType, PasswordType
 from Tx.model import DATABASE as db
 
 
-class User(DATABASE.Model):
+class User(db.Model):
     __tablename__ = "users"
 
     id = db.Column(
