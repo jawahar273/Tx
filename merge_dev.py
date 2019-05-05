@@ -7,7 +7,6 @@ import pytest
 ROOT_DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 PRODUCTION_DIR_PATH = None
 PRODUCTION_FILE_PATHS = None
-# _FILE_PATH = os.path.join(ROOT_DIR_PATH, ".env")
 _FILE_PATH = None
 
 
@@ -73,6 +72,12 @@ def main(env, git):
 
     if env:
 
+        click.echo(
+            """
+            Please set .password file inside
+            the .envs folder for dev 
+            """
+        )
         get_env_files()
 
     elif git:
