@@ -1,22 +1,66 @@
 """
 Scaff module helpful in increating the prodicitive of
 generating of intent response files.
-Scaff module is alway in developer mode as this is a fixed
-location.
+Scaff should be used alway in developer times as this functional
+depend fixed location.
 
-Intent rules.
+Intent
+------
 
-1. Always declare intent name ends with
- '-Intent'(like '-ing' to 'following' from 'follow') in yaml file
-    before training and with sub folder Example `_profile`.
-2. Class in response must of Title
-    case with intent name without the suffiex '-Intent'
+Intent is a description for chatbot which describe
+the given text/voice. The intent designers must follow
+rule in traning the intent of `Snip-NLU <https://snips-nlu.readthedocs.io/en/latest/data_model.html#intent>`_. 
+Create a folder and generate sub file with diffrent intent for readbility.
+
+Intent Defining Rules.
+''''''''''''''''''''''
+
+.. note::
+
+    the intent file with intent-name are generated automatically.
+
+    .. code-block:: bash
+
+        python scaff.py intent # answer some questions.
+
+1. Always declare intent name ends with '-Intent and along with sub folder name Example `BioIntent_profile`.
+2. Class in response must of Title case with intent name without the suffiex '-Intent'(optional)
+3. In-Build folder for saving the intent file is 'bot/Storage'.
 
 .. code-block:: yaml
-    type: intent
-    name: QuitIntent
-    $class: Quit
 
+    type: intent
+    name: pwnedIntent_global
+    # `pwned` is the intent name
+    # `Intent` must be present at the end of the intent name
+    # `_global` is the sub folder where this intent is present
+
+
+Response
+--------
+
+Response is like action planner. After getting the intent
+classification the response will execute its given action
+and return the html parse structural text.
+
+Response Defining Rules.
+''''''''''''''''''''''''
+
+.. note::
+
+    the response and template file are generate automatically.
+
+    .. code-block:: bash
+
+        # In place of choosing the file name,
+        # it is highly recommented don't use underscore as the
+        # underscore will automatically added to file name.
+        python scaff.py response # answer some questions.
+
+
+1. The response file must align with intent file that is the name of the response
+must be same as the intent file. Such example is `Bot_response/_global/_pwned` and template
+`Bot_response/templates/_global/_pwned/_pwned.html` is equallent to `storage/_global/intents/pwned.yml`
 
 """
 
@@ -37,7 +81,7 @@ def main():
 
 @main.command("m2r")
 @click.argument("convert_file")
-def m2r_command(convert_file):
+def m2r(convert_file):
     run(f"m2r {convert_file}".split())
 
 

@@ -34,5 +34,7 @@ class BaseOutput(AbstractOutput):
 
         return self.wrapper(txObject[FOR_OUTPUT])
 
-    def params(self, oparams: dict):
-        self._tag_remove = import_class(oparams.get("tag_remove"))
+    def params(self, oparams: dict) -> None:
+
+        if oparams is not None:
+            self._tag_remove = import_class(oparams.get("tag_remove"))

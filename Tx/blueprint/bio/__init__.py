@@ -2,10 +2,10 @@ from sanic.blueprints import Blueprint
 from sanic.response import json, html
 from sanic_openapi import doc
 
-from TxBot.TxBot_engine.default_engine import TxDefaultEngine as Engine
-from TxBot.TxBot_input.rest_input import RESTInput
-from TxBot.TxBot_output.rest_output import RESTOutput
-from TxBot.TxBot_layer.cmd.wiki import TxWikiLayer
+from Bot.Bot_engine.default_engine import DefaultEngine as Engine
+from Bot.Bot_input.rest_input import RESTInput
+from Bot.Bot_output.rest_output import RESTOutput
+from Bot.Bot_layer.cmd.wiki import WikiLayer
 
 from config.stage import settings
 from utils import render_template_file as render_template
@@ -16,7 +16,7 @@ profile = Blueprint("Profile", url_prefix="/p")
 __input = RESTInput(settings.engine_param)
 __output = RESTOutput()
 __engine = Engine(__input, __output, settings.engine_param)
-__engine.add([TxWikiLayer({})])
+__engine.add([WikiLayer({})])
 
 
 @profile.route("/")

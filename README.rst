@@ -11,14 +11,14 @@ Tx is an umberlla package which is has intergation Tx-Bot(small NLU chatbot) and
 :License: MIT
 
 Architures
-==========
+--------------
 
 TxBot
------
 
-Tx-Bot compresseing of basic 5 components :module: `Bot.Bot_engine`, :module: `Bot.Bot_input`, :module: `Bot.Bot_output`, :module:  `Bot.Bot_layer` and :module:  `Bot.Bot_response`.
 
-.. image:: doc_img/TxBot_arc.jpg
+Tx-Bot compresseing of basic 5 components .. py:module::`~Bot.Bot_engine`, :module: `~Bot.Bot_input`, .. py:module:: `~Bot.Bot_output`, .. py:module::  `~Bot.Bot_layer` and .. py:module::  `~Bot.Bot_response`.
+
+.. image:: images/TxBot_arc.jpg
      :alt: TxBot Articures
 
 
@@ -26,7 +26,7 @@ Tx-Bot compresseing of basic 5 components :module: `Bot.Bot_engine`, :module: `B
 
 
 Settings
-========
+--------------
 
 1. Run `python -m snips_nlu download en` for downloading required
 file for snips
