@@ -1,7 +1,12 @@
 # Minimal makefile for Sphinx documentation
 #
 
+config:
+	export CONFIG = config.docs_local
+
 # You can set these variables from the command line.
+CONFIG        = config.docs_local
+EXPORT 		  = export
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
 SPHINXPROJ    = Tx, TxBot
