@@ -3,7 +3,7 @@ Tx
 
 Tx is an umberlla package which is has intergation Tx-Bot(small NLU chatbot) and Tx(Sanic web framework).
 
-.. images:: https://img.shields.io/badge/built%20with-Cookiecutter%Sanic-ff69b4.svg
+.. image:: https://img.shields.io/badge/built%20with-Cookiecutter%Sanic-ff69b4.svg
      :target: https://github.com/harshanarayana/cookiecutter-sanic
      :alt: Built with Cookiecutter Sanic
 
@@ -16,9 +16,9 @@ Architures
 TxBot
 -----
 
-Tx-Bot compresseing of basic 5 components :module: `TxBot.TxBot_engine`, :module: `TxBot.TxBot_input`, :module: `TxBot.TxBot_output`, :module:  `TxBot.TxBot_layer` and :module:  `TxBot.TxBot_response`.
+Tx-Bot compresseing of basic 5 components :module: `Bot.Bot_engine`, :module: `Bot.Bot_input`, :module: `Bot.Bot_output`, :module:  `Bot.Bot_layer` and :module:  `Bot.Bot_response`.
 
-.. images:: doc_img/TxBot_arc.jpg
+.. image:: doc_img/TxBot_arc.jpg
      :alt: TxBot Articures
 
 

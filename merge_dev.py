@@ -2,6 +2,11 @@ import os
 from typing import Sequence
 import click
 
+from colorama import init
+from termcolor import colored
+
+init()
+
 import pytest
 
 ROOT_DIR_PATH = os.path.dirname(os.path.realpath(__file__))
@@ -73,10 +78,11 @@ def main(env, git):
     if env:
 
         click.echo(
-            """
-            Please set .password file inside
-            the .envs folder for dev 
-            """
+            colored(
+                "Please set .password file inside\
+                the .envs folder for dev..",
+                "yellow",
+            )
         )
         get_env_files()
 
