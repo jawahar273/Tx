@@ -8,11 +8,11 @@ Installation
 Stable release
 --------------
 
-To install Tx, run this command in your terminal:
+.. To install Tx, run this command in your terminal:
 
-.. code-block:: console
+.. .. code-block:: console
 
-    $ pip install Tx
+..     $ pip install Tx
 
 This is the preferred method to install Tx, as it will always install the most recent stable release.
 

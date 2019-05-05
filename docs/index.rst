@@ -8,10 +8,7 @@ Welcome to Tx's documentation!
    readme
    installation
    usage
-   contributing
-   authors
-   history
-   usage/scaff
+   usage/scaffold
 
 Indices and tables
 ==================

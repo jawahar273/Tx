@@ -1,1 +1,6 @@
-.. module:: scaff
+===========================
+Scaff/Generating Templates.
+===========================
+
+.. automodule:: scaff
+ :members:
