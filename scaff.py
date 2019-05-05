@@ -4,6 +4,12 @@ generating of intent response files.
 Scaff should be used alway in developer times as this functional
 depend fixed location.
 
+.. code-block:: bash
+
+    # don't know what to do type this command.
+    python scraff.py --help 
+
+
 Intent
 ------
 
@@ -62,6 +68,10 @@ Response Defining Rules.
 must be same as the intent file. Such example is `Bot_response/_global/_pwned` and template
 `Bot_response/templates/_global/_pwned/_pwned.html` is equallent to `storage/_global/intents/pwned.yml`
 
+
+Click Commands functions
+------------------------
+
 """
 
 from subprocess import run
@@ -112,17 +122,40 @@ def both():
 @click.option(
     "--name", "-n", default="dataset.json", help="name for the dataset format"
 )
-def intent_to_dataset_format(path, name):
+@click.option(
+    "--dataset",
+    "-d",
+    default="dataset",
+    help="dataset folder containing the dataset training formate",
+)
+def intent_to_dataset_format(path: str, name: str, dataset: str) -> None:
     """
+    Converted the intent files into NLU readable/training
+    formate with help of `SNIP NLU generator`.
+
+    .. note::
+
+        .. code-block:: bash
+
+            # absolute path must be given.
+            python scaff.py train Bot/storage/_profile --name dataset.json --dataset dataset
+
     Folder structure for the intent and dataset.
+
     .. code-block:: bash
+
         storage/
             _profile/
                 intents
-                dataset
+                dataset  # manully create this folder.
 
-    @params path location of the intent folder and location of dataset folder
-    are take from the single arguments.
+    :param path: location of the intent folder and location of dataset folder
+        are take from the single arguments.
+    :type: path
+    :param name: name of the NLU's readable/training format file given after generation. default name is `dataset.json` 
+    :type: str
+    :param dataset: NLU's readable/training format contain folder given after generation. default name is `dataset` 
+    :type: str
     """
     INTENT = "intents"
     DATASET = "dataset"

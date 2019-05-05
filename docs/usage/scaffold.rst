@@ -3,4 +3,6 @@ Scaff/Generating Templates.
 ===========================
 
 .. automodule:: scaff
- :members:
+
+.. autofunction:: intent_to_dataset_format
+
