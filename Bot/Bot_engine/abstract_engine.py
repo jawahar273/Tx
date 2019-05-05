@@ -22,7 +22,12 @@ class AbstractEngine:
 
 
 class BaseEngine(AbstractEngine):
-    """docstring for TestEngine"""
+    """
+    Base engine will be mother of all its sub-class. As
+    major lifting is taken in inside the `BaseEngine`. Just
+    use the sub-class to handline the case which Mother's
+    class can't be handling.
+    """
 
     def __init__(self, input_object, output_object, engine_param=None):
         """

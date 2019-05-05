@@ -27,7 +27,9 @@ slots:
   - name: breach
     entity: dataBreachEntity
 utterances:
-    - have my [email](some@gmap.com) has been [breach](hacked)
-    - Check my [email](some@gmap.com) has been [breach](hacked)
-    - Is my [email](some@gmap.com) has been [breach](hacked)
-    - Can you check my [email](some@gmap.com) has been [breach](hacked)
+    - have my email id [email](some@gmap.com) has been [breach](hacked)
+    - Check my email id [email](some@gmap.com) has been [breach](hacked)
+    - Is my email id [email](some@gmap.com) has been [breach](hacked)
+    - Can you check my email id [email](some@gmap.com) has been [breach](hacked)
+    - check my email id [email](some@gmap.com) for any possible [breach](hacked)
+    - 

@@ -10,13 +10,46 @@
 {% block card %}
 <div>
     <p>
-        {% for breatch in breatchs%}
-            <ul>
-                <li>
-                    {{breatch}}
-                </li>
-            </ul>
-        {% endfor %}
+        {% if breatchs['loop'] %}
+            <p>
+                <h1>
+                    Recomments:
+                </h1>
+                Total number of website you has been compromised
+                is {{breatchs['breatch_level']['compromised_sites']}}
+                {% for recommente in breatchs['breatch_level']['recommentes']%}
+                    <ul>
+                        <li>
+                            {{recommente}}
+                        </li>
+                    </ul>
+                {% endfor %}
+            </p>
+            <p>
+                <h1>
+                    List of Breatches:
+                </h1>            
+                {% for breatch in breatchs['data']%}
+                {# change Table formate #}
+                    <ul>
+                        <li>
+                            Domain of breatches: {{breatch.name}}
+                            <a href="{{breatch.url}}">
+                                Link
+                            </a>
+                            Total Acount compromised along with your account {{breatch.total}}
+                        </li>
+                    </ul>
+                {% endfor %}
+            </p>
+        {% else %}
+            <div>
+                <p>
+                    {{breatchs['data']}}
+                </p>
+            </div>
+        {% endif %}
+
     </p>
 </div>
 {% endblock %}
