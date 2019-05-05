@@ -1,7 +1,10 @@
+# .gitignores is a generated file so please don't 
+# write directly, go to the .gitignore folder.
 
 # python git ignores
 *.md
 
+docs_local.py
 
 Skeleton*
 client/*
