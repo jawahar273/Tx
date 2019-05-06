@@ -14,7 +14,7 @@ Input Object:
 if __name__ == "__main__":
 
     engine_param = {
-        "dataset_path": "Bot/storage/_global/dataset/dataset.json",
+        "dataset_path": "Bot/storage/dataset.json",
         "next_class": "Bot.Bot_input.cli_input.CLIInput",
         "input_params": {},
         "output_params": {"tag_remove": "html2text.html2text"},

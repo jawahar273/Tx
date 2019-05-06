@@ -125,10 +125,16 @@ def both():
 @click.option(
     "--dataset",
     "-d",
-    default="dataset",
-    help="dataset folder containing the dataset training formate",
+    default=os.path.join("Bot", "storage"),
+    help="location for containing the dataset training format `dataset`",
 )
-def intent_to_dataset_format(path: str, name: str, dataset: str) -> None:
+@click.option(
+    "--common",
+    "-g",
+    default=os.path.join("Bot", "storage", "_global"),
+    help="global intent will be import into other intents",
+)
+def intent_to_dataset_format(path: str, name: str, dataset: str, common: str) -> None:
     """
     Converted the intent files into NLU readable/training
     formate with help of `SNIP NLU generator`.
@@ -158,17 +164,41 @@ def intent_to_dataset_format(path: str, name: str, dataset: str) -> None:
     :type: str
     """
     INTENT = "intents"
-    DATASET = "dataset"
+    absolute_intent_path = []
+    # DATASET = "dataset"
 
     # path = os.path.join(DEFAULT_STARTPOINT, path)
-    dataset_path = os.path.join(path, DATASET)
-    dataset_file_name = os.path.join(dataset_path, name)
+    # dataset_path = os.path.join(dataset_path, DATASET)
 
-    intent_path = os.path.join(path, INTENT)
-    intent_path = os.listdir(intent_path)
+    # just renaming to avoid confusion
+    dataset_path = dataset
 
+    def generate_intent_path(path: str, INTENT: str, intent_path: str) -> list:
+        """
+        Get the list of the intent files under `intent` folder inside the given
+        folder name.
+        """
+
+        return list(map(lambda x: os.path.join(path, INTENT, x), intent_path))
+
+    dataset_file_name = os.path.join(dataset, name)
+
+    true_intent_path = os.path.join(path, INTENT)
+    true_intent_path = os.listdir(true_intent_path)
+
+    absolute_intent_path = generate_intent_path(path, INTENT, true_intent_path)
+
+    if common is not False:
+
+        _global_intent = os.listdir(os.path.join(common, INTENT))
+        _global_intent = generate_intent_path(common, INTENT, _global_intent)
+        absolute_intent_path.extend(_global_intent)
+
+    import IPython
+
+    IPython.embed()
     command = "snips-nlu generate-dataset en".split()
-    command.extend(list(map(lambda x: os.path.join(path, INTENT, x), intent_path)))
+    command.extend(absolute_intent_path)
 
     std_out = run(command, capture_output=True)
     click.echo("dataset has been generated and writting to file..")

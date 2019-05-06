@@ -4,7 +4,7 @@ from Bot.Bot_response.abstract_response import BaseResponse
 class FinalYearProject(BaseResponse):
     def __init__(self, scope=None):
 
-        super(FinalYearProject, self).__init__(self, scope)
+        super(FinalYearProject, self).__init__(self, scope=scope)
 
     def get_class_name(self):
         return self.__class__.__name__

@@ -1,0 +1,459 @@
+{
+  "entities": {
+    "certificateEntity": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "dataBreachEntity": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "pwned"
+        },
+        {
+          "synonyms": [],
+          "value": "data breach"
+        },
+        {
+          "synonyms": [],
+          "value": "compromised"
+        },
+        {
+          "synonyms": [],
+          "value": "hacked"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "emailEntity": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    }
+  },
+  "intents": {
+    "bioIntent_profile": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Tell me about yourself"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "what you bio?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "How do you describe yourself?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "About yourself"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Describe yourself"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Describe yourself with current skill set"
+            }
+          ]
+        }
+      ]
+    },
+    "certificationIntent_profile": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Current "
+            },
+            {
+              "entity": "certificateEntity",
+              "slot_name": "certificateEntity",
+              "text": "certification"
+            },
+            {
+              "text": " you have."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What are the "
+            },
+            {
+              "entity": "certificateEntity",
+              "slot_name": "certificateEntity",
+              "text": "certification"
+            },
+            {
+              "text": " you have?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Tell about "
+            },
+            {
+              "entity": "certificateEntity",
+              "slot_name": "certificateEntity",
+              "text": "certification"
+            },
+            {
+              "text": " you have."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Describe you current holding "
+            },
+            {
+              "entity": "certificateEntity",
+              "slot_name": "certificateEntity",
+              "text": "certification"
+            }
+          ]
+        }
+      ]
+    },
+    "experienceIntent_profile": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Your previous past experience."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Tell about your past experience."
+            }
+          ]
+        }
+      ]
+    },
+    "finalYearProjectIntent_profile": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Tell about your final year project."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What you faviour achivement?"
+            }
+          ]
+        }
+      ]
+    },
+    "greetingIntent_global": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "hi"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Wake up"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Hi, How is it going?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "How are you doing?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "How do you do?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What's up?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Greetings!"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Hello"
+            }
+          ]
+        }
+      ]
+    },
+    "humorIntent_global": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Tell me a joke"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "tell me some jokes"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Do know any jokes"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Bit Me!"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What up on you face."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "I am sad today"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Today was a rough"
+            }
+          ]
+        }
+      ]
+    },
+    "locationIntent_profile": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Would you like to relocate."
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Are you will to relocate?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Do you like to relocate?"
+            }
+          ]
+        }
+      ]
+    },
+    "projectsIntent_profile": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "Tell about your projects"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "What are projects done so far?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Do you have some projects to showcase?"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Have you done any projects so far?"
+            }
+          ]
+        }
+      ]
+    },
+    "pwnedIntent_global": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "have my email id "
+            },
+            {
+              "entity": "emailEntity",
+              "slot_name": "email",
+              "text": "some@gmap.com"
+            },
+            {
+              "text": " has been "
+            },
+            {
+              "entity": "dataBreachEntity",
+              "slot_name": "breach",
+              "text": "hacked"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Check my email id "
+            },
+            {
+              "entity": "emailEntity",
+              "slot_name": "email",
+              "text": "some@gmap.com"
+            },
+            {
+              "text": " has been "
+            },
+            {
+              "entity": "dataBreachEntity",
+              "slot_name": "breach",
+              "text": "hacked"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Is my email id "
+            },
+            {
+              "entity": "emailEntity",
+              "slot_name": "email",
+              "text": "some@gmap.com"
+            },
+            {
+              "text": " has been "
+            },
+            {
+              "entity": "dataBreachEntity",
+              "slot_name": "breach",
+              "text": "hacked"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "Can you check my email id "
+            },
+            {
+              "entity": "emailEntity",
+              "slot_name": "email",
+              "text": "some@gmap.com"
+            },
+            {
+              "text": " has been "
+            },
+            {
+              "entity": "dataBreachEntity",
+              "slot_name": "breach",
+              "text": "hacked"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "check my email id "
+            },
+            {
+              "entity": "emailEntity",
+              "slot_name": "email",
+              "text": "some@gmap.com"
+            },
+            {
+              "text": " for any possible "
+            },
+            {
+              "entity": "dataBreachEntity",
+              "slot_name": "breach",
+              "text": "hacked"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "language": "en"
+}
