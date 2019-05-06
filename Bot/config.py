@@ -32,8 +32,11 @@ IGNORABLE_THESHOLD_VALUE = 0.58
 logger = None
 
 try:
+
     # for importing sanic logger
-    logger = import_class(getenv("LOGGERCLASS"))
-except AttributeError:
+    logger = import_class(getenv("LOGGERCLASS"), "sanic.log.logger")
+
+except (AttributeError, ValueError):
+
     # importing standard logger module
-    logger = import_module(getenv("LOGGERCLASS"))
+    logger = import_module(getenv("LOGGERCLASS"), "logging")

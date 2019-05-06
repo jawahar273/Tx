@@ -27,17 +27,10 @@ def import_class(path):
 
     if isinstance(path, str):
 
-        try:
-
-            value, class_name = path.rsplit(".", 1)
-
-        except ValueError as e:
-            raise ValueError(
-                "Are you trying to import module then use `import_module` from same utils.py"
-            )
+        value, class_name = path.rsplit(".", 1)
 
         module = import_module(value)
-
+        print("m")
         return getattr(module, class_name)
 
     else:
