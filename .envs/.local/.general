@@ -1,1 +1,5 @@
+# .evn file is generated file direclty should not include
+# any source as it may remove completely in regeneration.
+# go to .envs folder
+
 TEST_MODULE='txbot'

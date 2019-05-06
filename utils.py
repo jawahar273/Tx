@@ -13,21 +13,36 @@ def render_template_file(file_name: str, **kwargs: dict):
 
 
 def import_module(path):
-    return imm(path)
+
+    if isinstance(path, str):
+
+        return imm(path)
+
+    else:
+
+        raise TypeError("Wrong data type give, parameter must of path in str()")
 
 
 def import_class(path):
 
     if isinstance(path, str):
 
-        value, class_name = path.rsplit(".", 1)
+        try:
+
+            value, class_name = path.rsplit(".", 1)
+
+        except ValueError as e:
+            raise ValueError(
+                "Are you trying to import module then use `import_module` from same utils.py"
+            )
+
         module = import_module(value)
 
         return getattr(module, class_name)
 
     else:
 
-        return path
+        raise TypeError("Wrong data type give, parameter must of path in str()")
 
 
 def env_str(env_name: str, default: str) -> str:
