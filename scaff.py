@@ -67,11 +67,10 @@ Response Defining Rules.
         python scaff.py response # answer some questions.
 
 
-1. The response file must align with intent file that
-is the name of the response
-must be same as the intent file.
-Such example is `Bot_response/_global/_pwned` and template
-`Bot_response/templates/_global/_pwned/_pwned.html` is equallent to `storage/_global/intents/pwned.yml`
+1. The response file must align with intent file that is the name
+ of the response must be same as the intent file.
+ Such example is `Bot_response/_global/_pwned` and template
+ `Bot_response/templates/_global/_pwned/_pwned.html` is equallent to `storage/_global/intents/pwned.yml`
 
 
 Click Commands functions
@@ -121,7 +120,7 @@ def both():
 
 @main.command(
     "train",
-    help="convert list of intent file into train format by giving the folder path `Bot/storage/_profile`",
+    help="convert list of intent file into train format by giving the folder path `Bot/storage/_profile` or `Bot/storage/` for train all intent file inside",
 )
 @click.argument("path", type=click.Path(exists=True))
 @click.option(
@@ -130,7 +129,7 @@ def both():
 @click.option(
     "--dataset",
     "-d",
-    default=os.path.join("Bot", "storage"),
+    default=os.path.join("Bot", "dataset"),
     help="location for containing the dataset training format `dataset`",
 )
 @click.option(
@@ -160,6 +159,15 @@ def intent_to_dataset_format(path: str, name: str, dataset: str, common: str) ->
                 intents
                 dataset  # manully create this folder.
 
+    .. note::
+
+        The intent file ends with `?` will be skips in traning
+        all intent.
+
+        .. code-block::
+
+            python scraff.py bot/storage # folder contain all intent files
+
     :param path: location of the intent folder and location of dataset folder
         are take from the single arguments.
     :type: path
@@ -183,16 +191,36 @@ def intent_to_dataset_format(path: str, name: str, dataset: str, common: str) ->
         Get the list of the intent files under `intent` folder inside the given
         folder name.
         """
-
         return list(map(lambda x: os.path.join(path, INTENT, x), intent_path))
 
     dataset_file_name = os.path.join(dataset, name)
 
+    true_intent_path = None
     # todo: add all intent based on the path
-    true_intent_path = os.path.join(path, INTENT)
-    true_intent_path = os.listdir(true_intent_path)
+    import re
 
-    absolute_intent_path = generate_intent_path(path, INTENT, true_intent_path)
+    # check given intent path for specific intent folder.
+    if not re.match(r".*[_]", path):
+        click.echo("get all intents")
+        all_dir = os.listdir(path)
+
+        for _path in all_dir:
+
+            if _path.endswith("?"):
+                continue
+            __intent_path = os.path.join(path, _path, INTENT)
+            _intent_path = os.listdir(__intent_path)
+            absolute_intent_path.extend(
+                generate_intent_path(__intent_path, "", _intent_path)
+            )
+
+    else:
+
+        true_intent_path = os.path.join(path, INTENT)
+        true_intent_path = os.listdir(true_intent_path)
+        absolute_intent_path.extend(
+            generate_intent_path(path, INTENT, true_intent_path)
+        )
 
     if common is not False:
 

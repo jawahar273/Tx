@@ -1,7 +1,0 @@
-#None
----
-type: intent
-name: None
-utterances:
-  - something is not right.. did you check above line for correction.
-  - Not good, something is not right.

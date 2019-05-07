@@ -20,7 +20,7 @@ if __name__ == "__main__":
     # mainly useful for CLI front
     # {"tag_remove": "html2text.html2text"}
     engine_param = {
-        "dataset_path": "Bot/storage/dataset.json",
+        "dataset_path": "Bot/dataset/dataset.json",
         "next_class": "Bot.Bot_input.cli_input.CLIInput",
         "input_params": {},
         "output_params": {"tag_remove": "html2text.html2text"},
