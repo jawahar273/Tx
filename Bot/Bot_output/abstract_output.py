@@ -9,10 +9,12 @@ from utils import import_class
 class AbstractOutput(ABC):
     @abstractmethod
     def __init__(self, *args, **kwargs):
+
         raise NotImplementedError("__init__() is not implemented")
 
     @abstractmethod
     def output(self, *args, **kwargs):
+
         raise NotImplementedError("output() is not implemented")
 
 
@@ -27,7 +29,9 @@ class BaseOutput(AbstractOutput):
     def wrapper(self, output):
 
         if self._tag_remove is None:
+
             return output
+
         return self._tag_remove(output)
 
     def output(self, txObject: dict):
@@ -37,4 +41,9 @@ class BaseOutput(AbstractOutput):
     def params(self, oparams: dict) -> None:
 
         if oparams is not None:
-            self._tag_remove = import_class(oparams.get("tag_remove"))
+
+            tag_remove = oparams.get("tag_remove")
+
+            if tag_remove:
+
+                self._tag_remove = import_class(tag_remove)
