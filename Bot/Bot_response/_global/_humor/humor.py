@@ -27,6 +27,7 @@ class Humor(BaseResponse):
 
     def get_humor_response(self):
         """
+        Deperate in favour of `Bot.Bot_response.utils.geneate`_response_from_intent
         Select random humor from the give file.
         """
         # need better alternative
@@ -38,7 +39,7 @@ class Humor(BaseResponse):
             try:
 
                 _response = yaml.safe_load(_response)
-                total_temp = len(_response["responseText"])
+                total_temp = len(_response["responseText"]) - 1
                 # selecting random humor sentence
                 _response = _response["responseText"][randint(0, total_temp)]
 

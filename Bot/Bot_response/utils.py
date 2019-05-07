@@ -29,7 +29,7 @@ def geneate_response_from_intent(
             _response = yaml.safe_load(_response)
 
             if random:
-                total_temp = len(_response["responseText"])
+                total_temp = len(_response["responseText"]) - 1
                 # selecting random humor sentence
                 _response = _response["responseText"][randint(0, total_temp)]
 
