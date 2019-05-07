@@ -13,7 +13,7 @@ understanding with the help of snips-nlp.
   .. code:: json
 
         {
-           ...
+           "...",
            "slots": [
               {
                  "value": "paris",
@@ -25,18 +25,18 @@ understanding with the help of snips-nlp.
                     "value": "2018-02-08 20:00:00 +00:00"
                  },
                  "entity": "snips/datetime",
-                 ...
+                 "..."
               }
            ]
         }
 
 
-TxBot is basicaly divided into 4 parts which is `Input`, `Engine`, `Layers` and `Output`.
+TxBot is basicaly divided into 5 parts which is `Input`, `Engine`, `Layers` and `Output`.
 
     .. code-block:: js
 
-        Input --> Engine --> Ouput
+        Input --> Engine --> Response(Action) --> Ouput
                     ^
                     |
                     |
-                  Layers
+                  Layers(replace for MiddleWare)

@@ -1,7 +1,7 @@
 from .base import *
 
 engine_param = {
-    "dataset_path": "Bot/storage/_profile/dataset/dataset.json",
+    "dataset_path": "Bot/dataset/dataset.json",
     "next_class": "Bot.Bot_input.rest_input.RESTInput",
     "input_params": {},
     "output_params": {},
