@@ -1,7 +1,11 @@
+"""
+Bot demo only contain the bot module for test as
+independent module.
+"""
+
 from Bot.Bot_output.cli_output import CLIOutput
 from Bot.Bot_input.cli_input import CLIInput
 
-# from Bot_engine.common_engine import CommonEngine
 from Bot.Bot_engine.default_engine import DefaultEngine as CommonEngine
 from Bot.Bot_layer.preset import layer_list  # predefine layer set.
 

@@ -1,5 +1,7 @@
 from Bot.Bot_response.abstract_response import BaseResponse
 
+from Bot.Bot_response.utils import geneate_response_from_intent
+
 
 class Greeting(BaseResponse):
     def __init__(self, scope=None):
@@ -16,4 +18,8 @@ class Greeting(BaseResponse):
 
         super(Greeting, self).render(class_name=self.class_name, sub_path="_global")
 
-        return self.render_template.render(pretty=pretty)
+        temp = geneate_response_from_intent(
+            "greeting_response.yml", "_greeting", "_global"
+        )
+
+        return self.render_template.render(pretty=pretty, response_text=temp)

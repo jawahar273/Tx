@@ -7,7 +7,7 @@ depend fixed location.
 .. code-block:: bash
 
     # don't know what to do type this command.
-    python scraff.py --help 
+    python scraff.py --help
 
 
 Intent
@@ -15,7 +15,8 @@ Intent
 
 Intent is a description for chatbot which describe
 the given text/voice. The intent designers must follow
-rule in traning the intent of `Snip-NLU <https://snips-nlu.readthedocs.io/en/latest/data_model.html#intent>`_. 
+rule in traning the intent of
+`Snip-NLU <https://snips-nlu.readthedocs.io/en/latest/data_model.html#intent>`_. 
 Create a folder and generate sub file with diffrent intent for readbility.
 
 Intent Defining Rules.
@@ -29,8 +30,10 @@ Intent Defining Rules.
 
         python scaff.py intent # answer some questions.
 
-1. Always declare intent name ends with '-Intent and along with sub folder name Example `BioIntent_profile`.
-2. Class in response must of Title case with intent name without the suffiex '-Intent'(optional)
+1. Always declare intent name ends with '-Intent
+ and along with sub folder name Example `BioIntent_profile`.
+2. Class in response must of Title case with
+ intent name without the suffiex '-Intent'(optional)
 3. In-Build folder for saving the intent file is 'bot/Storage'.
 
 .. code-block:: yaml
@@ -64,8 +67,10 @@ Response Defining Rules.
         python scaff.py response # answer some questions.
 
 
-1. The response file must align with intent file that is the name of the response
-must be same as the intent file. Such example is `Bot_response/_global/_pwned` and template
+1. The response file must align with intent file that
+is the name of the response
+must be same as the intent file.
+Such example is `Bot_response/_global/_pwned` and template
 `Bot_response/templates/_global/_pwned/_pwned.html` is equallent to `storage/_global/intents/pwned.yml`
 
 
@@ -183,6 +188,7 @@ def intent_to_dataset_format(path: str, name: str, dataset: str, common: str) ->
 
     dataset_file_name = os.path.join(dataset, name)
 
+    # todo: add all intent based on the path
     true_intent_path = os.path.join(path, INTENT)
     true_intent_path = os.listdir(true_intent_path)
 
@@ -194,9 +200,6 @@ def intent_to_dataset_format(path: str, name: str, dataset: str, common: str) ->
         _global_intent = generate_intent_path(common, INTENT, _global_intent)
         absolute_intent_path.extend(_global_intent)
 
-    import IPython
-
-    IPython.embed()
     command = "snips-nlu generate-dataset en".split()
     command.extend(absolute_intent_path)
 

@@ -34,9 +34,9 @@ logger = None
 try:
 
     # for importing sanic logger
-    logger = import_class(getenv("LOGGERCLASS"), "sanic.log.logger")
+    logger = import_class(getenv("LOGGERCLASS", "sanic.log.logger"))
 
 except (AttributeError, ValueError):
 
     # importing standard logger module
-    logger = import_module(getenv("LOGGERCLASS"), "logging")
+    logger = import_module(getenv("LOGGERCLASS", "logging"))
