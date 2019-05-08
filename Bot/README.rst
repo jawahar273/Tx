@@ -1,8 +1,8 @@
 =====
-TxBot
+Tx-Bot
 =====
 
-TxBot Module provide the nessary class from intergating the chat-bot
+Tx-Bot Module provide the nessary class from intergating the chat-bot
 objects. TxBot is like general purpose chat build based with the help
 of `snips-nlu`. Snips-nlp is an Natural Language Understanding engine which
 is a part of Natural Language Process, where NLU help the machine
@@ -39,4 +39,8 @@ TxBot is basicaly divided into 5 parts which is `Input`, `Engine`, `Layers` and 
                     ^
                     |
                     |
-                  Layers(replace for MiddleWare)
+                  Layers(can be a MiddleWare also)
+
+# Todo List
+1. Weather
+2. Use Layer Module for asking some addtional infromation from user(need a test run only).

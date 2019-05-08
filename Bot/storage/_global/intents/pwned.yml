@@ -2,6 +2,14 @@
 ---
 type: entity
 name: emailEntity
+  - my email
+  - my mail
+  - my mail id 
+  - my email id 
+  - my email some@gmap.com
+  - my mail somthing@mailid.com
+  - my mail id  newmaindi@intovast.com
+  - my email id jarvis12@toast.in
 
 # data breach
 ---
@@ -27,9 +35,9 @@ slots:
   - name: breach
     entity: dataBreachEntity
 utterances:
-    - have my email id [email](some@gmap.com) has been [breach](hacked)
-    - Check my email id [email](some@gmap.com) has been [breach](hacked)
-    - Is my email id [email](some@gmap.com) has been [breach](hacked)
-    - Can you check my email id [email](some@gmap.com) has been [breach](hacked)
-    - check my email id [email](some@gmap.com) for any possible [breach](hacked)
+    - have [email](email) has been [breach](hacked)
+    - Check [email](email) has been [breach](hacked)
+    - Is [email](email) has been [breach](hacked)
+    - Can you check [email](email) has been [breach](hacked)
+    - check [email](email) for any possible [breach](hacked)
   

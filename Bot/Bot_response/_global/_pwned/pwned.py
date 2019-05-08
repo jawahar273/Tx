@@ -130,6 +130,8 @@ class Pwned(BaseResponse):
                 breatch["msg"]["breatch_level"] = self.level_of_compormised(
                     breatch["msg"]
                 )
+                # todo: use regex for checking mail if not
+                # then check mail id based on `dict input`.
                 break
 
         if breatch is None:
