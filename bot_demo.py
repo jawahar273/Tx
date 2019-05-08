@@ -9,12 +9,6 @@ from Bot.Bot_input.cli_input import CLIInput
 from Bot.Bot_engine.default_engine import DefaultEngine as CommonEngine
 from Bot.Bot_layer.preset import layer_list  # predefine layer set.
 
-"""
-Global Object:
-    output_class, next
-Input Object:
-    text, input_params
-"""
 if __name__ == "__main__":
 
     # mainly useful for CLI front
