@@ -1,6 +1,6 @@
-=====
+======
 Tx-Bot
-=====
+======
 
 Tx-Bot Module provide the nessary class from intergating the chat-bot
 objects. TxBot is like general purpose chat build based with the help
@@ -39,7 +39,7 @@ TxBot is basicaly divided into 5 parts which is `Input`, `Engine`, `Layers` and 
                     ^
                     |
                     |
-                  Layers(can be a MiddleWare also)
+                  Layers(also can act as MiddleWare)
 
 # Todo List
 1. Weather
