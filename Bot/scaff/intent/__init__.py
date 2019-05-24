@@ -15,7 +15,8 @@ def gen_intent(base_path="storage"):
     """
     print("*" * 20, "Generate Intent yaml Files Easy", "*" * 20)
 
-    sub_path = input("inside the storage sub folder name such as `_task`: ")
+    sub_path = input(f"Select or create a sub folder \
+    the given under {base_path} for set of  intents: ")
     _sub_path = sub_path
     # sub folder is always contant as `intent`
     sub_path = os.path.join(sub_path, "intents")

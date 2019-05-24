@@ -93,26 +93,41 @@ def main():
     pass
 
 
-@main.command("m2r")
+@main.command("m2r",
+help="conver the markdown file into rst extention")
 @click.argument("convert_file")
 def m2r(convert_file):
     run(f"m2r {convert_file}".split())
 
 
-@main.command("intent")
+@main.command("intent",
+help="creating the both 'intennt' file")
 def intent():
     gen_intent()
 
 
-@main.command("response")
+@main.command("response",
+help="creating the both 'response' file")
+
 def response():
     gen_response()
 
 
-@main.command("both")
-def both():
+@main.command("both",
+help="creating the both 'response' and 'intents' file")
+@click.option("--ipath", type=click.Path(exists=True),
+help="base folder give the folder name for saving intents")
+@click.option("--rpath", type=click.Path(exists=True),
+help="base folder give the folder name for saving response")
+
+def both(ipath, rpath):
     if click.confirm("Do you like generate Intent and Response both?"):
-        temp = gen_intent()
+        if not ipath:
+            ipath = 'storage'
+
+        temp = gen_intent(ipath)
+        if rpath:
+            temp['base_path'] = rpath
         gen_response(**temp)
     else:
         click.echo("abort!")
