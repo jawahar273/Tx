@@ -1,6 +1,9 @@
-
+# .gitignores is a generated file so please don't 
+# write directly, go to the .gitignore folder.
+# python git ignores
 *.md
 
+docs_local.py
 
 Skeleton*
 client/*
@@ -293,7 +296,7 @@ tx/media/
 !.envs/.local/
 .envs/.local/.password
 
-
+# react git ignores
 !frontend/*.md
 
 # Don't check auto-generated stuff into git
