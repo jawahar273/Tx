@@ -50,8 +50,9 @@ def get_git_ignore():
 
     PRODUCTION_DIR_PATH = os.path.join(ROOT_DIR_PATH, ".gitignores")
     PRODUCTION_FILE_PATHS = [
+        os.path.join(PRODUCTION_DIR_PATH, ".general"),
         os.path.join(PRODUCTION_DIR_PATH, ".python"),
-        os.path.join(PRODUCTION_DIR_PATH, ".react"),
+        os.path.join(PRODUCTION_DIR_PATH, ".client"),
     ]
     # path of the folders.
 
@@ -92,7 +93,6 @@ def main(env, git):
     else:
         click.echo("Neither option is selected")
         return
-    print(_FILE_PATH, PRODUCTION_FILE_PATHS)
     merge(_FILE_PATH, PRODUCTION_FILE_PATHS)
 
 
