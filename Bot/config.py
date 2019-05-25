@@ -26,7 +26,7 @@ STOPLAYER = signal(STOPLAYERNAME)
 TEMPLATE_FORMATE = env_str("TEMPLATE_FORMATE", "html")
 
 # Response Config
-IGNORABLE_THESHOLD_VALUE = 0.58
+IGNORABLE_THRESHOLD_VALUE = 0.58
 
 # logger Config
 logger = None

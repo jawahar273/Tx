@@ -3,7 +3,7 @@ import os
 
 from config.stage import settings
 
-from Bot.config import IGNORABLE_THESHOLD_VALUE, TEMPLATE_FORMATE
+from Bot.config import IGNORABLE_THRESHOLD_VALUE, TEMPLATE_FORMATE
 from Bot.utils import template_name_from_class_name, invert_title_case, _title_case
 
 # class AbstractResponse(ABC):
@@ -41,9 +41,17 @@ class AbstractResponse(ABC):
 
 class BaseResponse(AbstractResponse):
     def __init__(self, *args, **kwargs):
-        # to reject if the probility of intent is less than
-        # theshold value.
-        self.theshold_value = IGNORABLE_THESHOLD_VALUE
+        '''
+        Instance Variable Description
+        -----------------------------
+
+        `threshold_value` --  for rejecting the intent classification which is less than the
+        given value.
+        `scope` -- this `Dict` object directly received from the Snip engine.
+        `response_class` -- 
+        '''
+        # to reject if the probability of intent is less than theshold value.
+        self.threshold_value = IGNORABLE_THRESHOLD_VALUE
         self.scope = kwargs["scope"]
 
         if self.scope is None:
