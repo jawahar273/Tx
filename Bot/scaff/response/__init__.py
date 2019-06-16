@@ -38,19 +38,19 @@ def gen_response(base_path="Bot_response", _sub_path=None, _file_name=None):
             os.path.dirname("Bot/storage"), base_path, sub_path, input_path
         )
 
-        if not confirm("Files may be overridden. Still do like to contiune"):
+        if not confirm("Files may be overridden. Still do like to continue"):
             exit_now()
 
-        os.mkdir(input_path)
+        os.makedirs(input_path)
 
     except FileExistsError as e:
 
-        print("Folder already exits")
+        print(f"Just kidding look like the folder already exit in: {input_path}")
 
     try:
 
         # split the path to avoid sub folder.
-        os.mkdir(os.path.split(template_scaff_path)[0])
+        os.makedirs(os.path.split(template_scaff_path)[0])
 
     except FileExistsError as e:
 

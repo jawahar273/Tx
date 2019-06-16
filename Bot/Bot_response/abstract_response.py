@@ -68,7 +68,7 @@ class BaseResponse(AbstractResponse):
         #                                         self.class_name)
         #                                     )
 
-        # ## file Name
+        # ## getting file Name
         render_template_name = (
             f"_{invert_title_case(self.class_name)}.{TEMPLATE_FORMATE}"
         )

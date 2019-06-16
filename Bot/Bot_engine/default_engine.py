@@ -7,6 +7,8 @@ from .abstract_engine import BaseEngine
 from Bot.config import PROCESSED_INPUT, FOR_OUTPUT, NLUSCOPE
 from Bot.utils import import_response_intent
 
+# from config.stage.settings import logger
+from config.stage import logger
 
 class DefaultEngine(BaseEngine):
     """
@@ -36,7 +38,7 @@ class DefaultEngine(BaseEngine):
     def response(self, scope):
         """
         Get the :class: `Dict` status from NLU or command
-        exection success, the one
+        execution successfully, the one
         response class :module: `Bot.Bot_response`
         imported.
         """
@@ -71,6 +73,7 @@ class DefaultEngine(BaseEngine):
             self.return_object[NLUSCOPE] = self.parse(
                 self.return_object[PROCESSED_INPUT]
             )
+
 
         del self.return_object[PROCESSED_INPUT]
 

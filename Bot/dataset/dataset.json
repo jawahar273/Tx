@@ -34,6 +34,12 @@
       "data": [],
       "matching_strictness": 1.0,
       "use_synonyms": true
+    },
+    "emailEntity - my email - my mail - my mail id - my email id - my email some@gmap.com - my mail somthing@mailid.com - my mail id  newmaindi@intovast.com - my email id jarvis12@toast.in": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
     }
   },
   "intents": {
@@ -355,12 +361,12 @@
         {
           "data": [
             {
-              "text": "have my email id "
+              "text": "have "
             },
             {
               "entity": "emailEntity",
               "slot_name": "email",
-              "text": "some@gmap.com"
+              "text": "email"
             },
             {
               "text": " has been "
@@ -375,12 +381,12 @@
         {
           "data": [
             {
-              "text": "Check my email id "
+              "text": "Check "
             },
             {
               "entity": "emailEntity",
               "slot_name": "email",
-              "text": "some@gmap.com"
+              "text": "email"
             },
             {
               "text": " has been "
@@ -395,12 +401,12 @@
         {
           "data": [
             {
-              "text": "Is my email id "
+              "text": "Is "
             },
             {
               "entity": "emailEntity",
               "slot_name": "email",
-              "text": "some@gmap.com"
+              "text": "email"
             },
             {
               "text": " has been "
@@ -415,12 +421,12 @@
         {
           "data": [
             {
-              "text": "Can you check my email id "
+              "text": "Can you check "
             },
             {
               "entity": "emailEntity",
               "slot_name": "email",
-              "text": "some@gmap.com"
+              "text": "email"
             },
             {
               "text": " has been "
@@ -435,12 +441,12 @@
         {
           "data": [
             {
-              "text": "check my email id "
+              "text": "check "
             },
             {
               "entity": "emailEntity",
               "slot_name": "email",
-              "text": "some@gmap.com"
+              "text": "email"
             },
             {
               "text": " for any possible "

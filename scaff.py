@@ -101,7 +101,7 @@ def m2r(convert_file):
 
 
 @main.command("intent",
-help="creating the both 'intennt' file")
+help="creating the both 'intent' file")
 def intent():
     gen_intent()
 
@@ -126,6 +126,7 @@ def both(ipath, rpath):
             ipath = 'storage'
 
         temp = gen_intent(ipath)
+    
         if rpath:
             temp['base_path'] = rpath
         gen_response(**temp)

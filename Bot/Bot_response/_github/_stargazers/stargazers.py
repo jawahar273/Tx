@@ -1,10 +1,11 @@
 from Bot.Bot_response.abstract_response import BaseResponse
 
 
-class Projects(BaseResponse):
+class Stargazers(BaseResponse):
+
     def __init__(self, scope=None):
 
-        super(Projects, self).__init__(self, scope=scope)
+        super(Stargazers, self).__init__(self, scope=scope)
 
     def get_class_name(self):
 
@@ -14,6 +15,8 @@ class Projects(BaseResponse):
 
         self.class_name = self.get_class_name()  # class name
 
-        super(Projects, self).render(class_name=self.class_name, sub_path="_profile")
+        super(Stargazers, self).render(
+            class_name=self.class_name, sub_path='_github'
+        )
 
         return self.render_template.render(pretty=pretty)

@@ -79,7 +79,7 @@ class BaseEngine(AbstractEngine):
         """
 
         if len(self.layers) == 0:
-            raise TypeError("Layer is empty....")
+            raise ValueError("Layer is empty....")
         self.return_object = self.input_object.processed()
 
         for single_layer in self.layers:

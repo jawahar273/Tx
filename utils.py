@@ -30,7 +30,6 @@ def import_class(path):
         value, class_name = path.rsplit(".", 1)
 
         module = import_module(value)
-        print("m")
         return getattr(module, class_name)
 
     else:

@@ -15,8 +15,8 @@ def gen_intent(base_path="storage"):
     """
     print("*" * 20, "Generate Intent yaml Files Easy", "*" * 20)
 
-    sub_path = input(f"Select or create a sub folder \
-    the given under {base_path} for set of  intents: ")
+    sub_path = input(f"Select or create a sub folder\
+    the given under '{base_path}' for set of  intents: ")
     _sub_path = sub_path
     # sub folder is always contant as `intent`
     sub_path = os.path.join(sub_path, "intents")
@@ -36,7 +36,7 @@ def gen_intent(base_path="storage"):
     scaff_path = f"{scaff_path}.yml"
 
     print("abs folder", sub_path)
-    print("If somthing is wrong, press 1  to exit or press any key")
+    print("If something is wrong, press 1  to exit or press any key")
     if input("..") == "1":
         exit_now()
 
@@ -45,7 +45,6 @@ def gen_intent(base_path="storage"):
         with open(scaff_path, "w") as intent_file:
 
             file_name = invert_title(invert_title(file_name))
-            # from IPython import embed; embed()
 
             intent_file_template = None  # Template(intent_file.read())
             template_py = os.path.join(os.path.dirname(__file__), "template.yml.html")

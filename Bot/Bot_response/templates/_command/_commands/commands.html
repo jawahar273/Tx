@@ -1,16 +1,9 @@
-
-{% extends "response.html" %}
-
-{% block card_style %}
+{% extends "response.html" %} {% block card_style %} {% endblock %} {% block
+card %}
+<div>
+  <h1>Successful Return Value</h1>
+  <p>
+    {{ output_values }}
+  </p>
+</div>
 {% endblock %}
-
-{% block card %}
-    <div>
-        <h1> Successful Return Value  </h1>
-        <p>
-            {{output_values}}
-        </p>
-    </div>
-{% endblock %}
-
-

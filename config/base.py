@@ -20,7 +20,7 @@ engine_param = {
 
 
 # logger settings
-logger = import_class("sanic.log.logger")
+logger = import_class("logging.Logger")
 
 # Validation REGEX
 

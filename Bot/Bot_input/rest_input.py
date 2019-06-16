@@ -11,5 +11,9 @@ class RESTInput(BaseInput):
         return self.return_object
 
     def step(self, text):
+        """
+        Extra step for handling the input to the
+        bot with custom method.
+        """
         self.txObject.update({"text": text})
         super(RESTInput, self).__init__(self.txObject)
