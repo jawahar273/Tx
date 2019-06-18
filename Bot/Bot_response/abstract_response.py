@@ -6,7 +6,6 @@ from config.stage import settings
 from Bot.config import IGNORABLE_THRESHOLD_VALUE, TEMPLATE_FORMATE
 from Bot.utils import template_name_from_class_name, invert_title_case, _title_case
 
-# class AbstractResponse(ABC):
 
 
 class AbstractResponse(ABC):
@@ -61,12 +60,6 @@ class BaseResponse(AbstractResponse):
 
         self.class_name = kwargs.get("class_name")
 
-        # render_template_name = os.path.join(os.path.dirname(__file__),
-        #                                     kwargs.get('sub_path'),
-        #                                     f'_{_title(self.class_name)}',
-        #                                     template_name_from_class_name(
-        #                                         self.class_name)
-        #                                     )
 
         # ## getting file Name
         render_template_name = (
@@ -80,11 +73,6 @@ class BaseResponse(AbstractResponse):
         self.render_template = settings.render_template.get_template(
             render_template_name
         )
-        # with open(self.render_template) as _template_file:
-
-        #     self.render_template = self.template(
-        #         _template_file.read()
-        #     )
 
     def get_class_name(self):
         raise NotImplementedError("get_class_name must be implemented")

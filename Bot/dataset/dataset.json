@@ -361,12 +361,12 @@
         {
           "data": [
             {
-              "text": "have "
+              "text": "have my email id "
             },
             {
               "entity": "emailEntity",
               "slot_name": "email",
-              "text": "email"
+              "text": "Claudine85@alo.com"
             },
             {
               "text": " has been "
@@ -381,12 +381,12 @@
         {
           "data": [
             {
-              "text": "Check "
+              "text": "Check email id "
             },
             {
               "entity": "emailEntity",
               "slot_name": "email",
-              "text": "email"
+              "text": "Nathanial112@hotmail.com"
             },
             {
               "text": " has been "
@@ -401,12 +401,12 @@
         {
           "data": [
             {
-              "text": "Is "
+              "text": "Is my email"
             },
             {
               "entity": "emailEntity",
               "slot_name": "email",
-              "text": "email"
+              "text": "Sister.Harvey25@yahoo.com"
             },
             {
               "text": " has been "
@@ -421,12 +421,12 @@
         {
           "data": [
             {
-              "text": "Can you check "
+              "text": "Can you check my mail id "
             },
             {
               "entity": "emailEntity",
               "slot_name": "email",
-              "text": "email"
+              "text": "Brady_Durgan@hotmail.com"
             },
             {
               "text": " has been "
@@ -441,12 +441,12 @@
         {
           "data": [
             {
-              "text": "check "
+              "text": "check my id "
             },
             {
               "entity": "emailEntity",
               "slot_name": "email",
-              "text": "email"
+              "text": "Melba23@yahoo.com"
             },
             {
               "text": " for any possible "

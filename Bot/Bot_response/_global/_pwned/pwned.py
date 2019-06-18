@@ -22,7 +22,6 @@ class Pwned(BaseResponse):
 
         @param email a email address to check for pwned.
         """
-
         # Delay for 2 seconds before
         # making request to accomodate API usage policy
 
@@ -60,8 +59,9 @@ class Pwned(BaseResponse):
                             }
                         ]
                     )
+                
 
-                return {"statusCode": 200, "msg": {"loop": True, "data": data}}
+                return {"statusCode": 200, "msg": {"loop": True, "data": data, "email": _email}}
 
             elif status_code == 403:
 
@@ -130,8 +130,6 @@ class Pwned(BaseResponse):
                 breatch["msg"]["breatch_level"] = self.level_of_compormised(
                     breatch["msg"]
                 )
-                # todo: use regex for checking mail if not
-                # then check mail id based on `dict input`.
                 break
 
         if breatch is None:

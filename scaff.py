@@ -170,6 +170,7 @@ def intent_to_dataset_format(path: str, name: str, dataset: str, common: str) ->
 
     .. code-block:: bash
 
+        # @deprecated
         storage/
             _profile/
                 intents
@@ -187,17 +188,14 @@ def intent_to_dataset_format(path: str, name: str, dataset: str, common: str) ->
     :param path: location of the intent folder and location of dataset folder
         are take from the single arguments.
     :type: path
-    :param name: name of the NLU's readable/training format file given after generation. default name is `dataset.json` 
+    :param name: name of the NLU's readable/training format `file` given after generation. default name is `dataset.json` 
     :type: str
-    :param dataset: NLU's readable/training format contain folder given after generation. default name is `dataset` 
+    :param dataset: NLU's readable/training format contain `folder` given after generation. default name is `dataset` 
     :type: str
     """
     INTENT = "intents"
     absolute_intent_path = []
-    # DATASET = "dataset"
 
-    # path = os.path.join(DEFAULT_STARTPOINT, path)
-    # dataset_path = os.path.join(dataset_path, DATASET)
 
     # just renaming to avoid confusion
     dataset_path = dataset

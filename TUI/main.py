@@ -2,6 +2,7 @@ from os.path import dirname, join, split
 
 from prompt_toolkit import print_formatted_text, HTML
 from prompt_toolkit.styles import Style
+from prompt_toolkit import PromptSession
 
 from Bot.Bot_engine.default_engine import DefaultEngine as Engine
 from Bot.Bot_input.rest_input import RESTInput
@@ -24,18 +25,32 @@ handcraft for handling the function that I am tasked in handling as best I could
 """
 
 def entryPoint():
+    session = PromptSession()
+
     print_formatted_text(HTML(welcome_text))
-    reset_input.step("Your previous past experience.")
-    style = Style.from_dict({
-        'h1': '#00695C',
-        'h2': '#00796B',
-        'h3': '#00897B',
-        'h4': '#00897B',
-        'h5': '#009688',
-        'a': '#ECEFF1 underline',
-        'p': '#548bb5'
-    })
-    print_formatted_text(HTML(engine.go(pretty="json.html")), style=style)
+
+    while True:
+        try:
+            text = session.prompt('#> ')
+            reset_input.step(text)
+            style = Style.from_dict({
+                'h1': '#00695C',
+                'h2': '#00796B',
+                'h3': '#00897B',
+                'h4': '#00897B',
+                'h5': '#009688',
+                'a': '#ECEFF1 underline',
+                'p': '#548bb5'
+            })
+            print_formatted_text(HTML(engine.go(pretty="json.html")), style=style)
+        except KeyboardInterrupt:
+            print_formatted_text('Sleep Mode!!!!.....')
+            break
+        except EOFError:
+            break
+
+
+    # print_formatted_text(HTML(engine.go(pretty="base.html")), style=style)
 
     # render_format = ''
     # if request.args.get("pretty") == "true":

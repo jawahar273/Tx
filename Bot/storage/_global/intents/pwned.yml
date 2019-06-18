@@ -35,9 +35,9 @@ slots:
   - name: breach
     entity: dataBreachEntity
 utterances:
-    - have [email](email) has been [breach](hacked)
-    - Check [email](email) has been [breach](hacked)
-    - Is [email](email) has been [breach](hacked)
-    - Can you check [email](email) has been [breach](hacked)
-    - check [email](email) for any possible [breach](hacked)
+    - have my email id [email](Claudine85@alo.com) has been [breach](hacked)
+    - Check email id [email](Nathanial112@hotmail.com) has been [breach](hacked)
+    - Is my email[email](Sister.Harvey25@yahoo.com) has been [breach](hacked)
+    - Can you check my mail id [email](Brady_Durgan@hotmail.com) has been [breach](hacked)
+    - check my id [email](Melba23@yahoo.com) for any possible [breach](hacked)
   

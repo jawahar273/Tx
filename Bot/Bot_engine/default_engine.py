@@ -58,7 +58,11 @@ class DefaultEngine(BaseEngine):
         super(DefaultEngine, self).add(layer)
 
     def go(self, pretty="base.html"):
-
+        '''
+        :param: pretty is the name of the file where the meta data or base line of html
+            are saved and it is parsed along with return result. Currently base.html and json.html
+            is taken as parameter.
+        '''
         # super() must be called
         super(DefaultEngine, self).go()
 

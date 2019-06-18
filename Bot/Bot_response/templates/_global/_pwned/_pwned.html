@@ -13,7 +13,7 @@
         {% if breatchs['loop'] %}
             <p>
                 <h1>
-                    Recomments:
+                    Recommends: for <{{breatchs['email']}}>.
                 </h1>
                 Total number of website you has been compromised
                 is {{breatchs['breatch_level']['compromised_sites']}}
@@ -27,7 +27,7 @@
             </p>
             <p>
                 <h1>
-                    List of Breatches:
+                    List of Breathes:
                 </h1>            
                 {% for breatch in breatchs['data']%}
                 {# change Table formate #}
@@ -37,7 +37,7 @@
                             <a href="{{breatch.url}}">
                                 Link
                             </a>
-                            Total Acount compromised along with your account {{breatch.total}}
+                            Total Account compromised along with your account {{breatch.total}}
                         </li>
                     </ul>
                 {% endfor %}
