@@ -32,6 +32,9 @@ def entryPoint():
     while True:
         try:
             text = session.prompt('#> ')
+            if text == '' or not text:
+                continue
+
             reset_input.step(text)
             style = Style.from_dict({
                 'h1': '#00695C',
@@ -42,7 +45,9 @@ def entryPoint():
                 'a': '#ECEFF1 underline',
                 'p': '#548bb5'
             })
-            print_formatted_text(HTML(engine.go(pretty="json.html")), style=style)
+            temp = engine.go(pretty="json.html")
+            print_formatted_text(HTML(temp), style=style)
+
         except KeyboardInterrupt:
             print_formatted_text('Sleep Mode!!!!.....')
             break

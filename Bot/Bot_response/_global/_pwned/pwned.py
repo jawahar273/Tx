@@ -1,4 +1,4 @@
-from time import sleep
+# -*- coding: utf-8 -*-
 from urllib import parse
 from requests import exceptions, get
 
@@ -17,7 +17,7 @@ class Pwned(BaseResponse):
     def check_for_breach(self, email):
         """
         Check the given email is haven pwned in
-        the data breatch by some sites.
+        the data breach by some sites.
         Inspired by .. _Leon: https://github.com/leon-ai/leon.
 
         @param email a email address to check for pwned.
@@ -27,7 +27,7 @@ class Pwned(BaseResponse):
 
         _email = parse.quote_plus(email)
         url = f"/api/v2/breachedaccount/{_email}"
-        truncate = "?truncateResponse=true"
+        # truncate = "?truncateResponse=true"
 
         try:
             response = get(f"https://haveibeenpwned.com{url}")
@@ -61,7 +61,7 @@ class Pwned(BaseResponse):
                     )
                 
 
-                return {"statusCode": 200, "msg": {"loop": True, "data": data, "email": _email}}
+                return {"statusCode": 200, "msg": {"loop": True, "data": data, "email": _email.encode('utf-8')}}
 
             elif status_code == 403:
 
@@ -120,20 +120,21 @@ class Pwned(BaseResponse):
 
         super(Pwned, self).render(class_name=self.class_name, sub_path="_global")
 
-        breatch = None
+        breach = None
+        # change this code for `get_slot_by_name`
         for slot in self.scope["slots"]:
 
             if slot["slotName"] == "email":
-                _range = slot["range"]
-                rawValue = self.scope["input"]
-                breatch = self.check_for_breach(slot["rawValue"])
-                breatch["msg"]["breatch_level"] = self.level_of_compormised(
-                    breatch["msg"]
+                # _range = slot["range"]
+                # rawValue = self.scope["input"]
+                breach = self.check_for_breach(slot["rawValue"])
+                breach["msg"]["breach_level"] = self.level_of_compormised(
+                    breach["msg"]
                 )
                 break
 
-        if breatch is None:
-            breatch = {"msg": {"loop": False, "data": "Please provide mail address"}}
+        if breach is None:
+            breach = {"msg": {"loop": False, "data": "Please provide mail address"}}
         return self.render_template.render(
-            pretty=pretty, breatchs=breatch["msg"], len=len
+            pretty=pretty, breachs=breach["msg"], len=len
         )

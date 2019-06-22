@@ -1,0 +1,10 @@
+#  changelog get the change version based the api.
+---
+type: intent
+name: changelogIntentchangelog
+$class: Changelog
+utterances:
+    - changelog --search [changelog](python)
+    - changelog --search [changelog](golang)
+    - get change log for this one [changelog](mezzanine )
+    - fetch changelog for this packages [changelog](keras) 

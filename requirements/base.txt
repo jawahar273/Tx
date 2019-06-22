@@ -28,4 +28,4 @@ passlib==1.7.1
 
 html2text==2018.1.9
 
-prompt_toolkit==1.12.0
+prompt_toolkit==2.0.9

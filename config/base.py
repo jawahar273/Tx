@@ -1,4 +1,8 @@
+from os import getenv
+
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from walrus import Walrus
+
 from utils import import_class
 
 # Template settings
@@ -8,7 +12,6 @@ render_template = Environment(
     autoescape=select_autoescape(["html", "xml"]),
 )
 
-
 # NLU Engine settings
 engine_param = {
     "dataset_path": "Bot/storage/_profile/dataset/dataset.json",
@@ -17,7 +20,6 @@ engine_param = {
     "output_params": {},
     "is_next": False,
 }
-
 
 # logger settings
 logger = import_class("logging.Logger")
@@ -29,3 +31,9 @@ EMAIL_VALID_REGEX = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 
 # Intent and Dataset storage
 DEFAULT_STARTPOINT = "Bot.storage"
+
+db = Walrus(
+    host=getenv('REDIS-HOST', 'localhost'),
+    port=getenv('REDIS-PORT', 6379),
+    db=getenv('REDIS-DB', 1)
+)

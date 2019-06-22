@@ -136,7 +136,8 @@ def both(ipath, rpath):
 
 @main.command(
     "train",
-    help="convert list of intent file into train format by giving the folder path `Bot/storage/_profile` or `Bot/storage/` for train all intent file inside",
+   help="\n simply type `Bot/storage/` for get starting.\n"
+    +"convert list of intent file into train format by giving the folder path `Bot/storage/_profile` or `Bot/storage/` for train all intent file inside",
 )
 @click.argument("path", type=click.Path(exists=True))
 @click.option(

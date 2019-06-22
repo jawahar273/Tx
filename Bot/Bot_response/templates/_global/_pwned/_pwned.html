@@ -10,14 +10,14 @@
 {% block card %}
 <div>
     <p>
-        {% if breatchs['loop'] %}
+        {% if breachs['loop'] %}
             <p>
                 <h1>
-                    Recommends: for <{{breatchs['email']}}>.
+                    Recommends: for {{breachs['email']}}.
                 </h1>
                 Total number of website you has been compromised
-                is {{breatchs['breatch_level']['compromised_sites']}}
-                {% for recommente in breatchs['breatch_level']['recommentes']%}
+                is {{breachs['breach_level']['compromised_sites']}}
+                {% for recommente in breachs['breach_level']['recommentes']%}
                     <ul>
                         <li>
                             {{recommente}}
@@ -29,15 +29,15 @@
                 <h1>
                     List of Breathes:
                 </h1>            
-                {% for breatch in breatchs['data']%}
-                {# change Table formate #}
+                {% for breach in breachs['data']%}
+                {# change Table format #}
                     <ul>
                         <li>
-                            Domain of breatches: {{breatch.name}}
-                            <a href="{{breatch.url}}">
+                            Domain of breaches: {{breach.name}}
+                            <a href="{{breach.url}}">
                                 Link
                             </a>
-                            Total Account compromised along with your account {{breatch.total}}
+                            Total Account compromised along with your account {{breach.total}}
                         </li>
                     </ul>
                 {% endfor %}
@@ -45,7 +45,7 @@
         {% else %}
             <div>
                 <p>
-                    {{breatchs['data']}}
+                    {{breachs['data']}}
                 </p>
             </div>
         {% endif %}

@@ -18,6 +18,8 @@ def gen_response(base_path="Bot_response", _sub_path=None, _file_name=None):
     sub_path = _sub_path or input(
         f"name of the sub folder such as for Example `_task`:"
     )
+    if(not sub_path.startswith('_')):
+        sub_path = f'_{sub_path}'
     # _sub_path = sub_path
     input_path = _file_name or input(f"name of the response file: ")
     file_name = invert_title(input_path)

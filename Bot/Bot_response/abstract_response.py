@@ -80,20 +80,11 @@ class BaseResponse(AbstractResponse):
     def check_intent_name(self, name):
         return name.startswith(f"{self.get_class_name()}Intent")
 
+    def get_slot_by_name(self, slot_name):
+        """
+        Get the rawvalue from the scope of the intent engine.
+        """
 
-# class ResponseException(Exception):
-
-#     @staticmethod
-#     def return_statement(code, _exceptions):
-#         static_code = {
-#             "404": "Nothing is found",
-#             "405": "mmm... Somthing is wrong with the given method"
-#         }
-
-#         return_object = {
-#             "errorCode": code,
-#             "errorMsg": status_code.get(f"{code}")
-#         }
-#         # make some log for hiding the true error
-#         # from user.
-#         return return_object
+        for slot in self.scope["slots"]:
+            if slot['slotName'] == slot_name:
+                return slot["rawValue"]

@@ -50,9 +50,9 @@ def get_git_ignore():
 
     PRODUCTION_DIR_PATH = os.path.join(ROOT_DIR_PATH, ".gitignores")
     PRODUCTION_FILE_PATHS = [
-        os.path.join(PRODUCTION_DIR_PATH, ".general"),
+        # os.path.join(PRODUCTION_DIR_PATH, ".general"),
         os.path.join(PRODUCTION_DIR_PATH, ".python"),
-        os.path.join(PRODUCTION_DIR_PATH, ".client"),
+        # os.path.join(PRODUCTION_DIR_PATH, ".client"),
     ]
     # path of the folders.
 
@@ -60,7 +60,7 @@ def get_git_ignore():
 
 
 def merge(
-    output_file_path: str, merged_file_paths: Sequence[str], append_linesep: bool = True
+    output_file_path: str, merged_file_paths: Sequence[str], append_linesep: bool=True
 ) -> None:
     with open(output_file_path, "w") as output_file:
         for merged_file_path in merged_file_paths:

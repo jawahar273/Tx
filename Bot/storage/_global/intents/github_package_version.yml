@@ -1,0 +1,32 @@
+---
+type: entity
+name: patchEntity
+value:
+  - certification
+  - certificate
+
+---
+type: entity
+name: checkVersion
+value:
+  - new version
+  - new version package
+  - updates
+  - update
+  - new updates version
+
+#  github_package_version desc
+---
+type: intent
+name: github_package_versionIntent_global
+$class: Github_package_version
+slots:
+  - name: patch_type
+    entity: patchEntity
+
+utterances:
+    - github --package [package_name](redis) --patch [patch_type](major)
+    - check the version of this package [package_name](redis) and [patch_type](major)
+    - will you check out for any [checkVersion](update) on this package [package_name](redis) in github
+    - run through this package [package_name](redis) for any [checkVersion](update)
+    - find any [checkVersion](update) on the [package_name](redis)

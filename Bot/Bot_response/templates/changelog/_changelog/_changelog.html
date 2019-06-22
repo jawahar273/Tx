@@ -1,0 +1,17 @@
+{% extends "response.html" %} {% block card_style %} {% endblock %} {% block
+card %}
+<div>
+  <ul>
+    {{
+      changelog_list
+    }}
+    {% for changelog in changelog_list%}
+    <li>
+      <a href="{{ domain }}/{{ changelog['completion'] }}">
+        {{ domain }}/{{ changelog["completion"] }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

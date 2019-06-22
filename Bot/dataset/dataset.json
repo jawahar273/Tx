@@ -6,6 +6,18 @@
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
+    "changelog": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "checkVersion": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
     "dataBreachEntity": {
       "automatically_extensible": true,
       "data": [
@@ -36,6 +48,18 @@
       "use_synonyms": true
     },
     "emailEntity - my email - my mail - my mail id - my email id - my email some@gmap.com - my mail somthing@mailid.com - my mail id  newmaindi@intovast.com - my email id jarvis12@toast.in": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "package_name": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "patchEntity": {
       "automatically_extensible": true,
       "data": [],
       "matching_strictness": 1.0,
@@ -150,6 +174,58 @@
         }
       ]
     },
+    "changelogIntentchangelog": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "changelog --search "
+            },
+            {
+              "entity": "changelog",
+              "slot_name": "changelog",
+              "text": "python"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "changelog --search "
+            },
+            {
+              "entity": "changelog",
+              "slot_name": "changelog",
+              "text": "golang"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "get change log for this one "
+            },
+            {
+              "entity": "changelog",
+              "slot_name": "changelog",
+              "text": "mezzanine "
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "fetch changelog for this packages "
+            },
+            {
+              "entity": "changelog",
+              "slot_name": "changelog",
+              "text": "keras"
+            }
+          ]
+        }
+      ]
+    },
     "experienceIntent_profile": {
       "utterances": [
         {
@@ -181,6 +257,113 @@
           "data": [
             {
               "text": "What you faviour achivement?"
+            }
+          ]
+        }
+      ]
+    },
+    "github_package_versionIntent_global": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "github --package "
+            },
+            {
+              "entity": "package_name",
+              "slot_name": "package_name",
+              "text": "redis"
+            },
+            {
+              "text": " --patch "
+            },
+            {
+              "entity": "patchEntity",
+              "slot_name": "patch_type",
+              "text": "major"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "check the version of this "
+            },
+            {
+              "entity": "package_name",
+              "slot_name": "package_name",
+              "text": "redis"
+            },
+            {
+              "text": " and "
+            },
+            {
+              "entity": "patchEntity",
+              "slot_name": "patch_type",
+              "text": "major"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "will you check out for any "
+            },
+            {
+              "entity": "checkVersion",
+              "slot_name": "checkVersion",
+              "text": "update"
+            },
+            {
+              "text": " on this "
+            },
+            {
+              "entity": "package_name",
+              "slot_name": "package_name",
+              "text": "redis"
+            },
+            {
+              "text": " in github"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "run through this "
+            },
+            {
+              "entity": "package_name",
+              "slot_name": "package_name",
+              "text": "redis"
+            },
+            {
+              "text": " for any "
+            },
+            {
+              "entity": "checkVersion",
+              "slot_name": "checkVersion",
+              "text": "update"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "find any "
+            },
+            {
+              "entity": "checkVersion",
+              "slot_name": "checkVersion",
+              "text": "update"
+            },
+            {
+              "text": " on the "
+            },
+            {
+              "entity": "package_name",
+              "slot_name": "package_name",
+              "text": "redis"
             }
           ]
         }

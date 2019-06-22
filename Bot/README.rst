@@ -41,6 +41,23 @@ TxBot is basicaly divided into 5 parts which is `Input`, `Engine`, `Layers` and 
                     |
                   Layers(also can act as MiddleWare)
 
-# Todo List
-1. Weather
-2. Use Layer Module for asking some addtional infromation from user(need a test run only).
+Intra dependency folder in default config
+=======================================
+
+This section is used to describe the intera dependency for an successfull completetion
+of the intent and its code corresponding.  If an new internt and response are created
+using the cmd then `dummy` will be created under the following main folder.
+
+.. code-block::
+
+   storage
+      | _global
+         | dummy
+
+   Bot_response
+      | _global
+         | dummy
+
+      | template
+         | _global
+            | dummy
