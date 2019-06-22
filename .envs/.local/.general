@@ -3,3 +3,5 @@
 # go to .envs folder
 
 TEST_MODULE='txbot'
+
+PROVIDED_PLATFORM = 'tui'

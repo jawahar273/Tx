@@ -1,7 +1,7 @@
 Tx
 ==
 
-Tx is an umbrella package which is has intergation Tx-Bot(small NLU chatbot) and Tx(Sanic web framework).
+Tx is an umbrella package which is has intergation Tx-Bot(small NLU chatbot), TUI(simple Terminal User Interface) and Tx(Sanic web framework).
 
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%Sanic-ff69b4.svg
      :target: https://github.com/harshanarayana/cookiecutter-sanic
@@ -81,3 +81,4 @@ with extra arguments).
 
      There is below section which contain little details about architecure Tx-bot where for
      github is good at playing hide and seek you may see it.
+

@@ -31,7 +31,7 @@ def get_env_files():
         os.path.join(PRODUCTION_DIR_PATH, ".general"),
         os.path.join(PRODUCTION_DIR_PATH, ".sanic"),
         os.path.join(PRODUCTION_DIR_PATH, ".postgres"),
-        os.path.join(PRODUCTION_DIR_PATH, ".password"),
+        # os.path.join(PRODUCTION_DIR_PATH, ".password"),
         os.path.join(PRODUCTION_DIR_PATH, ".txbot"),
     ]
     # env_root_path = [".envs", ".local"]

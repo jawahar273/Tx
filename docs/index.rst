@@ -8,7 +8,6 @@ Welcome to Tx's documentation!
    readme
    installation
    usage
-   usage/scaffold
 
 Indices and tables
 ==================
