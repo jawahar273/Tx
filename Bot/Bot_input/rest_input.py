@@ -2,6 +2,7 @@ from .abstract_input import BaseInput
 
 
 class RESTInput(BaseInput):
+
     def __init__(self, txObject):
         self.txObject = txObject
 
@@ -10,7 +11,7 @@ class RESTInput(BaseInput):
         super(RESTInput, self).processed()
         return self.return_object
 
-    def step(self, text):
+    def toBotText(self, text):
         """
         Extra step for handling the input to the
         bot with custom method.

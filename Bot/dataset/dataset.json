@@ -18,6 +18,35 @@
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
+    "countdownEntity": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [
+            "56 mins",
+            "59 mins",
+            "1 min"
+          ],
+          "value": "10 mins"
+        },
+        {
+          "synonyms": [
+            "1 sec"
+          ],
+          "value": "20 secs"
+        },
+        {
+          "synonyms": [
+            "2 hrs",
+            "12 hrs",
+            "40hrs"
+          ],
+          "value": "1 hr"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
     "dataBreachEntity": {
       "automatically_extensible": true,
       "data": [
@@ -53,6 +82,76 @@
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
+    "intendedTimeEntity": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "after"
+        },
+        {
+          "synonyms": [],
+          "value": "before"
+        },
+        {
+          "synonyms": [],
+          "value": "from now on"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "messageEntity": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "display"
+        },
+        {
+          "synonyms": [],
+          "value": "message"
+        },
+        {
+          "synonyms": [],
+          "value": "show this on the screen"
+        },
+        {
+          "synonyms": [],
+          "value": "show in the screen"
+        },
+        {
+          "synonyms": [],
+          "value": "show in the display"
+        },
+        {
+          "synonyms": [],
+          "value": "show in display"
+        },
+        {
+          "synonyms": [],
+          "value": "throw onto the screen"
+        },
+        {
+          "synonyms": [],
+          "value": "put into the screen"
+        },
+        {
+          "synonyms": [],
+          "value": "show that"
+        },
+        {
+          "synonyms": [],
+          "value": "show the world"
+        },
+        {
+          "synonyms": [],
+          "value": "message#"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
     "package_name": {
       "automatically_extensible": true,
       "data": [],
@@ -64,7 +163,8 @@
       "data": [],
       "matching_strictness": 1.0,
       "use_synonyms": true
-    }
+    },
+    "snips/datetime": {}
   },
   "intents": {
     "bioIntent_profile": {
@@ -287,7 +387,7 @@
         {
           "data": [
             {
-              "text": "check the version of this "
+              "text": "check the version of this package "
             },
             {
               "entity": "package_name",
@@ -315,7 +415,7 @@
               "text": "update"
             },
             {
-              "text": " on this "
+              "text": " on this package "
             },
             {
               "entity": "package_name",
@@ -330,7 +430,7 @@
         {
           "data": [
             {
-              "text": "run through this "
+              "text": "run through this package "
             },
             {
               "entity": "package_name",
@@ -638,6 +738,226 @@
               "entity": "dataBreachEntity",
               "slot_name": "breach",
               "text": "hacked"
+            }
+          ]
+        }
+      ]
+    },
+    "reminderIntent_cron": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "reminder --countdown "
+            },
+            {
+              "entity": "countdownEntity",
+              "slot_name": "countdown",
+              "text": "40 sec"
+            },
+            {
+              "text": " "
+            },
+            {
+              "entity": "intendedTimeEntity",
+              "slot_name": "intendedTime",
+              "text": "after"
+            },
+            {
+              "text": " --time "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "when",
+              "text": "now"
+            },
+            {
+              "text": " --message "
+            },
+            {
+              "entity": "messageEntity",
+              "slot_name": "message",
+              "text": "some long message"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "reminder -c "
+            },
+            {
+              "entity": "countdownEntity",
+              "slot_name": "countdown",
+              "text": "30 mins"
+            },
+            {
+              "text": " "
+            },
+            {
+              "entity": "intendedTimeEntity",
+              "slot_name": "intendedTime",
+              "text": "after"
+            },
+            {
+              "text": " -t "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "when",
+              "text": "10 mins"
+            },
+            {
+              "text": " -m "
+            },
+            {
+              "entity": "messageEntity",
+              "slot_name": "message",
+              "text": "some long message"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "countdown for "
+            },
+            {
+              "entity": "countdownEntity",
+              "slot_name": "countdown",
+              "text": "59 mins"
+            },
+            {
+              "text": " "
+            },
+            {
+              "entity": "intendedTimeEntity",
+              "slot_name": "intendedTime",
+              "text": "after"
+            },
+            {
+              "text": " "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "when",
+              "text": "now"
+            },
+            {
+              "text": " and "
+            },
+            {
+              "entity": "messageEntity",
+              "slot_name": "message",
+              "text": "some long message"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "set countdown "
+            },
+            {
+              "entity": "countdownEntity",
+              "slot_name": "countdown",
+              "text": "40 mins"
+            },
+            {
+              "text": " "
+            },
+            {
+              "entity": "intendedTimeEntity",
+              "slot_name": "intendedTime",
+              "text": "after"
+            },
+            {
+              "text": " "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "when",
+              "text": "now"
+            },
+            {
+              "text": " and  "
+            },
+            {
+              "entity": "messageEntity",
+              "slot_name": "message",
+              "text": "some long message"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "start a countdown "
+            },
+            {
+              "entity": "countdownEntity",
+              "slot_name": "countdown",
+              "text": "next 39mins"
+            },
+            {
+              "text": " "
+            },
+            {
+              "entity": "intendedTimeEntity",
+              "slot_name": "intendedTime",
+              "text": "after"
+            },
+            {
+              "text": " "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "when",
+              "text": "at 10:00 am"
+            },
+            {
+              "text": " and "
+            },
+            {
+              "entity": "messageEntity",
+              "slot_name": "message",
+              "text": "some long message"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "make countdown "
+            },
+            {
+              "entity": "countdownEntity",
+              "slot_name": "countdown",
+              "text": "50 mins"
+            },
+            {
+              "text": " "
+            },
+            {
+              "entity": "intendedTimeEntity",
+              "slot_name": "intendedTime",
+              "text": "after"
+            },
+            {
+              "text": " "
+            },
+            {
+              "entity": "snips/datetime",
+              "slot_name": "when",
+              "text": "at 10:00 am"
+            },
+            {
+              "text": " and "
+            },
+            {
+              "entity": "messageEntity",
+              "slot_name": "message",
+              "text": "some long message"
             }
           ]
         }

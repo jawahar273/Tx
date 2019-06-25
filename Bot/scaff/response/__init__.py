@@ -14,7 +14,7 @@ def gen_response(base_path="Bot_response", _sub_path=None, _file_name=None):
     """
 
     print("=" * 20, "Generate Response Files Easy", "=" * 20)
-    print(f"The base folder is from `{base_path}`")
+    print(f"The base folder is `{base_path}`")
     sub_path = _sub_path or input(
         f"name of the sub folder such as for Example `_task`:"
     )

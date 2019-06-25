@@ -1,0 +1,58 @@
+
+
+# to display the message
+---
+type: entity
+name: messageEntity
+values:
+  - display
+  - message
+  - show this on the screen
+  - show in the screen
+  - show in the display
+  - show in display
+  - throw onto the screen
+  - put into the screen
+  - show that
+  - show the world
+  - message# 
+
+---
+type: entity
+name: intendedTimeEntity
+values:
+  - after
+  - before
+  - from now on
+
+---
+type: entity
+name: countdownEntity
+values:
+  - [10 mins, 56 mins, 59 mins, 1 min]
+  - [20 secs, 1 sec,]
+  - [1 hr, 2 hrs, 12 hrs, 40hrs]
+
+#  reminder desc
+---
+type: intent
+name: reminderIntent_cron
+$class: Reminder
+slots:
+    - name:  message
+      entity: messageEntity
+    - name: when
+      entity: snips/datetime
+    - name: countdown
+      entity: countdownEntity
+    - name: intendedTime
+      entity: intendedTimeEntity
+utterances:
+    - reminder --countdown [countdown](40 sec) [intendedTime](after) --time [when](now) --message [message](some long message)
+    - reminder -c [countdown](30 mins) [intendedTime](after) -t [when](10 mins) -m [message](some long message)
+
+    - countdown for [countdown](59 mins) [intendedTime](after) [when](now) and [message](some long message)
+    # countdown for 10 mins after 1 hrs and show in display at it is any ldf
+    - set countdown [countdown](40 mins) [intendedTime](after) [when](now) and  [message](some long message)
+    - start a countdown for [countdown](next 39mins) [intendedTime](after) [when](at 10:00 am) and [message](some long message)
+    - make countdown [countdown](50 mins) [intendedTime](after) [when](at 10:00 am) and [message](some long message)

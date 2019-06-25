@@ -4,7 +4,6 @@ from blinker import signal
 
 from utils import import_class, import_module, env_str
 
-
 # PROCESSED_INPUT = 'PROCESSED_INPUT'
 ASSERTTYPE = "ASSERTTYPE"
 PROCESSED_INPUT = "process_input"
@@ -18,7 +17,7 @@ COMMANDS = {"WIKI": {"name": "wiki"}, "EXIT": {"name": "exit"}}
 CMD_SYMBOLE_START = ":"
 CMD_SYMBOLE_STOP = " "
 
-# To stop run wanted running layer signal will be used.
+# To stop the running layer, signal will be used.
 STOPLAYERNAME = "STOPLAYER"
 STOPLAYER = signal(STOPLAYERNAME)
 

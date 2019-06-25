@@ -4,4 +4,4 @@
 
 TEST_MODULE='txbot'
 
-PROVIDED_PLATFORM = 'tui'
+TARGET_PLATFORM = 'tui'

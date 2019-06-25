@@ -13,3 +13,5 @@ prompt_toolkit==2.0.9
 walrus==0.7.1
 datefinder==0.7.0
 git+https://github.com/kivy/plyer.git
+# dateparser==0.7.1
+# huey==2.1.0

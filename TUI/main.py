@@ -19,12 +19,18 @@ engine.add([WikiLayer({})])
 
 welcome_text = """
 <ansigreen>
-Hi, this is a welcome line from me to tell you that I am a bot
+Hi, this is a welcome line from me to tell you that I am a bot \
 handcraft for handling the function that I am tasked in handling as best I could.
+Mode: CLI
 </ansigreen>
 """
 
+
 def entryPoint():
+    """
+    Intergating with prompt tool kit is used for handling the history of
+    the cli and for key binding.
+    """
     session = PromptSession()
 
     print_formatted_text(HTML(welcome_text))
@@ -35,7 +41,7 @@ def entryPoint():
             if text == '' or not text:
                 continue
 
-            reset_input.step(text)
+            reset_input.toBotText(text)
             style = Style.from_dict({
                 'h1': '#00695C',
                 'h2': '#00796B',
@@ -53,7 +59,6 @@ def entryPoint():
             break
         except EOFError:
             break
-
 
     # print_formatted_text(HTML(engine.go(pretty="base.html")), style=style)
 

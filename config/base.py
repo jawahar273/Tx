@@ -1,9 +1,13 @@
 from os import getenv
 
+from dotenv import load_dotenv
+
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-from walrus import Walrus
 
 from utils import import_class
+
+# loading the env variables
+load_dotenv()
 
 # Template settings
 
@@ -32,8 +36,3 @@ EMAIL_VALID_REGEX = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 # Intent and Dataset storage
 DEFAULT_STARTPOINT = "Bot.storage"
 
-db = Walrus(
-    host=getenv('REDIS-HOST', 'localhost'),
-    port=getenv('REDIS-PORT', 6379),
-    db=getenv('REDIS-DB', 1)
-)

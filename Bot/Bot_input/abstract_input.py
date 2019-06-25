@@ -1,5 +1,5 @@
 """
-Input modeul are created as a pre-processing
+Input model are created as a pre-processing
 set in improving/converting the user text in 
 a understandable way. For example if the given
 text must be searched in stackover flow and the
@@ -12,6 +12,7 @@ from Bot.config import PROCESSED_INPUT
 
 
 class AbstractInput(ABC):
+
     @abstractmethod
     def __init__(self, *args, **kwarg):
 
@@ -24,6 +25,7 @@ class AbstractInput(ABC):
 
 
 class BaseInput(AbstractInput):
+
     def __init__(self, txObject):
         """
         Get the input object as .. py:class:: `Dict`
@@ -63,8 +65,7 @@ class BaseInput(AbstractInput):
     def processed(self):
         """
         .. py:method:: `Processed` must be implemented on each new sub class.
-        return must of dict type with `key`: 'PROCESSED_INPUT' from config
-        module.
+        return must of dict type with `key`: 'PROCESSED_INPUT'.
         """
         self.return_object.update({PROCESSED_INPUT: self.return_object["text"].strip()})
 

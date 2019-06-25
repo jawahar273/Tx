@@ -53,7 +53,6 @@ name: getAllListsTaskIntent_task
 $class: GetAllListsTask
 utterances:
  - list --all [date:snips/datetime](today)
- 
  - get all the list of the task [date:snips/datetime](today)
  - get all list of [date:snips/datetime](last week)
  - get all on this [date:snips/datetime](date)
@@ -61,7 +60,7 @@ utterances:
 
 
 
-# entrie for priority
+# ententityrie for priority
 ---
 type: entity
 name: priorityStatusEntity
@@ -94,8 +93,8 @@ utterances:
  - list [lower](--lower)
  - list of [lower](lower priority task)
  
- - get all high priority between [date:snips/datetime](last monday) and [date:snips/datetime](this week monday)
- - get from [date:snips/datetime](today) to [date:snips/datetime](last week)
+ - get all high priority between [from:snips/datetime](last monday) and [to:snips/datetime](this week monday)
+ - get from [from:snips/datetime](today) to [to:snips/datetime](last week)
 
 
 

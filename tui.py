@@ -1,3 +1,5 @@
 from TUI.main import entryPoint
 
-entryPoint()
+if __name__ == '__main__':
+
+    entryPoint()

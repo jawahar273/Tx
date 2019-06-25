@@ -8,6 +8,7 @@ from Bot.utils import import_class
 
 
 class AbstractEngine:
+
     def __init__(self, *args, **kwarg):
 
         raise NotImplementedError("`__init__` is not implemented")
@@ -50,7 +51,7 @@ class BaseEngine(AbstractEngine):
         self.engine_name = "base_engine"
         output_params = engine_param.get("output_params")
         self.output_object.params(output_params)
-        STOPLAYER.connect(self.subscribe)
+        STOPLAYER.connect(self.subscribe_tobreak)
         # return object is alway for accessing
         # processed input inside.
 
@@ -62,7 +63,7 @@ class BaseEngine(AbstractEngine):
         else:
             self.layers.append(layer)
 
-    def subscribe(self, sender):
+    def subscribe_tobreak(self, sender):
         """
         Get the event signal and return true(for now).
         """
@@ -79,7 +80,7 @@ class BaseEngine(AbstractEngine):
         """
 
         if len(self.layers) == 0:
-            raise ValueError("Layer is empty....")
+            raise ValueError("Layer is empty, add some function layer for processing.")
         self.return_object = self.input_object.processed()
 
         for single_layer in self.layers:

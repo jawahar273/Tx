@@ -3,16 +3,11 @@
 from setuptools import setup, find_packages
 from os import path
 
-from sys import exit
-
-exit(0)
-
 with open("README.rst") as readme_file:
     readme = readme_file.read()
 
 with open("HISTORY.rst") as history_file:
     history = history_file.read()
-
 
 with open(
     path.join(path.dirname(path.abspath(__file__)), "requirements.txt")
@@ -42,6 +37,11 @@ setup(
     keywords="Tx",
     name="Tx",
     packages=find_packages(include=["Tx", "TxBot"]),
+    entry_points={
+        'console_scripts': [
+            'tx = tui.__main__:main'
+        ]
+    },
     setup_requires=setup_requirements,
     test_suite="tests",
     tests_require=test_requirements,

@@ -1,8 +1,3 @@
-import schedule
-import time
+from config.stage import Huey
 
-from config.stage import db
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+from Bot.Bot_response.response_schedule import *
