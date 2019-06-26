@@ -33,6 +33,16 @@ values:
   - [20 secs, 1 sec,]
   - [1 hr, 2 hrs, 12 hrs, 40hrs]
 
+---
+type: entity
+name: listOfCountDownEntity
+values:
+  - list of countdown
+  - countdowns list
+  - countdowns
+  - all countdowns
+  - alive countdowns
+
 #  reminder desc
 ---
 type: intent
@@ -47,6 +57,8 @@ slots:
       entity: countdownEntity
     - name: intendedTime
       entity: intendedTimeEntity
+    - name: listOfCountDown
+      entity: listOfCountDownEntity
 utterances:
     - reminder --countdown [countdown](40 sec) [intendedTime](after) --time [when](now) --message [message](some long message)
     - reminder -c [countdown](30 mins) [intendedTime](after) -t [when](10 mins) -m [message](some long message)
@@ -56,3 +68,8 @@ utterances:
     - set countdown [countdown](40 mins) [intendedTime](after) [when](now) and  [message](some long message)
     - start a countdown for [countdown](next 39mins) [intendedTime](after) [when](at 10:00 am) and [message](some long message)
     - make countdown [countdown](50 mins) [intendedTime](after) [when](at 10:00 am) and [message](some long message)
+    - get me the [listOfCountDown](countdown list)
+    - get me the [listOfCountDown](countdown list) based on it [countdownID](12) 
+    - get me the [listOfCountDown](countdown)  which its id is [countdownID](12) 
+    - show me [listOfCountDown](all countdowns list)
+    

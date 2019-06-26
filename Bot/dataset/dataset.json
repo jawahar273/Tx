@@ -47,6 +47,12 @@
       "matching_strictness": 1.0,
       "use_synonyms": true
     },
+    "countdownID": {
+      "automatically_extensible": true,
+      "data": [],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
     "dataBreachEntity": {
       "automatically_extensible": true,
       "data": [
@@ -96,6 +102,33 @@
         {
           "synonyms": [],
           "value": "from now on"
+        }
+      ],
+      "matching_strictness": 1.0,
+      "use_synonyms": true
+    },
+    "listOfCountDownEntity": {
+      "automatically_extensible": true,
+      "data": [
+        {
+          "synonyms": [],
+          "value": "list of countdown"
+        },
+        {
+          "synonyms": [],
+          "value": "countdowns list"
+        },
+        {
+          "synonyms": [],
+          "value": "countdowns"
+        },
+        {
+          "synonyms": [],
+          "value": "all countdowns"
+        },
+        {
+          "synonyms": [],
+          "value": "alive countdowns"
         }
       ],
       "matching_strictness": 1.0,
@@ -892,7 +925,7 @@
         {
           "data": [
             {
-              "text": "start a countdown "
+              "text": "start a countdown for "
             },
             {
               "entity": "countdownEntity",
@@ -958,6 +991,70 @@
               "entity": "messageEntity",
               "slot_name": "message",
               "text": "some long message"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "get me the "
+            },
+            {
+              "entity": "listOfCountDownEntity",
+              "slot_name": "listOfCountDown",
+              "text": "countdown list"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "get me the "
+            },
+            {
+              "entity": "listOfCountDownEntity",
+              "slot_name": "listOfCountDown",
+              "text": "countdown list"
+            },
+            {
+              "text": " based on it "
+            },
+            {
+              "entity": "countdownID",
+              "slot_name": "countdownID",
+              "text": "12"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "get me the "
+            },
+            {
+              "entity": "listOfCountDownEntity",
+              "slot_name": "listOfCountDown",
+              "text": "countdown"
+            },
+            {
+              "text": "  which its id is "
+            },
+            {
+              "entity": "countdownID",
+              "slot_name": "countdownID",
+              "text": "12"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "show me "
+            },
+            {
+              "entity": "listOfCountDownEntity",
+              "slot_name": "listOfCountDown",
+              "text": "all countdowns list"
             }
           ]
         }

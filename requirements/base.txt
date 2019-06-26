@@ -11,7 +11,7 @@ passlib==1.7.1
 html2text==2018.1.9
 prompt_toolkit==2.0.9
 walrus==0.7.1
-datefinder==0.7.0
+# datefinder==0.7.0
 git+https://github.com/kivy/plyer.git
-# dateparser==0.7.1
-# huey==2.1.0
+dateparser==0.7.1
+huey==2.1.0

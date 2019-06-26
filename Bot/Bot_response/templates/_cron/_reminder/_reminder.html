@@ -1,6 +1,4 @@
 
-
-
 {% extends "response.html" %}
 
 {% block card_style %}
@@ -10,7 +8,26 @@
 {% block card %}
 <div>
     <p>
-        Edit this template.
+        {% if wait_for_countdown %}
+            <div>
+                Count down will be started and please wait....
+            </div>
+        {% elif list_of_task %}
+            <ul>
+                <li>
+                   | id | seconds | description |
+                </li>
+                {% for task in list_of_task %}
+                    <li>
+                       | {{ task.id }} | {{ task.secs }} | {{ task.desc }} |
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div>
+                No Result.
+            </div>
+        {% endif %}
     </p>
 </div>
 {% endblock %}
