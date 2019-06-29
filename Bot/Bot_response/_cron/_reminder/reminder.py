@@ -1,6 +1,21 @@
+"""
+-----------------
+Reminder
+-----------------
 
+Reminder response  is used for setting a goal to be done
+with in  a specific time.
 
-from plyer import notification
+    .. note::
+
+        Right now the reminder response will be handling basic
+        count down task.
+
+Scheduler as the name suggest it schedule the given task with
+the help of Heuy a light weight task manager. Schedular are able to
+get the list of current running task(live one) and are able to revoke a task only
+if it is running or future task.
+"""
 
 from Bot.Bot_response.abstract_response import BaseResponse
 from config.stage import db
@@ -26,9 +41,6 @@ class Reminder(BaseResponse):
         super(Reminder, self).render(
             class_name=self.class_name, sub_path='_cron'
         )
-        # if (getenv('TARGET_PLATFORM') != 'web'):
-
-        #     notification.notify('setting reminder')
 
         intended_time_set = set(['form now on', 'from now', 'after', 'before'])
 

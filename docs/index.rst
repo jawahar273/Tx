@@ -8,6 +8,7 @@ Welcome to Tx's documentation!
    readme
    installation
    usage
+   actions/index
 
 Indices and tables
 ==================

@@ -1,3 +1,12 @@
+
+"""
+-------
+Default 
+-------
+
+Return the default resposne if the user's response is not
+understand or out of scope for the bot engine.
+"""
 from Bot.Bot_response.abstract_response import BaseResponse
 
 

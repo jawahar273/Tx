@@ -1,8 +1,7 @@
 
 from time import sleep, strftime
-from os import getenv
-from plyer import notification
 
+from Bot.utils import send_notification
 from config.stage import Huey
 from .models import CountdownTracker
 
@@ -25,9 +24,7 @@ def start_count_down_basic_case(_time, message, task=None):
     # handling basic case for count down and imidetely
     countdown_sec = None
 
-    if (getenv('TARGET_PLATFORM') != 'web'):
-
-        notification.notify(f'starting count down')
+    send_notification(f'starting count down')
 
     if _time.find('min') is not -1:
 
@@ -60,17 +57,14 @@ def start_count_down_basic_case(_time, message, task=None):
         countdown_sec -= 1
         if interval['half_interval'] == countdown_sec:
 
-            if (getenv('TARGET_PLATFORM') != 'web'):
-                notification.notify(f'half of the time has been over for {_time}')
+            send_notification(f'half of the time has been over for {_time}')
 
         elif interval['quator_interval' ] == countdown_sec:
 
-            if (getenv('TARGET_PLATFORM') != 'web'):
-                notification.notify(f'quator of the time has been over for {_time}')
+            send_notification(f'quator of the time has been over for {_time}')
 
         sleep(1)
-    if (getenv('TARGET_PLATFORM') != 'web'):
-        notification.notify(f'Message: {message}')
+    send_notification(f'Message: {message}')
 
     CountdownTracker.delete(id=task.id)
 
@@ -98,8 +92,8 @@ def revoke_task_by_id(_id):
 
         result = CountdownTracker.get(id=_id)
         Huey.revoke_by_id(result)
+        send_notification(f'Successfully revoked')
 
     except ValueError:
 
-        if (getenv('TARGET_PLATFORM') != 'web'):
-            notification.notify(f'No id found')         
+        send_notification(f'No id found')         

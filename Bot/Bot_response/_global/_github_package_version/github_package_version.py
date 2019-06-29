@@ -1,3 +1,19 @@
+
+"""
+----------------------
+Github Package Version
+----------------------
+
+Get the version of the given package based on the following verse_.
+Thought there are some limitation in getting the version of the page
+as the api track set of package such as mysql, docker, etc.. To
+have better update  follow the api github wiki_
+
+.. _verse: https://verse.pawelad.xyz
+.. _wiki: https://github.com/pawelad/verse/wiki/Available-projects
+
+"""
+
 from requests import exceptions, get
 
 from Bot.Bot_response.abstract_response import BaseResponse

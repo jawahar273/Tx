@@ -1,4 +1,18 @@
-# -*- coding: utf-8 -*-
+"""
+-----
+Pwned
+-----
+Do you know about data breach? If not then you should have atleast awareness
+of data breach.  data breach is the intentional or unintentional release of secure or private/confidential information to an untrusted environment. Other terms for this 
+phenomenon include unintentional information disclosure, data leak and also data spill. [#]_
+
+To check if your personal information has been breach in of the organization that you have
+been using in your day to day life or in the past. The response used Have I Been Pwned. [#]_
+
+
+.. [#] Accouding to `Wikipedia <https://en.wikipedia.org/wiki/Data_breach>`_
+.. [#] Get more detail from the `link <https://en.wikipedia.org/wiki/Have_I_Been_Pwned%3F>`_
+"""
 from urllib import parse
 from requests import exceptions, get
 
@@ -6,6 +20,7 @@ from Bot.Bot_response.abstract_response import BaseResponse
 
 
 class Pwned(BaseResponse):
+
     def __init__(self, scope=None):
 
         super(Pwned, self).__init__(self, scope=scope)
@@ -59,7 +74,6 @@ class Pwned(BaseResponse):
                             }
                         ]
                     )
-                
 
                 return {"statusCode": 200, "msg": {"loop": True, "data": data, "email": _email.encode('utf-8')}}
 

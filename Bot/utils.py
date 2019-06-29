@@ -1,4 +1,7 @@
 from re import split, search
+from os import getenv
+
+from plyer import notification
 
 from Bot.config import CMD_SYMBOLE_STOP, CMD_SYMBOLE_START, TEMPLATE_FORMATE
 from utils import import_class, import_module
@@ -71,3 +74,9 @@ def windows_path_regex(path):
     """
     regex = r"[a-zA-Z]:\\((?:.*?\\)*).*"
     return True if search(regex, path) else False
+
+
+def send_notification(msg, *args, **kwargs):
+    if (getenv('TARGET_PLATFORM') != 'web'):
+        notification.notify(msg, *args, **kwargs)
+

@@ -1,9 +1,12 @@
+
+
 from Bot.Bot_response.abstract_response import BaseResponse
 
 from Bot.Bot_response.utils import geneate_response_from_intent
 
 
 class Greeting(BaseResponse):
+
     def __init__(self, scope=None):
 
         super(Greeting, self).__init__(self, scope=scope)

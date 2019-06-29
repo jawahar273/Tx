@@ -108,7 +108,6 @@ def intent():
 
 @main.command("response",
 help="creating the both 'response' file")
-
 def response():
     gen_response()
 
@@ -119,7 +118,6 @@ help="creating the both 'response' and 'intents' file")
 help="base folder give the folder name for saving intents")
 @click.option("--rpath", type=click.Path(exists=True),
 help="base folder give the folder name for saving response")
-
 def both(ipath, rpath):
     if click.confirm("Do you like generate Intent and Response both?"):
         if not ipath:
@@ -171,18 +169,24 @@ def intent_to_dataset_format(path: str, name: str, dataset: str, common: str) ->
 
     .. code-block:: bash
 
-        # @deprecated
         storage/
             _profile/
                 intents
-                dataset  # manully create this folder.
+                dataset  # manually create this folder has been moved into as global.
 
     .. note::
 
         The intent file ends with `?` will be skips in traning
-        all intent.
+            all intent.
 
-        .. code-block::
+It is possible to use all the intent file as a dataset.json.
+
+    .. note::
+
+        For generating global dataset based on all intent present inside the storage
+            folder
+
+        .. code-block:: bash
 
             python scraff.py bot/storage # folder contain all intent files
 
@@ -196,7 +200,6 @@ def intent_to_dataset_format(path: str, name: str, dataset: str, common: str) ->
     """
     INTENT = "intents"
     absolute_intent_path = []
-
 
     # just renaming to avoid confusion
     dataset_path = dataset
