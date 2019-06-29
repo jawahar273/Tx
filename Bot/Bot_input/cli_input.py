@@ -1,3 +1,5 @@
+
+# @maintenance mode
 from colorama import init
 from termcolor import colored
 
@@ -7,9 +9,10 @@ from .abstract_input import BaseInput
 
 
 class CLIInput(BaseInput):
+
     def __init__(self, txObject=None):
 
-        txObject.update({"text": input(colored("Tx#> ", "green"))})
+        # txObject.update({"text": input(colored("Tx#> ", "green"))})
 
         super(CLIInput, self).__init__(txObject)
 
@@ -29,3 +32,11 @@ class CLIInput(BaseInput):
 
         super(CLIInput, self).processed()
         return self.return_object
+
+    def toBotText(self, text):
+        """
+        Extra step for handling the input to the
+        bot with custom method.
+        """
+        self.txObject.update({"text": text})
+        super(CLIInput, self).__init__(self.txObject)
