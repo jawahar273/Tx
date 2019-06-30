@@ -1,14 +1,13 @@
-# @maintenance mode
+"""
+Common engine will only return the layer's result
+as it is.
+# @depreacted mode
 
+"""
 from Bot.Bot_layer.test_layer import SampleTestLayer
 
 from .abstract_engine import BaseEngine
 from Bot.config import FOR_OUTPUT, PROCESSED_INPUT
-
-"""
-Common engine will only return the layer's result
-as it is.
-"""
 
 
 class CommonEngine(BaseEngine):

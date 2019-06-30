@@ -1,7 +1,3 @@
-"""
-Engine module is used for higher level or specific object
-purpose. Handle them with care.
-"""
 
 from Bot.config import STOPLAYER
 from Bot.utils import import_class
@@ -24,10 +20,9 @@ class AbstractEngine:
 
 class BaseEngine(AbstractEngine):
     """
-    Base engine will be mother of all its sub-class. As
-    major lifting is taken in inside the `BaseEngine`. Just
-    use the sub-class to handline the case which Mother's
-    class can't be handling.
+    Base engine will be mother of all its sub-class.
+    As major lifting is taken in inside the `BaseEngine`. Just use the sub-class
+    to handline the case which Mother's class can't be handling.
     """
 
     def __init__(self, input_object, output_object, engine_param=None):
@@ -37,8 +32,9 @@ class BaseEngine(AbstractEngine):
         All the layer must be set using
         .. py:method:: BaseEngine.add(layers) Engine class.
 
-        ..note
-        1. get the value from input object using the function
+        ..note::
+
+            1. get the value from input object using the function
         """
         self.input_object = input_object
         self.output_object = output_object
@@ -75,6 +71,7 @@ class BaseEngine(AbstractEngine):
         Return is layer, will handling the input sentence.
 
         ..notes ::
+
             sub class must return `self.return_object` itself.
             Returning to ` OutPut` module must decised by ` Engine`.
         """
@@ -99,8 +96,8 @@ class BaseEngine(AbstractEngine):
 
     def next(self):
         """
-        .. py:method:: BasedEngine.next() are recommented to be called after the end
-        of :class:method
+        :meth::`BasedEngine.next` are recommenced to be called after the end
+        of engine.
         """
 
         if self.engine_param["is_next"]:

@@ -1,14 +1,16 @@
-----------
+Bot Internal Structure
+======================
+
+
 Architures
 ----------
 
-TxBot
 
 
-Tx-Bot compresseing of basic 5 components .. py:module::`~Bot.Bot_engine`, :module: `~Bot.Bot_input`, .. py:module:: `~Bot.Bot_output`, .. py:module::  `~Bot.Bot_layer` and .. py:module::  `~Bot.Bot_response`.
+Tx-Bot compresseing of basic 5 components  :Class:`Bot.Bot_engine.abstract_engine`,
+:mod:`Bot.Bot_input.abstract_input`, :Class:`Bot.Bot_output.abstract_output`, :Class:`Bot.Bot_layer.abstract_layer`
+and :Class:`Bot.Bot_response.abstract_response`.
 
-.. image:: ./TxBot_arc.jpg
+.. image:: ./images/TxBot_arc.jpg
      :alt: TxBot Articures
-
-
 

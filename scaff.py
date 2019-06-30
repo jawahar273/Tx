@@ -1,5 +1,5 @@
 """
-Scaff module helpful in increating the prodicitive of
+Scaff module helpful in increating the productive time of
 generating of intent response files.
 Scaff should be used alway in developer times as this functional
 depend fixed location.
@@ -30,11 +30,8 @@ Intent Defining Rules.
 
         python scaff.py intent # answer some questions.
 
-1. Always declare intent name ends with '-Intent
- and along with sub folder name Example `BioIntent_profile`.
-2. Class in response must of Title case with
- intent name without the suffiex '-Intent'(optional)
-3. In-Build folder for saving the intent file is 'bot/Storage'.
+1. In-Build folder for saving the intent file is 'Bot/Storage'.
+2. Following snippet is example after generating of intent from the command line.
 
 .. code-block:: yaml
 
@@ -62,15 +59,10 @@ Response Defining Rules.
     .. code-block:: bash
 
         # In place of choosing the file name,
-        # it is highly recommented don't use underscore as the
+        # it is highly recommenced don't use underscore as the
         # underscore will automatically added to file name.
         python scaff.py response # answer some questions.
 
-
-1. The response file must align with intent file that is the name
- of the response must be same as the intent file.
- Such example is `Bot_response/_global/_pwned` and template
- `Bot_response/templates/_global/_pwned/_pwned.html` is equallent to `storage/_global/intents/pwned.yml`
 
 
 Click Commands functions
@@ -172,19 +164,18 @@ def intent_to_dataset_format(path: str, name: str, dataset: str, common: str) ->
         storage/
             _profile/
                 intents
-                dataset  # manually create this folder has been moved into as global.
 
     .. note::
 
         The intent file ends with `?` will be skips in traning
-            all intent.
+        all intent.
 
 It is possible to use all the intent file as a dataset.json.
 
     .. note::
 
         For generating global dataset based on all intent present inside the storage
-            folder
+        folder
 
         .. code-block:: bash
 

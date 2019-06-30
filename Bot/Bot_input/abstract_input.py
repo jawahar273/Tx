@@ -1,6 +1,6 @@
 """
 Input model are created as a pre-processing
-set in improving/converting the user text in 
+set in improving/converting the user text in
 a understandable way. For example if the given
 text must be searched in stackover flow and the
 result can be taken to engine.
@@ -56,7 +56,7 @@ class BaseInput(AbstractInput):
 
     def get_access_keys(self):
         """
-        .. py:method:: `get_access_key` which return the current object
+        Which return the current object
         access keys which will be used internally by input object
         class.
         """
@@ -64,7 +64,7 @@ class BaseInput(AbstractInput):
 
     def processed(self):
         """
-        .. py:method:: `Processed` must be implemented on each new sub class.
+        This method must be implemented on each new sub class.
         return must of dict type with `key`: 'PROCESSED_INPUT'.
         """
         self.return_object.update({PROCESSED_INPUT: self.return_object["text"].strip()})

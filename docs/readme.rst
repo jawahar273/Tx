@@ -1,4 +1,4 @@
-.. include:: ../README.rst
 
-.. include:: ./bot/architures.rst
-.. include:: ./bot/settings.rst
+.. include:: ../README.rst
+.. include:: ./installation.rst
+.. include:: ./get_start.rst

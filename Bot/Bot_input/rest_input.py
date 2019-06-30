@@ -2,6 +2,9 @@ from .abstract_input import BaseInput
 
 
 class RESTInput(BaseInput):
+    """
+    RESTInput is used to communication using REST operation. 
+    """
 
     def __init__(self, txObject):
         self.txObject = txObject

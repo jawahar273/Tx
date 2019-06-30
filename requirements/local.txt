@@ -14,8 +14,8 @@ colorama==0.4.1
 profiling==0.1.3
 memory-profiler==0.55.0
 
-click==7.0
 
+html2text==2018.1.9
 
 pytest-sanic==1.0.0 
 

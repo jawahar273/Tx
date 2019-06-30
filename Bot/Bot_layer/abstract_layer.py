@@ -7,6 +7,7 @@ from abc import ABC, abstractmethod
 
 
 class AbstractLayer(ABC):
+
     @abstractmethod
     def __init__(self, *args, **kwargs):
 
@@ -19,6 +20,7 @@ class AbstractLayer(ABC):
 
 
 class BaseLayer(AbstractLayer):
+
     def __init__(self, params):
         """
         Get the input data from the layer/input
@@ -38,14 +40,14 @@ class BaseLayer(AbstractLayer):
 
     def on_success(self, txObject):
         """
-        Wraper function for passing :func: `response` on the event of
+        Wraper function for passing :func:`response` on the event of
         success.
         """
         pass
 
     def on_fails(self, txObject):
         """
-        Wraper function for passing :func: `response` on the event of
+        Wraper function for passing :func:`response` on the event of
         fails.
         """
         pass

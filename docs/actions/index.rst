@@ -1,6 +1,5 @@
-=======
-Actions
-=======
+Actions Working
+---------------
 
 .. note::
 

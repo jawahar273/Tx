@@ -10,9 +10,10 @@ from Bot.utils import import_response_intent
 # from config.stage.settings import logger
 from config.stage import logger
 
+
 class DefaultEngine(BaseEngine):
     """
-    Default Engine module will be used for manging the NLU engine.
+    Default Engine module will be used for managing the NLU engine.
     """
 
     def __init__(self, input_object, output_object, engine_param=None):
@@ -25,21 +26,28 @@ class DefaultEngine(BaseEngine):
         self.train_model(dataset_path)
 
     def train_model(self, path):
+        """
+        Train the NLU JSON format by SNIP NLU.
 
+        :param str path: path of the dataset.json
+        """
         with open(path) as dataset_file:
 
             self.engine.fit(json.load(dataset_file))
 
     def parse(self, request_text):
-
+        """
+        Parser the given user's text using the the
+        Snip NLU engine.
+        """
         engine = self.engine.parse(request_text)
         return engine
 
     def response(self, scope):
         """
-        Get the :class: `Dict` status from NLU or command
+        Get the :class:`Dict` status from NLU or command
         execution successfully, the one
-        response class :module: `Bot.Bot_response`
+        response class :mod:`Bot.Bot_response`
         imported.
         """
 
@@ -48,13 +56,24 @@ class DefaultEngine(BaseEngine):
         return import_response_intent(intent_name)(scope=scope)
 
     def command_success_response(self, txObject):
-
+        """
+        Find if there the given user's text is related
+        to command request. if then change the scope
+        intent name as ``commandsIntent_command``.
+        """
         txObject.update(
             {NLUSCOPE: {"intent": {"intentName": "commandsIntent_command"}}}
         )
 
     def add(self, layer):
-
+        """
+        Add the layer function into the engine's
+        list for executing of the layer function.
+        
+        :param :Class:`Bot.Bot_layer.abstract_layer` layer: the object
+        of function are added as layer into the engine for concurrency
+        exection.
+        """
         super(DefaultEngine, self).add(layer)
 
     def go(self, pretty="base.html"):
@@ -77,7 +96,6 @@ class DefaultEngine(BaseEngine):
             self.return_object[NLUSCOPE] = self.parse(
                 self.return_object[PROCESSED_INPUT]
             )
-
 
         del self.return_object[PROCESSED_INPUT]
 

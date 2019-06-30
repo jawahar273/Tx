@@ -9,6 +9,10 @@ from .abstract_input import BaseInput
 
 
 class CLIInput(BaseInput):
+    """
+    CLIInput class is used to intergating with command line
+    interface.
+    """
 
     def __init__(self, txObject=None):
 
