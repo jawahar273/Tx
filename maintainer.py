@@ -9,6 +9,10 @@ with `redis-py <https://github.com/andymccurdy/redis-py>`_.
 
         huey_consumer maintainer.Huey -w 2 -c 2
 
+.. warning::
+
+    Redis server must be running in background for huey to work properly.
+
 """
 
 from config.stage import Huey
