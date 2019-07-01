@@ -1,0 +1,4 @@
+-r requirements/base.txt
+-r requirements/CLI.txt
+-r requirements/sanic.txt
+-r requirements/speech.txt
