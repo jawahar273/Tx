@@ -1,7 +1,5 @@
 Welcome to Tx's documentation!
 ======================================
-.. image:: ./images/web-crawler.svg
-     :width: 40%
 
 .. toctree::
    :maxdepth: 2
