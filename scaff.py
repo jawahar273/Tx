@@ -65,8 +65,44 @@ Response Defining Rules.
 
 
 
-Click Commands functions
-------------------------
+Traning
+-------
+Converted the intent files into NLU readable/training
+formate with help of `SNIP NLU generator`. It is possible to use all the
+intent file as a dataset.json.
+
+.. note::
+
+    .. code-block:: bash
+
+        # absolute path must be given.
+        python scaff.py train Bot/storage/_profile --name dataset.json --dataset dataset
+
+Folder structure for the intent and dataset.
+
+.. code-block:: bash
+
+    storage/
+        _profile/
+            intents
+
+.. warning::
+
+    Inside storage folder if any intent folder endswith ``?`` then
+    they are ignore in traning process. If for example the``_profile?`` 
+    intent folder endswith then the this folder will be ignored
+    completely by algorithum.
+
+
+.. note::
+
+    For generating global dataset based on all intent present inside the storage
+    folder
+
+    .. code-block:: bash
+
+        # folder contain all intent files
+        python scraff.py bot/storage --name dataset.json --dataset dataset
 
 """
 
@@ -85,40 +121,42 @@ def main():
     pass
 
 
-@main.command("m2r",
-help="conver the markdown file into rst extention")
+@main.command("m2r", help="conver the markdown file into rst extention")
 @click.argument("convert_file")
 def m2r(convert_file):
     run(f"m2r {convert_file}".split())
 
 
-@main.command("intent",
-help="creating the both 'intent' file")
+@main.command("intent", help="creating the both 'intent' file")
 def intent():
     gen_intent()
 
 
-@main.command("response",
-help="creating the both 'response' file")
+@main.command("response", help="creating the both 'response' file")
 def response():
     gen_response()
 
 
-@main.command("both",
-help="creating the both 'response' and 'intents' file")
-@click.option("--ipath", type=click.Path(exists=True),
-help="base folder give the folder name for saving intents")
-@click.option("--rpath", type=click.Path(exists=True),
-help="base folder give the folder name for saving response")
+@main.command("both", help="creating the both 'response' and 'intents' file")
+@click.option(
+    "--ipath",
+    type=click.Path(exists=True),
+    help="base folder give the folder name for saving intents",
+)
+@click.option(
+    "--rpath",
+    type=click.Path(exists=True),
+    help="base folder give the folder name for saving response",
+)
 def both(ipath, rpath):
     if click.confirm("Do you like generate Intent and Response both?"):
         if not ipath:
-            ipath = 'storage'
+            ipath = "storage"
 
         temp = gen_intent(ipath)
-    
+
         if rpath:
-            temp['base_path'] = rpath
+            temp["base_path"] = rpath
         gen_response(**temp)
     else:
         click.echo("abort!")
@@ -126,8 +164,8 @@ def both(ipath, rpath):
 
 @main.command(
     "train",
-   help="\n simply type `Bot/storage/` for get starting.\n"
-    +"convert list of intent file into train format by giving the folder path `Bot/storage/_profile` or `Bot/storage/` for train all intent file inside",
+    help="\n simply type `Bot/storage/` for get starting.\n"
+    + "convert list of intent file into train format by giving the folder path `Bot/storage/_profile` or `Bot/storage/` for train all intent file inside",
 )
 @click.argument("path", type=click.Path(exists=True))
 @click.option(
@@ -147,39 +185,7 @@ def both(ipath, rpath):
 )
 def intent_to_dataset_format(path: str, name: str, dataset: str, common: str) -> None:
     """
-    Converted the intent files into NLU readable/training
-    formate with help of `SNIP NLU generator`.
-
-    .. note::
-
-        .. code-block:: bash
-
-            # absolute path must be given.
-            python scaff.py train Bot/storage/_profile --name dataset.json --dataset dataset
-
-    Folder structure for the intent and dataset.
-
-    .. code-block:: bash
-
-        storage/
-            _profile/
-                intents
-
-    .. note::
-
-        The intent file ends with `?` will be skips in traning
-        all intent.
-
-It is possible to use all the intent file as a dataset.json.
-
-    .. note::
-
-        For generating global dataset based on all intent present inside the storage
-        folder
-
-        .. code-block:: bash
-
-            python scraff.py bot/storage # folder contain all intent files
+    
 
     :param path: location of the intent folder and location of dataset folder
         are take from the single arguments.

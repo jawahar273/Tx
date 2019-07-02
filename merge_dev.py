@@ -1,3 +1,29 @@
+"""
+Merge dev file help in generating of ``.env`` and ``.gitignore``
+corresponding based on the .envs and .gitignores folder. The
+main object of this folder to simple the based on the requirements
+of need.
+
+For creating ``.env`` following command will be useful.
+
+.. code-block:: bash
+
+    # for generating the `.env` file based on the
+    # .envs folder which for separating environment
+    python merge_dev.py -e true
+
+For creating ``.gitignore`` following command will be useful.
+
+.. code-block:: bash
+
+    # for generating the `.gitignore` file based on the
+    # .gitignores, based the nature of
+    # language this is useful in seprating file
+    # For example python and javascrip might have diffrent gitignores
+    python merge_dev.py -g true
+    
+
+"""
 import os
 from typing import Sequence
 import click
@@ -60,7 +86,7 @@ def get_git_ignore():
 
 
 def merge(
-    output_file_path: str, merged_file_paths: Sequence[str], append_linesep: bool=True
+    output_file_path: str, merged_file_paths: Sequence[str], append_linesep: bool = True
 ) -> None:
     with open(output_file_path, "w") as output_file:
         for merged_file_path in merged_file_paths:

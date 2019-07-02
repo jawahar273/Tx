@@ -69,7 +69,9 @@ utterances:
     - start a countdown for [countdown](next 39mins) [intendedTime](after) [when](at 10:00 am) and [message](some long message)
     - make countdown [countdown](50 mins) [intendedTime](after) [when](at 10:00 am) and [message](some long message)
     - get me the [listOfCountDown](countdown list)
-    - get me the [listOfCountDown](countdown list) based on it [countdownID](12) 
-    - get me the [listOfCountDown](countdown)  which its id is [countdownID](12) 
+    - get me the [listOfCountDown](countdown list) based on it id [countdownID](12) 
+    - get me the [listOfCountDown](countdown) which its id is [countdownID](12) 
+    - get me the [listOfCountDown](countdown) and [countdownID](12) 
+    - get me the [listOfCountDown](countdown) and id [countdownID](12) 
     - show me [listOfCountDown](all countdowns list)
     

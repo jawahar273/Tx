@@ -1,7 +1,19 @@
 """
+
+Humor
+-----
+
 Bot are need to more friendly ah. Some-time we might me low on energy we
 might need joke to boost our self. This response return with some level
 of humber to user.
+
+For example:
+
+.. code-block:: yaml
+
+    - tell me some jokes
+    - Do know any jokes
+    - I am sad today
 
 """
 import os
@@ -13,7 +25,6 @@ from Bot.Bot_response.abstract_response import BaseResponse
 
 
 class Humor(BaseResponse):
-
     def __init__(self, scope=None):
 
         super(Humor, self).__init__(self, scope=scope)

@@ -1,14 +1,15 @@
 
-Settings
---------
+.. Settings
+.. --------
 
-Must run Command
-----------------
-
-1. Run ``python -m snips_nlu download en`` for downloading required
-file for snips.
 
 Environment
 -----------
-1. Setting target Platform must be ``TARGET_PLATFORM`` are ``web``, ``tui``.
-2. Template formte are defined in ``TEMPLATE_FORMATE`` are ``html``, ``txt``.
+
+================ ========================= ============================================================
+Name             Value                     Describe
+================ ========================= ============================================================
+TARGET_PLATFORM  web, tui(default)          To Describe the current running platform which is web or
+                                            TUI.
+TEMPLATE_FORMATE txt, html(default)         
+================ ========================= ============================================================

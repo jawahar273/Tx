@@ -9,6 +9,13 @@ phenomenon include unintentional information disclosure, data leak and also data
 To check if your personal information has been breach in of the organization that you have
 been using in your day to day life or in the past. The response used Have I Been Pwned. [#]_
 
+For example:
+
+.. code-block:: yaml
+
+    - have my email id Claudine85@alo.com been hacked
+    - Check email id Nathanial112@hotmail.com been data breach
+
 
 .. [#] Accouding to `Wikipedia <https://en.wikipedia.org/wiki/Data_breach>`_
 .. [#] Get more detail from the `link <https://en.wikipedia.org/wiki/Have_I_Been_Pwned%3F>`_
@@ -20,7 +27,6 @@ from Bot.Bot_response.abstract_response import BaseResponse
 
 
 class Pwned(BaseResponse):
-
     def __init__(self, scope=None):
 
         super(Pwned, self).__init__(self, scope=scope)
@@ -75,7 +81,14 @@ class Pwned(BaseResponse):
                         ]
                     )
 
-                return {"statusCode": 200, "msg": {"loop": True, "data": data, "email": _email.encode('utf-8')}}
+                return {
+                    "statusCode": 200,
+                    "msg": {
+                        "loop": True,
+                        "data": data,
+                        "email": _email.encode("utf-8"),
+                    },
+                }
 
             elif status_code == 403:
 
@@ -142,9 +155,7 @@ class Pwned(BaseResponse):
                 # _range = slot["range"]
                 # rawValue = self.scope["input"]
                 breach = self.check_for_breach(slot["rawValue"])
-                breach["msg"]["breach_level"] = self.level_of_compormised(
-                    breach["msg"]
-                )
+                breach["msg"]["breach_level"] = self.level_of_compormised(breach["msg"])
                 break
 
         if breach is None:

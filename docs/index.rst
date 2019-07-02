@@ -1,14 +1,17 @@
 Welcome to Raven's documentation!
 ======================================
 
+.. image:: https://cdn.statically.io/gh/jawahar273/Tx/9628c8ac/docs/images/raven.svg
+     :width: 40%
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    readme
    usage
-   structures
    actions
+   structures
    api
    
 
