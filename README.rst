@@ -6,21 +6,17 @@ Raven is an umbrella package which is has intergation Tx-Bot(small NLU chatbot),
 .. image:: https://cdn.statically.io/gh/jawahar273/Tx/9628c8ac/docs/images/raven.svg
      :width: 40%
 
-.. image:: https://cdn.statically.io/gh/jawahar273/Tx/9628c8ac/docs/images/raven.svg
-     :width: 40%
+|MIT Licence| |forthebadge| 
 
-|MIT Licence|
+|pythonforthebadge|
 
-.. |MIT Licence| image:: https://img.shields.io/badge/MIT-brightgreen.svg?style=for-the-badge
-   :target: https://opensource.org/licenses/mit-license.php
+.. |MIT Licence| image:: https://img.shields.io/badge/License-MIT-brightgreen.svg?style=for-the-badge
+   :target: https://opensource.org/licenses/license-mit.php
 
-
-|forthebadge|
 
 .. |forthebadge| image:: https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg
    :target: https://forthebadge.com
 
-|pythonforthebadge|
 
 .. |pythonforthebadge| image:: https://forthebadge.com/images/badges/made-with-python.svg
    :target: https://forthebadge.com
