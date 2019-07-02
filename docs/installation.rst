@@ -49,3 +49,29 @@ Or download the `tarball`_:
 
 .. _Github repo: https://github.com/jawahar273/Tx
 .. _tarball: https://github.com/jawahar273/Tx/tarball/master
+
+
+Pipenv
+------
+
+Pipenv automatically create and manages the dependency using ``pip``, ``virtualenv`` and adding/removing
+the packages using ``Pipfile`` and ``Pipfile.lock``. One of the main object is remove the
+dependency on ``requirement.txt`` file.
+
+.. code-block:: bash
+
+    pip install --user pipenv
+
+
+The ``requirements/*.txt`` is compartable with Pipenv for recurrent installing of packages.
+
+.. code-block:: bash
+
+    # step: 1 (for development/production)
+    pipenv install -r requirements/base.txt
+    # setp: 2 (for development only)
+    pipenv install -r requirements/local.txt --dev
+    # setp: 3 (only if you are need CLI)
+    pipenv install -r requirements/CLI.txt
+    # setp: 3 (only if you need Sanic)
+    pipenv install -r requirements/sanic.txt

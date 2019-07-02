@@ -1,6 +1,7 @@
 snips-nlu==0.19.5
 PyYAML==5.1
-git+https://github.com/jek/blinker.git # for event signal system.
+ # for event signal system.
+git+https://github.com/jek/blinker.git#egg=blinker
 pymediawiki==0.6.1
 Jinja2==2.10.1
 requests==2.21.0
@@ -9,7 +10,7 @@ python-dotenv==0.10.1
 passlib==1.7.1
 walrus==0.7.1
 # datefinder==0.7.0
-git+https://github.com/kivy/plyer.git
+git+https://github.com/kivy/plyer.git#egg=plyer
 dateparser==0.7.1
 huey==2.1.0
 loguru==0.3.0

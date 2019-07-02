@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 from os import path
 
-from version import __version__
+from version import version
 
 with open("README.rst") as readme_file:
     readme = readme_file.read()
@@ -38,15 +38,11 @@ setup(
     keywords="Tx",
     name="Tx",
     packages=find_packages(include=["Tx", "TxBot"]),
-    entry_points={
-        'console_scripts': [
-            'tx = tui.__main__:main'
-        ]
-    },
+    entry_points={"console_scripts": ["tx = tui.__main__:main"]},
     setup_requires=setup_requirements,
     test_suite="tests",
     tests_require=test_requirements,
     url="https://github.com/jawahar273/Tx",
-    version=__version__,
+    version=version,
     zip_safe=True,
 )

@@ -3,7 +3,6 @@
 # write directly, go to the .gitignore folder.
 # -------------------------------------------------------------
 
-Pipfile
 .idea/
 
 # python git ignores

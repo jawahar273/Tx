@@ -24,6 +24,9 @@ To run the bot in the TUI which can test or to run in production.
 Scheduler
 *********
 
+`Huey <https://huey.readthedocs.io>`_ is light weight task queue which schedule tasks to execute at a given time, or after a given delay,
+schedule recurring tasks, like a crontab, task prioritization, task pipelines etc..
+
 .. automodule:: maintainer
 
 .. automodule:: Bot.Bot_response.response_schedule

@@ -1,4 +1,4 @@
--r ./base.txt
+# -r ./base.txt
 
 
 mypy==0.670  # https://github.com/python/mypy
@@ -29,5 +29,4 @@ twine==1.13.0
 
 pre-commit==1.15.1
 
-alembic==1.0.10
 m2r

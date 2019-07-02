@@ -103,13 +103,13 @@ class Pwned(BaseResponse):
             elif status_code == 503:
 
                 return {
-                    "statusCode": static_code,
+                    "statusCode": status_code,
                     "msg": {"loop": False, "data": "site is unavailable"},
                 }
 
             return status_code
 
-        except exceptions.RequestException as e:
+        except exceptions.RequestException:
 
             return {
                 "statusCode": 500,
