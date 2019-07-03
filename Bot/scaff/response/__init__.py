@@ -18,8 +18,8 @@ def gen_response(base_path="Bot_response", _sub_path=None, _file_name=None):
     sub_path = _sub_path or input(
         f"name of the sub folder such as for Example `_task`:"
     )
-    if(not sub_path.startswith('_')):
-        sub_path = f'_{sub_path}'
+    if not sub_path.startswith("_"):
+        sub_path = f"_{sub_path}"
     # _sub_path = sub_path
     input_path = _file_name or input(f"name of the response file: ")
     file_name = invert_title(input_path)
@@ -40,7 +40,12 @@ def gen_response(base_path="Bot_response", _sub_path=None, _file_name=None):
             os.path.dirname("Bot/storage"), base_path, sub_path, input_path
         )
 
-        if not confirm("Files may be overridden. Still do like to continue"):
+        # Ux flow: there may be ambiguity in this code.
+        if _sub_path:
+            print("Files may be overridden, press 1  to exit or press any key")
+            if input("..") == "1":
+                exit_now()
+        elif not confirm("Files may be overridden. Still do like to continue"):
             exit_now()
 
         os.makedirs(input_path)

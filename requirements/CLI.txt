@@ -2,3 +2,4 @@ prompt_toolkit==2.0.9
 colorama==0.4.1
 click==7.0
 termcolor
+python-socketio==4.2.0

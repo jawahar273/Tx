@@ -26,16 +26,3 @@ TEMPLATE_FORMATE = env_str("TEMPLATE_FORMATE", "html")
 
 # Response Config
 IGNORABLE_THRESHOLD_VALUE = 0.58
-
-# logger Config
-logger = None
-
-try:
-
-    # for importing sanic logger
-    logger = import_class(getenv("LOGGERCLASS", "sanic.log.logger"))
-
-except (AttributeError, ValueError):
-
-    # importing standard logger module
-    logger = import_module(getenv("LOGGERCLASS", "logging"))

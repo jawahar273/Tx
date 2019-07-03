@@ -5,3 +5,6 @@
 TEST_MODULE='txbot'
 
 TARGET_PLATFORM = 'tui'
+
+DEBUG=true
+FLASK_DEBUG={DEBUG}

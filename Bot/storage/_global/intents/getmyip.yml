@@ -1,0 +1,13 @@
+#  getmyip desc
+---
+type: intent
+name: getmyipIntent_global
+$class: Getmyip
+utterances:
+    - find my public ip address
+    - get my ip address
+    - check the ip address
+    - show me the ip address
+    - track my ip address
+    - track ip address
+    

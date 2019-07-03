@@ -2,7 +2,6 @@
 Response schedule
 ^^^^^^^^^^^^^^^^^
 
-
 Response schedule is base hub where all the scheduler inside the response must be importing
 here which intern it will be register with Huey producer for
 consumer. By using the parent, child approach the aggregation of the function can

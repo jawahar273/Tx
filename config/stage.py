@@ -1,25 +1,27 @@
 from os import getenv
+from os.path import dirname, abspath, join as path_join
 from importlib import import_module
-from datetime import datetime 
+from datetime import datetime
 
 from walrus import Walrus
 from huey import RedisHuey
 
 settings = import_module(getenv("CONFIG", "config.local"))
-logger = settings.logger
 
 db = Walrus(
-    host=getenv('REDIS-HOST', 'localhost'),
-    port=getenv('REDIS-PORT', 6379),
-    db=getenv('REDIS-DB', 1)
+    host=getenv("REDIS-HOST", "localhost"),
+    port=getenv("REDIS-PORT", 6379),
+    db=getenv("REDIS-DB", 1),
 )
 
 Huey = RedisHuey(
-    host=getenv('REDIS-HOST', 'localhost'),
-    port=getenv('REDIS-PORT', 6379),
-    db=getenv('REDIS-DB', 2)
+    host=getenv("REDIS-HOST", "localhost"),
+    port=getenv("REDIS-PORT", 6379),
+    db=getenv("REDIS-DB", 2),
 )
 
+ROOT_DIR = dirname(abspath(__file__))
+LOG_PATH = path_join(ROOT_DIR, "log")
 # from blinker import signal
 
 # from scheduler import HEARTBEAT

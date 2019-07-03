@@ -3,8 +3,13 @@ Utils function for global usage.
 """
 from importlib import import_module as imm
 from os import getenv
+from os.path import join
 
 # from config.stage import heartbeat_meta
+
+
+def path_join(path, *args):
+    return join(path, *args)
 
 
 def render_template_file(file_name: str, **kwargs: dict):

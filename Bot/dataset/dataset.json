@@ -395,6 +395,52 @@
         }
       ]
     },
+    "getmyipIntent_global": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "find my public ip address"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "get my ip address"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "check the ip address"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "show me the ip address"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "track my ip address"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "track ip address"
+            }
+          ]
+        }
+      ]
+    },
     "github_package_versionIntent_global": {
       "utterances": [
         {
@@ -685,7 +731,7 @@
               "text": "Claudine85@alo.com"
             },
             {
-              "text": " has been "
+              "text": " been "
             },
             {
               "entity": "dataBreachEntity",
@@ -705,7 +751,7 @@
               "text": "Nathanial112@hotmail.com"
             },
             {
-              "text": " has been "
+              "text": " been "
             },
             {
               "entity": "dataBreachEntity",
@@ -725,7 +771,7 @@
               "text": "Sister.Harvey25@yahoo.com"
             },
             {
-              "text": " has been "
+              "text": " been "
             },
             {
               "entity": "dataBreachEntity",
@@ -745,7 +791,7 @@
               "text": "Brady_Durgan@hotmail.com"
             },
             {
-              "text": " has been "
+              "text": " been "
             },
             {
               "entity": "dataBreachEntity",
@@ -1017,7 +1063,7 @@
               "text": "countdown list"
             },
             {
-              "text": " based on it "
+              "text": " based on it id "
             },
             {
               "entity": "countdownID",
@@ -1037,7 +1083,47 @@
               "text": "countdown"
             },
             {
-              "text": "  which its id is "
+              "text": " which its id is "
+            },
+            {
+              "entity": "countdownID",
+              "slot_name": "countdownID",
+              "text": "12"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "get me the "
+            },
+            {
+              "entity": "listOfCountDownEntity",
+              "slot_name": "listOfCountDown",
+              "text": "countdown"
+            },
+            {
+              "text": " and "
+            },
+            {
+              "entity": "countdownID",
+              "slot_name": "countdownID",
+              "text": "12"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "text": "get me the "
+            },
+            {
+              "entity": "listOfCountDownEntity",
+              "slot_name": "listOfCountDown",
+              "text": "countdown"
+            },
+            {
+              "text": " and id "
             },
             {
               "entity": "countdownID",

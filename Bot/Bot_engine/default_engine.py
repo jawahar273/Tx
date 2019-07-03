@@ -1,14 +1,17 @@
 import json
 
 from snips_nlu import SnipsNLUEngine
+from loguru import logger
 
 from .abstract_engine import BaseEngine
 
 from Bot.config import PROCESSED_INPUT, FOR_OUTPUT, NLUSCOPE
 from Bot.utils import import_response_intent
 
-# from config.stage.settings import logger
-from config.stage import logger
+from config.stage import LOG_PATH
+from utils import path_join
+
+logger.add(f'{path_join(LOG_PATH,"engine.log")}')
 
 
 class DefaultEngine(BaseEngine):
@@ -20,6 +23,7 @@ class DefaultEngine(BaseEngine):
 
         super(DefaultEngine, self).__init__(input_object, output_object, engine_param)
         self.engine_name = "default_engine"
+        logger.info("Initializing the engine..")
         self.engine = SnipsNLUEngine()
         # get the path of the dataset
         dataset_path = engine_param.get("dataset_path")
@@ -34,6 +38,7 @@ class DefaultEngine(BaseEngine):
         with open(path) as dataset_file:
 
             self.engine.fit(json.load(dataset_file))
+        logger.info("Successfully loading the trained data sets")
 
     def parse(self, request_text):
         """
@@ -41,6 +46,7 @@ class DefaultEngine(BaseEngine):
         Snip NLU engine.
         """
         engine = self.engine.parse(request_text)
+
         return engine
 
     def response(self, scope):
@@ -52,6 +58,7 @@ class DefaultEngine(BaseEngine):
         """
 
         intent_name = scope["intent"]["intentName"] or "defaultIntent_default"
+        logger.debug(f"getting the intent class name: {intent_name}")
 
         return import_response_intent(intent_name)(scope=scope)
 
@@ -61,6 +68,8 @@ class DefaultEngine(BaseEngine):
         to command request. if then change the scope
         intent name as ``commandsIntent_command``.
         """
+        logger.debug(f"getting the intent class name as: commandsIntent_command")
+
         txObject.update(
             {NLUSCOPE: {"intent": {"intentName": "commandsIntent_command"}}}
         )
@@ -70,18 +79,18 @@ class DefaultEngine(BaseEngine):
         Add the layer function into the engine's
         list for executing of the layer function.
         
-        :param :Class:`Bot.Bot_layer.abstract_layer` layer: the object
+        :param: :mod:`Bot.Bot_layer.abstract_layer` layer the object
         of function are added as layer into the engine for concurrency
         exection.
         """
         super(DefaultEngine, self).add(layer)
 
     def go(self, pretty="base.html"):
-        '''
+        """
         :param: pretty is the name of the file where the meta data or base line of html
             are saved and it is parsed along with return result. Currently base.html and json.html
             is taken as parameter.
-        '''
+        """
         # super() must be called
         super(DefaultEngine, self).go()
 
@@ -117,6 +126,8 @@ class DefaultEngine(BaseEngine):
 
         output_result = super().to_output(self.return_object)
 
+        # DEPRECATED:
         super().next()
+        logger.debug(f"running the parser ")
 
         return output_result

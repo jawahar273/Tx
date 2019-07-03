@@ -3,7 +3,10 @@
 # write directly, go to the .gitignore folder.
 # -------------------------------------------------------------
 
+log/*
 .idea/
+
+dataset/*
 
 # python git ignores
 *.md

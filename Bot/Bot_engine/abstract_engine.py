@@ -1,10 +1,8 @@
-
 from Bot.config import STOPLAYER
 from Bot.utils import import_class
 
 
 class AbstractEngine:
-
     def __init__(self, *args, **kwarg):
 
         raise NotImplementedError("`__init__` is not implemented")
@@ -96,12 +94,13 @@ class BaseEngine(AbstractEngine):
 
     def next(self):
         """
+        @depreacted
         :meth::`BasedEngine.next` are recommenced to be called after the end
         of engine.
         """
 
-        if self.engine_param["is_next"]:
-            self.input_object = import_class(self.engine_param["next_class"])(
-                self.engine_param
-            )
-        self.return_object = None
+        # if self.engine_param["is_next"]:
+        #     self.input_object = import_class(self.engine_param["next_class"])(
+        #         self.engine_param
+        #     )
+        # self.return_object = None

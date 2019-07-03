@@ -1,4 +1,13 @@
 
+.. warning:: 
+
+    ..code-block:: bash
+    
+        flask run --no-reload
+    
+    Run the flask with auto reload disable.
+    
+
 Resourceful Command
 --------------------
 

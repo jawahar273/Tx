@@ -14,3 +14,4 @@ git+https://github.com/kivy/plyer.git#egg=plyer
 dateparser==0.7.1
 huey==2.1.0
 loguru==0.3.0
+flask-socketio
