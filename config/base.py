@@ -10,14 +10,14 @@ load_dotenv()
 # Template settings
 
 render_template = Environment(
-    loader=FileSystemLoader(["templates", "Bot/Bot_response/templates"]),
+    loader=FileSystemLoader(["templates", "raven/response/templates"]),
     autoescape=select_autoescape(["html", "xml"]),
 )
 
 # NLU Engine settings
 engine_param = {
-    "dataset_path": "Bot/storage/_profile/dataset/dataset.json",
-    "next_class": "Bot.Bot_input.rest_input.RESTInput",
+    "dataset_path": "raven/storage/_profile/dataset/dataset.json",
+    "next_class": "raven.input.rest_input.RESTInput",
     "input_params": {},
     "output_params": {},
     "is_next": False,
@@ -30,7 +30,7 @@ engine_param = {
 EMAIL_VALID_REGEX = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 
 # Intent and Dataset storage
-DEFAULT_STARTPOINT = "Bot.storage"
+DEFAULT_STARTPOINT = "raven.storage"
 
 HOSTNAME = env_str("HOSTNAME", "localhost")
 PORT = env_int("PORT", 5000)

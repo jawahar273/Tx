@@ -17,4 +17,4 @@ Python utilities for working with `redis-py <https://github.com/andymccurdy/redi
 
 from config.stage import Huey
 
-from Bot.Bot_response.response_schedule import *
+from raven.response.response_schedule import *

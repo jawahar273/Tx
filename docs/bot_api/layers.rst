@@ -2,25 +2,25 @@
 Layer
 -----
 
-.. autoclass:: Bot.Bot_layer.abstract_layer.AbstractLayer
+.. autoclass:: raven.layer.abstract_layer.AbstractLayer
     :members:
     :noindex:
 
-.. autoclass:: Bot.Bot_layer.abstract_layer.BaseLayer
+.. autoclass:: raven.layer.abstract_layer.BaseLayer
     :members:
     :noindex:
 
 Command Request
 ^^^^^^^^^^^^^^^
 
-.. automodule:: Bot.Bot_layer.cmd.cmd_base_layer
+.. automodule:: raven.layer.cmd.cmd_base_layer
     :members:
     :noindex:
 
-.. automodule:: Bot.Bot_layer.cmd.exit
+.. automodule:: raven.layer.cmd.exit
     :members:
     :noindex:
 
-.. automodule:: Bot.Bot_layer.cmd.wiki
+.. automodule:: raven.layer.cmd.wiki
     :members:
     :noindex:

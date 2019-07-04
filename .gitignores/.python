@@ -6,8 +6,6 @@
 log/*
 .idea/
 
-dataset/*
-
 # python git ignores
 *.md
 

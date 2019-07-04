@@ -2,14 +2,14 @@
 #
 
 config:
-	export CONFIG = config.docs_local
+	export CONFIG = config.local
 
 # You can set these variables from the command line.
-CONFIG        = config.docs_local
+CONFIG        = config.local
 EXPORT 		  = export
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = Tx, TxBot
+SPHINXPROJ    = Tx, raven
 SOURCEDIR     = .
 BUILDDIR      = _build
 

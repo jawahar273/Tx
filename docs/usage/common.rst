@@ -38,5 +38,5 @@ schedule recurring tasks, like a crontab, task prioritization, task pipelines et
 
 .. automodule:: maintainer
 
-.. automodule:: Bot.Bot_response.response_schedule
+.. automodule:: raven.response.response_schedule
 

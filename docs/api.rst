@@ -10,7 +10,7 @@ API
 
 
 
-Utils
+Global Utils
 ====================
 
 .. automodule:: utils

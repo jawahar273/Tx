@@ -37,7 +37,7 @@ setup(
     include_package_data=True,
     keywords="Tx",
     name="Tx",
-    packages=find_packages(include=["Tx", "TxBot"]),
+    packages=find_packages(include=["Tx", "raven"]),
     entry_points={"console_scripts": ["tx = tui.__main__:main"]},
     setup_requires=setup_requirements,
     test_suite="tests",

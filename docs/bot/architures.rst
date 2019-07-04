@@ -1,4 +1,4 @@
-Bot Internal Structure
+Raven Bot Internal Structure
 ======================
 
 
@@ -7,9 +7,9 @@ Architures
 
 
 
-Tx-Bot compresseing of basic 5 components  :Class:`Bot.Bot_engine.abstract_engine`,
-:mod:`Bot.Bot_input.abstract_input`, :Class:`Bot.Bot_output.abstract_output`, :Class:`Bot.Bot_layer.abstract_layer`
-and :Class:`Bot.Bot_response.abstract_response`.
+Raven-Bot compresseing of basic 5 components  :Class:`raven.engine.abstract_engine`,
+:mod:`raven.input.abstract_input`, :Class:`raven.output.abstract_output`, :Class:`raven.layer.abstract_layer`
+and :Class:`raven.response.abstract_response`.
 
 .. image:: ./images/TxBotArch.svg
      :alt: TxBot Articures

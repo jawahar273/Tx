@@ -2,6 +2,6 @@
 Ouput
 ---------
 
-.. automodule:: Bot.Bot_output.abstract_output 
+.. automodule:: raven.output.abstract_output 
 
-.. automodule:: Bot.Bot_output.abstract_output.BaseOutput
+.. automodule:: raven.output.abstract_output.BaseOutput

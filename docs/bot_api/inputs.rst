@@ -1,19 +1,19 @@
 
-Bot's Component Api
-====================
+Raven Bot Component Api
+=======================
 
 Input
 ---------
 
 
-.. autoclass:: Bot.Bot_input.abstract_input.BaseInput
+.. autoclass:: raven.input.abstract_input.BaseInput
     :members:
     :noindex:
 
-.. autoclass:: Bot.Bot_input.cli_input.CLIInput
+.. autoclass:: raven.input.cli_input.CLIInput
     :members:
     :noindex:
 
-.. autoclass:: Bot.Bot_input.rest_input.RESTInput
+.. autoclass:: raven.input.rest_input.RESTInput
     :members:
     :noindex:

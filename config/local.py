@@ -1,8 +1,8 @@
 from .base import *
 
 engine_param = {
-    "dataset_path": "Bot/dataset/dataset.json",
-    "next_class": "Bot.TxBot_input.rest_input.RESTInput",
+    "dataset_path": "raven/dataset/dataset.json",
+    "next_class": "raven.input.rest_input.RESTInput",
     "input_params": {},
     "is_next": False,
 }

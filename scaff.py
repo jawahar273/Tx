@@ -30,7 +30,7 @@ Intent Defining Rules.
 
         python scaff.py intent # answer some questions.
 
-1. In-Build folder for saving the intent file is 'Bot/Storage'.
+1. In-Build folder for saving the intent file is 'raven/Storage'.
 2. Following snippet is example after generating of intent from the command line.
 
 .. code-block:: yaml
@@ -76,7 +76,7 @@ intent file as a dataset.json.
     .. code-block:: bash
 
         # absolute path must be given.
-        python scaff.py train Bot/storage/_profile --name dataset.json --dataset dataset
+        python scaff.py train raven/storage/_profile --name dataset.json --dataset dataset
 
 Folder structure for the intent and dataset.
 
@@ -111,9 +111,10 @@ import os
 
 import click
 
-from Bot.scaff.response import gen_response
-from Bot.scaff.intent import gen_intent
-from Bot.scaff.utils import exit_now
+from raven.scaff.response import gen_response
+from raven.scaff.intent import gen_intent
+from raven.scaff.utils import exit_now
+from config.stage import settings
 
 
 @click.group(invoke_without_command=False)
@@ -164,8 +165,8 @@ def both(ipath, rpath):
 
 @main.command(
     "train",
-    help="\n simply type `Bot/storage/` for get starting.\n"
-    + "convert list of intent file into train format by giving the folder path `Bot/storage/_profile` or `Bot/storage/` for train all intent file inside",
+    help="\n simply type `raven/storage/` for get starting.\n"
+    + "convert list of intent file into train format by giving the folder path `raven/storage/_profile` or `raven/storage/` for train all intent file inside",
 )
 @click.argument("path", type=click.Path(exists=True))
 @click.option(
@@ -174,13 +175,13 @@ def both(ipath, rpath):
 @click.option(
     "--dataset",
     "-d",
-    default=os.path.join("Bot", "dataset"),
+    default=os.path.join("raven", "dataset"),
     help="location for containing the dataset training format `dataset`",
 )
 @click.option(
     "--common",
     "-g",
-    default=os.path.join("Bot", "storage", "_global"),
+    default=os.path.join(settings.DEFAULT_STARTPOINT, "_global"),
     help="global intent will be import into other intents",
 )
 def intent_to_dataset_format(path: str, name: str, dataset: str, common: str) -> None:

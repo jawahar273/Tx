@@ -4,7 +4,7 @@
 To Get Starting
 ===============
 
-To get start with Tx-Bot might be difficult at first sight. Don't worry here are
+To get start with Raven-Bot might be difficult at first sight. Don't worry here are
 some instruction to get start with the bot. ``Step: 1`` is installing the piece of the  code.
 
 .. warning::
@@ -15,10 +15,10 @@ Step: 2
 -------
 
 Use of a CLI thing so called ``scaff.py`` which intensify  generate scaffolding for us, which a half
-way through. There are two major sub division to remember in working with Tx-Bot one
+way through. There are two major sub division to remember in working with Raven-Bot one
 is ``storage`` is folder which contain of sub folder along with intents sets(``intents set`` are collection of
 intent and organized in such a way for human classification) and other folder is called 
-``Bot_response`` which contain the code to executed if the engine choose the response to show.
+``response`` which contain the code to executed if the engine choose the response to show.
 
 
 .. note::
